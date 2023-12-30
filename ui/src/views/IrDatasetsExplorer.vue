@@ -1,19 +1,27 @@
 <template>
+  <h1 class="font-weight-bold text-h2 text-center justify-center py-6">
+    ir_datasets Explorer
+  </h1>
+
   <div class="d-flex">
-    <v-data-table v-model="selected_topics" :items="topics" item-value="query_id" show-select hover>
-    <template v-slot:header.query_id="{ header }">
-      <v-text-field clearable label="Filter number &hellip;" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="dataset_filter"/>
-      Num
-    </template>
+    <v-data-table v-model="selected_topics" :items="filtered_topics" item-value="query_id" :headers="headers" show-select hover dense>
     <template v-slot:header.dataset="{ header }">
-      <v-text-field clearable label="Filter datasets &hellip;" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="topic_num_filter"/>
+      <v-text-field clearable label="Filter datasets &hellip;" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="dataset_filter"/>
       Dataset
     </template>
-      
+    <template v-slot:header.query_id="{ header }">
+      <v-text-field clearable label="Filter number &hellip;" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="topic_num_filter"/>
+      Num
+    </template>
     <template v-slot:header.default_text="{ header }">
       <v-text-field clearable label="Filter queries &hellip;" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="query_filter"/>
       Query
     </template>
+    <template v-slot:footer.prepend>
+        <v-select menu-icon="mdi-cog" variant="plain" :items="['Dataset', 'Topic', 'Query', 'nDCG@10 (Best)', 'nDCG@10 (Median)', 'nDCG@10 (Worst)']" hide-headers multiple style="max-width: 100px;" class="ma-2">
+          <template v-slot:selection="{ item, index }"/>
+        </v-select>
+      </template>
     </v-data-table>
   </div>
 
@@ -40,33 +48,57 @@
 </template>
 
 <script lang="ts">
+import topics from '@/ir_datasets';
+import {extractFromUrl, updateUrl} from "@/utils";
+
 export default {
   name: "ir-datasets-explorer",
   components: {},
   data() {
     return {
-      topic_num_filter: null,
-      dataset_filter: null,
-      query_filter: null,
+      topic_num_filter: extractFromUrl('topic'),
+      dataset_filter: extractFromUrl('dataset'),
+      query_filter: extractFromUrl('query'),
       tab: null,
       selected_topics: null,
-      topics: [
-        {'dataset': 'argsme/2020-04-01/touche-2020-task-1', 'query_id': '1', 'default_text': 'test 1'},
-        {'dataset': 'argsme/2020-04-01/touche-2020-task-1', 'query_id': '2', 'default_text': 'test 2'},
-        {'dataset': 'argsme/2020-04-01/touche-2020-task-1', 'query_id': '3', 'default_text': 'test 3'},
-        {'dataset': 'argsme/2020-04-01/touche-2020-task-1', 'query_id': '4', 'default_text': 'test 4'},
-        {'dataset': 'argsme/2020-04-01/touche-2020-task-1', 'query_id': '5', 'default_text': 'test 5'},
-        {'dataset': 'argsme/2020-04-01/touche-2020-task-1', 'query_id': '6', 'default_text': 'test 6'},
-        {'dataset': 'argsme/2020-04-01/touche-2020-task-1', 'query_id': '7', 'default_text': 'test 7'},
-        {'dataset': 'argsme/2020-04-01/touche-2020-task-1', 'query_id': '8', 'default_text': 'test 8'},
-        {'dataset': 'argsme/2020-04-01/touche-2020-task-1', 'query_id': '9', 'default_text': 'test 9'},
-        {'dataset': 'argsme/2020-04-01/touche-2020-task-1', 'query_id': '10', 'default_text': 'test 10'},
-        {'dataset': 'argsme/2020-04-01/touche-2020-task-1', 'query_id': '11', 'default_text': 'test 11'},
-        {'dataset': 'argsme/2020-04-01/touche-2020-task-1', 'query_id': '12', 'default_text': 'test 12'},
-      ],
+      topics: topics,
+      headers: [
+        { title: 'Dataset', value: 'dataset', sortable: false},
+        { title: 'Num', value: 'query_id', sortable: false},
+        { title: 'Query', value: 'default_text', sortable: false},
+        { title: 'nDCG@10', value: 'measure', align: 'center', children: [{ title: 'Best', value: 'best_ndcg_cut_10', sortable: true}, { title: 'Median', value: 'median_ndcg_cut_10', sortable: true}, { title: 'Worst', value: 'worst_ndcg_cut_10', sortable: true}]}
+      ]
+    }
+  },
+  methods: {
+    updateFilter() {
+      updateUrl(this.topic_num_filter, this.dataset_filter, this.query_filter);
     }
   },
   beforeMount() {
+  },
+  watch: {
+    topic_num_filter: function () { this.updateFilter() },
+    dataset_filter: function () { this.updateFilter() },
+    query_filter: function () { this.updateFilter() },
+  },
+  computed: {
+    filtered_topics() {
+      let topics = this.topics
+      if (this.topic_num_filter) {
+        topics = topics.filter(topic => topic.query_id.includes(this.topic_num_filter))
+      }
+
+      if (this.dataset_filter) {
+        topics = topics.filter(topic => topic.dataset.includes(this.dataset_filter))
+      }
+
+      if (this.query_filter) {
+        topics = topics.filter(topic => topic.default_text.includes(this.query_filter))
+      }
+
+      return topics;
+    }
   }
 }
 </script>

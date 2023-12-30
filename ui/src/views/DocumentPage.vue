@@ -6,12 +6,7 @@
 </template>
 
 <script lang="ts">
-import {ref} from 'vue'
-import {get} from "@/utils";
-
-function extractFromUrl(param: string) {
-  return (ref(window.location).value.href + '&').split(param + '=')[1].split('&')[0];
-}
+import {get, extractFromUrl} from "@/utils";
 
 export default {
   data: () => ({
