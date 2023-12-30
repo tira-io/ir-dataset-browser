@@ -55,7 +55,7 @@ export default defineConfig({
   experimental: {
     renderBuiltUrl(filename: string, { hostType }: { hostType: 'js' | 'css' | 'html' }) {
       // TIRA expects resourecs/assets at this location
-      return '/static/' + filename
+      return '/github-page-tutorial/dist/' + filename
     }
   }
 })
