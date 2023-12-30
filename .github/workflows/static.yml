@@ -38,6 +38,7 @@ jobs:
       - name: Compile Javascript assets
         run: |
           make
+          mv ./static/dist/index.html static/index.html
       - name: Setup Pages
         uses: actions/configure-pages@v4
       - name: Upload artifact
