@@ -4,7 +4,7 @@
   </h1>
 
   <div class="d-flex">
-    <v-data-table v-model="selected_topics" :items="filtered_topics" item-value="query_id" :headers="headers" show-select hover dense>
+    <v-data-table v-model="selected_topics" :items="filtered_topics" item-value="query_id" :headers="filtered_headers" show-select hover dense>
     <template v-slot:header.dataset="{ header }">
       <v-text-field clearable label="Filter datasets &hellip;" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="dataset_filter"/>
       Dataset
@@ -18,7 +18,7 @@
       Query
     </template>
     <template v-slot:footer.prepend>
-        <v-select menu-icon="mdi-cog" variant="plain" :items="['Dataset', 'Topic', 'Query', 'nDCG@10 (Best)', 'nDCG@10 (Median)', 'nDCG@10 (Worst)']" hide-headers multiple style="max-width: 100px;" class="ma-2">
+        <v-select menu-icon="mdi-cog" variant="plain" v-model="selected_headers" item-title="name" item-value="value" :items="available_headers" hide-headers multiple style="max-width: 100px;" class="ma-2">
           <template v-slot:selection="{ item, index }"/>
         </v-select>
       </template>
@@ -50,6 +50,7 @@
 <script lang="ts">
 import topics from '@/ir_datasets';
 import {extractFromUrl, updateUrl} from "@/utils";
+import {is_mobile} from "@/main";
 
 export default {
   name: "ir-datasets-explorer",
@@ -62,11 +63,30 @@ export default {
       tab: null,
       selected_topics: null,
       topics: topics,
+      selected_headers: is_mobile() ? ['dataset', 'default_text'] : ['dataset', 'query_id', 'default_text', 'max_ndcg_cut_10', 'median_ndcg_cut_10', 'min_ndcg_cut_10'],
+      available_headers: [
+        {name: 'Dataset', value: 'dataset'},
+        {name: 'Topic', value: 'query_id'},
+        {name: 'Query', value: 'default_text'},
+        {name: 'nDCG@10 (Maximum)', value: 'max_ndcg_cut_10'},
+        {name: 'nDCG@10 (Median)', value: 'median_ndcg_cut_10'},
+        {name: 'nDCG@10 (Minimum)', value: 'min_ndcg_cut_10'},
+        {name: 'Unjudged@10 (Maximum)', value: 'max_unjudged_cut_10'},
+        {name: 'Unjudged@10 (Median)', value: 'median_unjudged_cut_10'},
+        {name: 'Unjudged@10 (Minimum)', value: 'min_unjudged_cut_10'},
+        {name: 'Precision@10 (Maximum)', value: 'max_precision_cut_10'},
+        {name: 'Precision@10 (Median)', value: 'median_precision_cut_10'},
+        {name: 'Precision@10 (Minimum)', value: 'min_precision_cut_10'}
+      ],
       headers: [
         { title: 'Dataset', value: 'dataset', sortable: false},
         { title: 'Num', value: 'query_id', sortable: false},
         { title: 'Query', value: 'default_text', sortable: false},
-        { title: 'nDCG@10', value: 'measure', align: 'center', children: [{ title: 'Best', value: 'best_ndcg_cut_10', sortable: true}, { title: 'Median', value: 'median_ndcg_cut_10', sortable: true}, { title: 'Worst', value: 'worst_ndcg_cut_10', sortable: true}]}
+
+        { title: 'nDCG@10', value: 'ndcg_cut_10', align: 'center', children: [{ title: 'Maximum', value: 'max_ndcg_cut_10', sortable: true}, { title: 'Median', value: 'median_ndcg_cut_10', sortable: true}, { title: 'Minimum', value: 'min_ndcg_cut_10', sortable: true}]},
+        { title: 'Unjudged@10', value: 'unjudged_cut_10', align: 'center', children: [{ title: 'Maximum', value: 'max_unjudged_cut_10', sortable: true}, { title: 'Median', value: 'median_unjudged_cut_10', sortable: true}, { title: 'Minimum', value: 'min_unjudged_cut_10', sortable: true}]},
+
+        { title: 'Precision@10', value: 'precision_cut_10', align: 'center', children: [{ title: 'Maximum', value: 'max_precision_cut_10', sortable: true}, { title: 'Median', value: 'median_precision_cut_10', sortable: true}, { title: 'Minimum', value: 'min_precision_cut_10', sortable: true}]},
       ]
     }
   },
@@ -98,6 +118,31 @@ export default {
       }
 
       return topics;
+    },
+    filtered_headers() {
+      let headers = this.headers
+      if (this.selected_headers.length > 0) {
+        headers = headers.filter(header => this.selected_headers.includes(header.value))
+      }
+      var add_separator = false
+      for (let header of this.headers) {
+        header = {...header}
+        if (!header.children) {
+          continue
+        }
+        header.children = header.children.filter(child => this.selected_headers.includes(child.value))
+
+        if (header.children.length > 0) {
+          if (add_separator) {
+            headers.push({title: '', value: header.value + '_sep', sortable: false})
+          }
+          add_separator = true
+
+          headers.push(header)
+        }
+      }
+
+      return headers
     }
   }
 }

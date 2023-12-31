@@ -15,6 +15,12 @@ import { createRouter,createWebHistory} from 'vue-router'
 import { registerPlugins } from '@/plugins'
 import DocumentPage from "@/views/DocumentPage.vue";
 import IrDatasetsExplorer from "@/views/IrDatasetsExplorer.vue";
+import { useDisplay } from 'vuetify'
+
+export function is_mobile() {   
+    const { mobile } = useDisplay()
+    return mobile.value
+}
 
 export default function register_app() {
     const app_selector = '#app'
