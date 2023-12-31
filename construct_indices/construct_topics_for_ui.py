@@ -114,6 +114,17 @@ def create_run_details(dataset_name):
 
     return [i for i in ret.values()]
 
+def create_qrel_details(dataset_name):
+    ret = {}
+
+    for i in qrels[dataset_name]:
+        qid = str(i.query_id)
+        if qid not in ret:
+            ret[qid] = {"dataset": dataset_name, "qid": qid, 'qrels': []}
+
+        ret[qid]['qrels'] += [{'qid': i.query_id, 'relevance': i.relevance, 'doc_id': i.doc_id, 'retrieved_by': '?? / ??', 'median_rank': '??', 'var_rank': '??'}]
+
+    return [i for i in ret.values()]
 
 def main():
     runs = []
@@ -123,7 +134,17 @@ def main():
     with open('ui/run-details.jsonl', 'w') as f:
         for l in runs:
             f.write(json.dumps(l) + '\n')
+
+    qrels = []
+    for dataset_name in datasets:
+        qrels += create_qrel_details(dataset_name)
+
+    with open('ui/qrel-details.jsonl', 'w') as f:
+        for l in qrels:
+            f.write(json.dumps(l) + '\n')
+
     runs = parse_run_details('ui/run-details.jsonl')
+    qrels = parse_run_details('ui/qrel-details.jsonl')
     data = []
 
     for dataset_name in datasets:
@@ -131,6 +152,7 @@ def main():
     
     for i in data:
         i['run_details'] = {'start': runs[i['dataset']][i['query_id']]['start'], 'end': runs[i['dataset']][i['query_id']]['end'] - 1, 'path': 'run-details.jsonl'}
+        i['qrel_details'] = {'start': qrels[i['dataset']][i['query_id']]['start'], 'end': qrels[i['dataset']][i['query_id']]['end'] - 1, 'path': 'qrel-details.jsonl'}
 
     json.dump(data,  open('ui/src/topics.json', 'w'), indent=4)
 

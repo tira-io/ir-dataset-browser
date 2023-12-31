@@ -19,6 +19,11 @@
             "start": 0,
             "end": 1179,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 0,
+            "end": 2213,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -41,6 +46,11 @@
             "start": 1180,
             "end": 2355,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 2214,
+            "end": 3969,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -63,6 +73,11 @@
             "start": 2356,
             "end": 3566,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 3970,
+            "end": 7777,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -85,6 +100,11 @@
             "start": 3567,
             "end": 4714,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 7778,
+            "end": 8393,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -107,6 +127,11 @@
             "start": 4715,
             "end": 5856,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 8394,
+            "end": 8893,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -129,6 +154,11 @@
             "start": 5857,
             "end": 6997,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 8894,
+            "end": 10080,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -151,6 +181,11 @@
             "start": 6998,
             "end": 8172,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 10081,
+            "end": 18674,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -173,6 +208,11 @@
             "start": 8173,
             "end": 9346,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 18675,
+            "end": 18834,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -195,6 +235,11 @@
             "start": 9347,
             "end": 10529,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 18835,
+            "end": 19107,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -217,6 +262,11 @@
             "start": 10530,
             "end": 11702,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 19108,
+            "end": 20420,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -239,6 +289,11 @@
             "start": 11703,
             "end": 12849,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 20421,
+            "end": 20927,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -261,6 +316,11 @@
             "start": 12850,
             "end": 14034,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 20928,
+            "end": 25458,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -283,6 +343,11 @@
             "start": 14035,
             "end": 15231,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 25459,
+            "end": 32295,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -305,6 +370,11 @@
             "start": 15232,
             "end": 16422,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 32296,
+            "end": 38782,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -327,6 +397,11 @@
             "start": 16423,
             "end": 17607,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 38783,
+            "end": 42509,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -349,6 +424,11 @@
             "start": 17608,
             "end": 18821,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 42510,
+            "end": 45547,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -371,6 +451,11 @@
             "start": 18822,
             "end": 20065,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 45548,
+            "end": 48235,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -393,6 +478,11 @@
             "start": 20066,
             "end": 21230,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 48236,
+            "end": 49773,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -415,6 +505,11 @@
             "start": 21231,
             "end": 22386,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 49774,
+            "end": 52574,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -437,6 +532,11 @@
             "start": 22387,
             "end": 23570,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 52575,
+            "end": 55267,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -459,6 +559,11 @@
             "start": 23571,
             "end": 24754,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 55268,
+            "end": 61063,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -481,6 +586,11 @@
             "start": 24755,
             "end": 25939,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 61064,
+            "end": 68584,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -503,6 +613,11 @@
             "start": 25940,
             "end": 27150,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 68585,
+            "end": 70929,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -525,6 +640,11 @@
             "start": 27151,
             "end": 28303,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 70930,
+            "end": 75459,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -547,6 +667,11 @@
             "start": 28304,
             "end": 29503,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 75460,
+            "end": 83908,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -569,6 +694,11 @@
             "start": 29504,
             "end": 30678,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 83909,
+            "end": 90045,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -591,6 +721,11 @@
             "start": 30679,
             "end": 31846,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 90046,
+            "end": 93310,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -613,6 +748,11 @@
             "start": 31847,
             "end": 33014,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 93311,
+            "end": 94277,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -635,6 +775,11 @@
             "start": 33015,
             "end": 34186,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 94278,
+            "end": 95589,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -657,6 +802,11 @@
             "start": 34187,
             "end": 35378,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 95590,
+            "end": 96442,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -679,6 +829,11 @@
             "start": 35379,
             "end": 36573,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 96443,
+            "end": 97756,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -701,6 +856,11 @@
             "start": 36574,
             "end": 37738,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 97757,
+            "end": 99298,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -723,6 +883,11 @@
             "start": 37739,
             "end": 38955,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 99299,
+            "end": 100266,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -745,6 +910,11 @@
             "start": 38956,
             "end": 40177,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 100267,
+            "end": 101347,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -767,6 +937,11 @@
             "start": 40178,
             "end": 41330,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 101348,
+            "end": 104844,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -789,6 +964,11 @@
             "start": 41331,
             "end": 42485,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 104845,
+            "end": 105814,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -811,6 +991,11 @@
             "start": 42486,
             "end": 43673,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 105815,
+            "end": 108740,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -833,6 +1018,11 @@
             "start": 43674,
             "end": 44869,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 108741,
+            "end": 110168,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -855,6 +1045,11 @@
             "start": 44870,
             "end": 46017,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 110169,
+            "end": 110790,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -877,6 +1072,11 @@
             "start": 46018,
             "end": 47177,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 110791,
+            "end": 114171,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -899,6 +1099,11 @@
             "start": 47178,
             "end": 48322,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 114172,
+            "end": 123879,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -921,6 +1126,11 @@
             "start": 48323,
             "end": 49470,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 123880,
+            "end": 128068,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -943,6 +1153,11 @@
             "start": 49471,
             "end": 50672,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 128069,
+            "end": 128920,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -965,6 +1180,11 @@
             "start": 50673,
             "end": 51820,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 128921,
+            "end": 129887,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -987,6 +1207,11 @@
             "start": 51821,
             "end": 52998,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 129888,
+            "end": 130510,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1009,6 +1234,11 @@
             "start": 52999,
             "end": 54201,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 130511,
+            "end": 135963,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1031,6 +1261,11 @@
             "start": 54202,
             "end": 55363,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 135964,
+            "end": 139692,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1053,6 +1288,11 @@
             "start": 55364,
             "end": 56510,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 139693,
+            "end": 140083,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1075,6 +1315,11 @@
             "start": 56511,
             "end": 57672,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 140084,
+            "end": 140935,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1097,6 +1342,11 @@
             "start": 57673,
             "end": 58809,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 140936,
+            "end": 141097,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1119,6 +1369,11 @@
             "start": 58810,
             "end": 60025,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 141098,
+            "end": 142982,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1141,6 +1396,11 @@
             "start": 60026,
             "end": 61232,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 142983,
+            "end": 145909,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1163,6 +1423,11 @@
             "start": 61233,
             "end": 62437,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 145910,
+            "end": 147912,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1185,6 +1450,11 @@
             "start": 62438,
             "end": 63632,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 147913,
+            "end": 149108,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1207,6 +1477,11 @@
             "start": 63633,
             "end": 64805,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 149109,
+            "end": 150646,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1229,6 +1504,11 @@
             "start": 64806,
             "end": 65977,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 150647,
+            "end": 155174,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1251,6 +1531,11 @@
             "start": 65978,
             "end": 67140,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 155175,
+            "end": 156372,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1273,6 +1558,11 @@
             "start": 67141,
             "end": 68309,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 156373,
+            "end": 157569,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1295,6 +1585,11 @@
             "start": 68310,
             "end": 69481,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 157570,
+            "end": 157731,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1317,6 +1612,11 @@
             "start": 69482,
             "end": 70645,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 157732,
+            "end": 158126,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1339,6 +1639,11 @@
             "start": 70646,
             "end": 71797,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 158127,
+            "end": 163000,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1361,6 +1666,11 @@
             "start": 71798,
             "end": 72923,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 163001,
+            "end": 165463,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1383,6 +1693,11 @@
             "start": 72924,
             "end": 74049,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 165464,
+            "end": 168967,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1405,6 +1720,11 @@
             "start": 74050,
             "end": 75241,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 168968,
+            "end": 171542,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1427,6 +1747,11 @@
             "start": 75242,
             "end": 76411,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 171543,
+            "end": 172049,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1449,6 +1774,11 @@
             "start": 76412,
             "end": 77583,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 172050,
+            "end": 173014,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1471,6 +1801,11 @@
             "start": 77584,
             "end": 78751,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 173015,
+            "end": 176171,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1493,6 +1828,11 @@
             "start": 78752,
             "end": 79912,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 176172,
+            "end": 180013,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1515,6 +1855,11 @@
             "start": 79913,
             "end": 81070,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 180014,
+            "end": 181672,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1537,6 +1882,11 @@
             "start": 81071,
             "end": 82211,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 181673,
+            "end": 182295,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1559,6 +1909,11 @@
             "start": 82212,
             "end": 83352,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 182296,
+            "end": 184756,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1581,6 +1936,11 @@
             "start": 83353,
             "end": 84485,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 184757,
+            "end": 188483,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1603,6 +1963,11 @@
             "start": 84486,
             "end": 85614,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 188484,
+            "end": 190600,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1625,6 +1990,11 @@
             "start": 85615,
             "end": 86751,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 190601,
+            "end": 194328,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1647,6 +2017,11 @@
             "start": 86752,
             "end": 87878,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 194329,
+            "end": 201970,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1669,6 +2044,11 @@
             "start": 87879,
             "end": 89015,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 201971,
+            "end": 203053,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1691,6 +2071,11 @@
             "start": 89016,
             "end": 90233,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 203054,
+            "end": 205860,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1713,6 +2098,11 @@
             "start": 90234,
             "end": 91430,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 205861,
+            "end": 208785,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1735,6 +2125,11 @@
             "start": 91431,
             "end": 92620,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 208786,
+            "end": 212172,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1757,6 +2152,11 @@
             "start": 92621,
             "end": 93821,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 212173,
+            "end": 213715,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1779,6 +2179,11 @@
             "start": 93822,
             "end": 95056,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 213716,
+            "end": 214223,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1801,6 +2206,11 @@
             "start": 95057,
             "end": 96215,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 214224,
+            "end": 216803,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1823,6 +2233,11 @@
             "start": 96216,
             "end": 97370,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 216804,
+            "end": 219840,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1845,6 +2260,11 @@
             "start": 97371,
             "end": 98521,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 219841,
+            "end": 222532,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1867,6 +2287,11 @@
             "start": 98522,
             "end": 99683,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 222533,
+            "end": 223499,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1889,6 +2314,11 @@
             "start": 99684,
             "end": 100854,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 223500,
+            "end": 225844,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1911,6 +2341,11 @@
             "start": 100855,
             "end": 102066,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 225845,
+            "end": 226695,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1933,6 +2368,11 @@
             "start": 102067,
             "end": 103283,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 226696,
+            "end": 227892,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1955,6 +2395,11 @@
             "start": 103284,
             "end": 104447,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 227893,
+            "end": 229325,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1977,6 +2422,11 @@
             "start": 104448,
             "end": 105639,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 229326,
+            "end": 232706,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -1999,6 +2449,11 @@
             "start": 105640,
             "end": 106804,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 232707,
+            "end": 236778,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -2021,6 +2476,11 @@
             "start": 106805,
             "end": 108007,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 236779,
+            "end": 238437,
+            "path": "qrel-details.jsonl"
         }
     },
     {
@@ -2043,6 +2503,11 @@
             "start": 108008,
             "end": 109203,
             "path": "run-details.jsonl"
+        },
+        "qrel_details": {
+            "start": 238438,
+            "end": 243773,
+            "path": "qrel-details.jsonl"
         }
     }
 ]

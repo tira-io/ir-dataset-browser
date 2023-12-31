@@ -48,12 +48,12 @@
           ToDo: Details, including some information derived from the runs.
         </v-window-item>
 
-        <v-window-item value="runs">
-          <run-details :topics="selected_topics.map((i: string) => filtered_topics[parseInt(i) - 1])"/>
+        <v-window-item value="qrels">
+          <qrel-details :topics="selected_topics.map((i: string) => filtered_topics[parseInt(i) - 1])"/>
         </v-window-item>
 
-        <v-window-item value="qrels">
-          ToDo: Qrels, including median rank, mean rank, and variance among tirex runs
+        <v-window-item value="runs">
+          <run-details :topics="selected_topics.map((i: string) => filtered_topics[parseInt(i) - 1])"/>
         </v-window-item>
       </v-window>
     </v-card-text>
@@ -65,10 +65,11 @@ import topics from '@/ir_datasets';
 import {extractFromUrl, updateUrl} from "@/utils";
 import {is_mobile} from "@/main";
 import RunDetails from '@/components/RunDetails.vue';
+import QrelDetails from '@/components/QrelDetails.vue';
 
 export default {
   name: "ir-datasets-explorer",
-  components: {RunDetails},
+  components: {RunDetails, QrelDetails},
   data() {
     return {
       topic_num_filter: extractFromUrl('topic'),
