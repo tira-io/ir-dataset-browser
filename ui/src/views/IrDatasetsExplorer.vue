@@ -30,20 +30,33 @@
     Please select topics for browsing in the table above.
   </div>
 
-  <div v-if="selected_topics">
+  <div v-if="selected_topics && selected_topics.length > 0">
     <v-card color="primary">
-    <v-card-title class="text-center justify-center py-6">
-      <h1 class="font-weight-bold text-h2">
-        Browse {{ selected_topics }} Topics
-      </h1>
-    </v-card-title>
+      <v-card-title class="text-center justify-center py-6">
+        <h3 class="font-weight-bold text-h3">Browse {{ selected_topics.length }} Topics</h3>
+      </v-card-title>
 
-    <v-tabs v-model="tab" bg-color="primary">
-      <v-tab value="details">Details</v-tab>
-      <v-tab value="qrels">Relevance Judgments</v-tab>
-      <v-tab value="runs">Runs</v-tab>
-    </v-tabs>
-  </v-card>
+      <v-tabs v-model="tab" bg-color="primary">
+        <v-tab value="details">Details</v-tab>
+        <v-tab value="qrels">Relevance Judgments</v-tab>
+        <v-tab value="runs">Runs</v-tab>
+      </v-tabs>
+    </v-card>
+    <v-card-text>
+      <v-window v-model="tab">
+        <v-window-item value="details">
+          ToDo: Details, including some information derived from the runs.
+        </v-window-item>
+
+        <v-window-item value="runs">
+          <run-details :topics="selected_topics.map((i: string) => filtered_topics[parseInt(i) - 1])"/>
+        </v-window-item>
+
+        <v-window-item value="qrels">
+          ToDo: Qrels, including median rank, mean rank, and variance among tirex runs
+        </v-window-item>
+      </v-window>
+    </v-card-text>
   </div>
 </template>
 
@@ -51,10 +64,11 @@
 import topics from '@/ir_datasets';
 import {extractFromUrl, updateUrl} from "@/utils";
 import {is_mobile} from "@/main";
+import RunDetails from '@/components/RunDetails.vue';
 
 export default {
   name: "ir-datasets-explorer",
-  components: {},
+  components: {RunDetails},
   data() {
     return {
       topic_num_filter: extractFromUrl('topic'),

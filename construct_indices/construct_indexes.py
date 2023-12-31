@@ -89,6 +89,35 @@ def parse_topics(path: Path) -> Dict:
 
     return ret
 
+def parse_run_details(path: Path) -> Dict:
+    """
+    Parses a file with run details and returns a dictionary with the datasets and query id as key and the byte range as value.
+     
+    This method is inspired by indxr, please cite: https://github.com/AmenRa/indxr
+
+    :param path: Path to the run detals file in jsonl format 
+    :return: Dictionary with the dataset and query id as key and the byte range as value
+    """
+    ret = {}
+
+    with open(path, "rb") as file:
+        position = file.tell()
+
+        for _, line in enumerate(file):
+            line = json.loads(line.decode())
+
+            if line['dataset'] not in ret:
+                ret[line['dataset']] = {}
+
+            if line['qid'] is None or line['qid'] in ret:
+                raise ValueError(f'Run details contains duplicate or null document ids. Got {line["qid"]}')
+
+            ret[line['dataset']][line['qid']] = {'start': position, 'end': file.tell()}
+            position = file.tell()
+
+    return ret
+
+
 def parse_documents(path: Path) -> Dict:
     """
     Parses a documents file and returns a dictionary with the document id as key and the byte range as value.
