@@ -1,5 +1,5 @@
 {
-  "image": "mam10eks/github-page-tutorial:0.0.1",
+  "image": "webis/chatnoir-chat:0.0.3-dev",
   "customizations": {
     "vscode": {
       "extensions": ["ms-python.python", "ms-python.vscode-pylance", "ms-toolsai.jupyter"]
