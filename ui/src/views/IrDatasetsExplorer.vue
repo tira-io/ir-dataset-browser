@@ -49,11 +49,11 @@
         </v-window-item>
 
         <v-window-item value="qrels">
-          <qrel-details :topics="selected_topics.map((i: string) => filtered_topics[parseInt(i) - 1])"/>
+          <qrel-details :topics="selected_topics.map((i: string) => filtered_topics_map[i])"/>
         </v-window-item>
 
         <v-window-item value="runs">
-          <run-details :topics="selected_topics.map((i: string) => filtered_topics[parseInt(i) - 1])"/>
+          <run-details :topics="selected_topics.map((i: string) => filtered_topics_map[i])"/>
         </v-window-item>
       </v-window>
     </v-card-text>
@@ -134,6 +134,12 @@ export default {
       }
 
       return topics;
+    },
+    filtered_topics_map() {
+      return this.topics.reduce((map, obj) => {
+        map[obj.query_id] = obj;
+        return map;
+      }, {});
     },
     filtered_headers() {
       let headers = this.headers
