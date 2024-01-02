@@ -1,3 +1,3 @@
-import * as topics_json from './topics.json'
+import * as topics from './topics.json'
 
-export default topics_json.default as topics
+export default topics

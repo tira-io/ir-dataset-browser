@@ -77,7 +77,7 @@ export default {
       query_filter: extractFromUrl('query'),
       tab: null,
       selected_topics: null,
-      topics: topics,
+      topics: topics.default,
       selected_headers: is_mobile() ? ['dataset', 'default_text'] : ['dataset', 'query_id', 'default_text', 'max_nDCG@10', 'median_nDCG@10', 'min_nDCG@10'],
       available_headers: [
         {name: 'Dataset', value: 'dataset'},
