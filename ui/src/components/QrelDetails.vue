@@ -1,15 +1,22 @@
 <template>
     <h3>Topic {{topics[0].query_id}} ({{topics[0].dataset}})</h3>
+    <Bar :data="chartData" />
   
     <v-data-table :items="filtered_qrels" :headers="filtered_headers" hover dense />
-  </template>
+</template>
     
-  <script lang="ts">
-    import { get } from '@/utils'
+<script lang="ts">
+  import { get } from '@/utils'
     
+  import { Bar } from 'vue-chartjs'
+  import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+  ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+
+
     export default {
       name: "qrel-details",
       props: ['topics', 'selected_qrel_headers'],
+      components: {Bar},
       watch: {
         topics(newValue) {this.fetchData()},
         selected_qrel_headers(newValue) {this.fetchData()},
@@ -24,6 +31,13 @@
             {title: 'Retrieved (Top 10)', value: 'retrieved_in_10', sortable: true},
             {title: 'Retrieved (Top 100)', value: 'retrieved_in_100', sortable: true},
           ],
+          chartData: {
+            labels: [ 'January', 'February', 'March'],
+            datasets: [
+              {label: 'Data One', backgroundColor: '#f87979', data: [40, 20, 12]},
+              {label: 'Data Two', backgroundColor: '#f01212', data: [30, 12, 14]},
+            ]
+          }
         }
       },
       methods: {
