@@ -31,32 +31,52 @@
   </div>
 
   <div v-if="selected_topics && selected_topics.length > 0">
-    <v-card color="primary">
-      <v-card-title class="text-center justify-center py-6">
-        <h3 class="font-weight-bold text-h3">Browse {{ selected_topics.length }} Topics</h3>
-      </v-card-title>
+    <h3 class="text-h3">Browse {{ selected_topics.length }} Topics</h3>
 
-      <v-tabs v-model="tab" bg-color="primary">
-        <v-tab value="details">Details</v-tab>
-        <v-tab value="qrels">Relevance Judgments</v-tab>
-        <v-tab value="runs">Runs</v-tab>
-      </v-tabs>
-    </v-card>
-    <v-card-text>
-      <v-window v-model="tab">
-        <v-window-item value="details">
-          ToDo: Details, including some information derived from the runs.
-        </v-window-item>
+    <v-expansion-panels v-model="tab" multiple>
+      <v-expansion-panel>
+        <v-expansion-panel-title>Details</v-expansion-panel-title>
+        <v-expansion-panel-text>
+          <v-row class="justify-center mx-2">
+            <v-col :cols="columns" v-for="selected_topic in selected_topics">
+              <h3>Topic {{filtered_topics_map[selected_topic].query_id}} ({{filtered_topics_map[selected_topic].dataset}})</h3>
+              ToDo: Details, including some information derived from the runs.
+            </v-col>
+          </v-row>
+          
+        </v-expansion-panel-text>
+      </v-expansion-panel>
 
-        <v-window-item value="qrels">
-          <qrel-details :topics="selected_topics.map((i: string) => filtered_topics_map[i])"/>
-        </v-window-item>
+      <v-expansion-panel>
+        <v-expansion-panel-title>
+          Relevance Judgments (ToDo: Deep Link here)
+          <v-select menu-icon="mdi-cog" variant="plain" v-model="selected_qrel_headers" item-title="name" item-value="value" :items="available_qrel_headers" hide-headers multiple style="max-width: 100px;" class="ma-2">
+            <template v-slot:selection="{ item, index }"/>
+          </v-select>
+        </v-expansion-panel-title>
+        <v-expansion-panel-text>
+          <v-row class="justify-center mx-2">
+            <v-col :cols="columns" v-for="selected_topic in selected_topics">
+              <qrel-details :selected_qrel_headers="selected_qrel_headers" :topics="[filtered_topics_map[selected_topic]]" />
+            </v-col>
+          </v-row>
+          <h3>TODO: Add visualization(s) and implement the dummy columns.</h3>
+        </v-expansion-panel-text>
+      </v-expansion-panel>
 
-        <v-window-item value="runs">
-          <run-details :topics="selected_topics.map((i: string) => filtered_topics_map[i])"/>
-        </v-window-item>
-      </v-window>
-    </v-card-text>
+      <v-expansion-panel>
+        <v-expansion-panel-title>Runs</v-expansion-panel-title>
+        <v-expansion-panel-text>
+          <v-row class="justify-center mx-2">
+            <v-col :cols="columns" v-for="selected_topic in selected_topics">
+              <run-details :topics="[filtered_topics_map[selected_topic]]"/>
+            </v-col>
+          </v-row>
+
+          <h3>TODO: Add visualization as in the ir_measures explorer using the Relevance vector from the table above.</h3>
+        </v-expansion-panel-text>
+      </v-expansion-panel>
+    </v-expansion-panels>
   </div>
 </template>
 
@@ -103,7 +123,17 @@ export default {
         { title: 'nDCG@10', value: 'nDCG@10', align: 'center', children: [{title: 'Minimum', value: 'min_nDCG@10', sortable: true}, { title: 'Median', value: 'median_nDCG@10', sortable: true}, { title: 'Maximum', value: 'max_nDCG@10', sortable: true}, { title: 'Variance', value: 'var_nDCG@10', sortable: true}]},
         { title: 'Judged@10', value: 'Judged@10', align: 'center', children: [{ title: 'Minimum', value: 'min_Judged@10', sortable: true}, { title: 'Median', value: 'median_Judged@10', sortable: true}, { title: 'Maximum', value: 'max_Judged@10', sortable: true}, { title: 'Variance', value: 'var_Judged@10', sortable: true}]},
         { title: 'Precision@10', value: 'P@10', align: 'center', children: [{ title: 'Minimum', value: 'min_P@10', sortable: true}, { title: 'Median', value: 'median_P@10', sortable: true}, { title: 'Maximum', value: 'max_P@10', sortable: true}, { title: 'Variance', value: 'var_P@10', sortable: true}]},
-      ]
+      ],
+
+
+      available_qrel_headers: [
+        {name: 'Document', value: 'doc_id'},
+        {name: 'Relevance', value: 'relevance'},
+        {name: 'Retrieved (Top 10)', value: 'retrieved_in_10'},
+        {name: 'Retrieved (Top 100)', value: 'retrieved_in_100'},
+        {name: 'Median Rank', value: 'median_rank'}
+      ],
+      selected_qrel_headers: is_mobile() ? ['doc_id', 'relevance', 'median_rank'] : ['doc_id', 'relevance', 'median_rank', 'retrieved_in_100'],
     }
   },
   methods: {
@@ -112,6 +142,9 @@ export default {
     },
     uniqueElements(element: any[], key: string) {
       return uniqueElements(element, key)
+    },
+    is_mobile() {
+      return is_mobile()
     }
   },
   beforeMount() {
@@ -133,6 +166,13 @@ export default {
         map[obj.query_id] = obj;
         return map;
       }, {});
+    },
+    columns() {
+      if(is_mobile()) {
+        return 12
+      }
+
+      return Math.floor(12 / this.selected_topics.length)
     },
     filtered_headers() {
       let headers = this.headers

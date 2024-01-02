@@ -1,9 +1,7 @@
 <template>
-    <h1>Qrel Details</h1>
+    <h3>Topic {{topics[0].query_id}} ({{topics[0].dataset}})</h3>
   
-    <v-data-table v-model="selected_runs" :items="filtered_qrels" show-select hover dense />
-  
-    <h1>TODO: Add visualization(s) and implement the dummy columns.</h1>
+    <v-data-table :items="filtered_qrels" :headers="filtered_headers" hover dense />
   </template>
     
   <script lang="ts">
@@ -11,14 +9,21 @@
     
     export default {
       name: "qrel-details",
-      props: ['topics'],
+      props: ['topics', 'selected_qrel_headers'],
       watch: {
         topics(newValue) {this.fetchData()},
+        selected_qrel_headers(newValue) {this.fetchData()},
       },
       data() {
         return {
           cache: {'qrel-details.jsonl': {'0-100': {'qrels': [{"qid": "93", "relevance": 1, "doc_id": "182", "retrieved_by": "?? / ??", "median_rank": "??", "var_rank": "??"}]}}},
-          selected_runs: null
+          available_headers: [
+            {title: 'Document', value: 'doc_id', sortable: true},
+            {title: 'Relevance', value: 'relevance', sortable: true},
+            {title: 'Median Rank', value: 'median_rank', sortable: true},
+            {title: 'Retrieved (Top 10)', value: 'retrieved_in_10', sortable: true},
+            {title: 'Retrieved (Top 100)', value: 'retrieved_in_100', sortable: true},
+          ],
         }
       },
       methods: {
@@ -53,6 +58,8 @@
           }
   
           return ret;
+        }, filtered_headers() {
+          return this.available_headers.filter((i) => this.selected_qrel_headers.includes(i.value))
         }
       },
       beforeMount() {

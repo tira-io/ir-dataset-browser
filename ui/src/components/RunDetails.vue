@@ -1,9 +1,7 @@
 <template>
-  <h1>Run Details</h1>
+  <h3>Topic {{topics[0].query_id}} ({{topics[0].dataset}})</h3>
 
   <v-data-table v-model="selected_runs" :items="filtered_runs" show-select hover dense />
-
-  <h1>TODO: Add visualization as in the ir_measures explorer using the Relevance vector from the table above.</h1>
 </template>
   
 <script lang="ts">
