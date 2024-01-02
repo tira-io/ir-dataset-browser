@@ -1,4 +1,4 @@
-#docker build -t mam10eks/github-page-tutorial:0.0.1 .
+#docker build -t mam10eks/github-page-tutorial:0.0.2 .
 # This image already contains all dependencies: ir_datasets, tira, vuetify, etc.
 FROM webis/tira-application:basis-0.0.96
 
