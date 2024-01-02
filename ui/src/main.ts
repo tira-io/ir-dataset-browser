@@ -35,7 +35,7 @@ export default function register_app() {
 
     const routes = [
       {path: '/', component: IrDatasetsExplorer},
-      {path: '/datasets/docs', component: DocumentPage},
+      {path: '/docs', component: DocumentPage},
 
       // Fallback: everything matches to home.
       {path: '/:pathMatch(.*)*', component: IrDatasetsExplorer},

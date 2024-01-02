@@ -1783,6 +1783,11 @@ combined-stream@^1.0.8:
   dependencies:
     delayed-stream "~1.0.0"
 
+comlink@^4.3.0:
+  version "4.4.1"
+  resolved "https://registry.npmjs.org/comlink/-/comlink-4.4.1.tgz"
+  integrity sha512-+1dlx0aY5Jo1vHy/tSsIGpSkN4tS9rZSW8FIhG0JH/crs9wwweswIo/POr451r7bZww3hFbPAKnTpimzL/mm4Q==
+
 common-ancestor-path@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npmjs.org/common-ancestor-path/-/common-ancestor-path-1.0.1.tgz"
@@ -4598,6 +4603,13 @@ sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.npmjs.org/sprintf-js/-/sprintf-js-1.0.3.tgz"
   integrity sha512-D9cPgkvLlV3t3IzL0D0YLvGA9Ahk4PcvVwUbN0dSGr1aP0Nrt4AEnTUbuGvquEC0mA64Gqt1fzirlRs5ibXx8g==
+
+sql.js-httpvfs@^0.8.12:
+  version "0.8.12"
+  resolved "https://registry.npmjs.org/sql.js-httpvfs/-/sql.js-httpvfs-0.8.12.tgz"
+  integrity sha512-lcEBc2q0psFRfdCx8Di22oUIkkv5MUIaVO/fGCj/Jjx6YQDKVylQEcjd7NSSbmINHTRwVkm/vWP8uuevT7Rkkw==
+  dependencies:
+    comlink "^4.3.0"
 
 ssri@^10.0.0, ssri@^10.0.5:
   version "10.0.5"

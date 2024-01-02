@@ -26,5 +26,10 @@ def create_db(filename):
     con.close()
 
 if __name__ == '__main__':
-    create_db('static/indexes/ms-marco.json.gz')
-    create_db('static/indexes/argsme.json.gz')
+    #create_db('static/indexes/ms-marco.json.gz')
+    #create_db('static/indexes/argsme.json.gz')
+    #create_db('static/indexes/antique.json.gz')
+    #create_db('static/indexes/cranfield.json.gz')
+    #create_db('static/indexes/vaswani.json.gz')
+    
+    

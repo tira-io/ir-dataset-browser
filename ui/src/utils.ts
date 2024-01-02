@@ -1,6 +1,6 @@
 import {ref} from 'vue'
 
-async function execute_get(url: string, range: string): Promise<any> {
+export async function execute_get(url: string, range: string): Promise<any> {
 	const response = await fetch(url, {
 		method: 'GET',
 		headers: {'Range': 'bytes=' + range},
