@@ -7,6 +7,7 @@ from statistics import median
 import json
 import numpy as np
 from construct_indexes import parse_run_details
+import pandas as pd
 
 tira = Client()
 datasets = {i: ir_datasets.load(i) for i in [
@@ -16,6 +17,8 @@ datasets = {i: ir_datasets.load(i) for i in [
 qrels = {n: list(d.qrels_iter()) for n, d in datasets.items()}
 
 MEASURES = [ir_measures.nDCG@10, ir_measures.P@10, ir_measures.Judged@10]
+# We only report the median
+RANK_NOT_RETRIEVED = 99999
 
 tira_runs = [
     "ir-benchmarks/tira-ir-starter/BM25 Re-Rank (tira-ir-starter-pyterrier)",
@@ -114,15 +117,40 @@ def create_run_details(dataset_name):
 
     return [i for i in ret.values()]
 
-def create_qrel_details(dataset_name):
+def run_with_derived_rank(run):
+    df = pd.DataFrame([{'query_id': i.query_id, 'doc_id': i.doc_id, 'score': i.score} for i in ir_measures.read_trec_run(run)])
+
+    df = df.sort_values(["query_id", "score", "doc_id"], ascending=[True,False,False]).reset_index()
+    df["rank"] = 1
+    df["rank"] = df.groupby("query_id")["rank"].cumsum()
+
+    return df
+
+def create_qrel_details(dataset_name, run_files):
     ret = {}
+    run_to_qid_to_docid_to_rank = {i: {} for i in run_files}
+
+    for run_name in tqdm(run_files, 'Analyse runs for qrel details'):
+        for _, i in run_with_derived_rank(run_files[run_name]).iterrows():
+            if i.query_id not in run_to_qid_to_docid_to_rank[run_name]:
+                run_to_qid_to_docid_to_rank[run_name][i.query_id] = {}
+
+            if i.doc_id not in run_to_qid_to_docid_to_rank[run_name][i.query_id]:
+                run_to_qid_to_docid_to_rank[run_name][i.query_id][i.doc_id] = int(i['rank'])
 
     for i in qrels[dataset_name]:
         qid = str(i.query_id)
         if qid not in ret:
             ret[qid] = {"dataset": dataset_name, "qid": qid, 'qrels': []}
 
-        ret[qid]['qrels'] += [{'qid': i.query_id, 'relevance': i.relevance, 'doc_id': i.doc_id, 'retrieved_by': '?? / ??', 'median_rank': '??', 'var_rank': '??'}]
+        ranks = [run_to_qid_to_docid_to_rank[run_name][qid].get(i.doc_id, RANK_NOT_RETRIEVED) for run_name in run_files if qid in run_to_qid_to_docid_to_rank[run_name]]
+        median_rank, retrieved_in_100, retrieved_in_10 = None, None, None
+        if ranks:
+            median_rank = median(ranks)
+            retrieved_in_100 = len([i for i in ranks if i <= 100])
+            retrieved_in_10 = len([i for i in ranks if i <= 10])
+
+        ret[qid]['qrels'] += [{'qid': i.query_id, 'relevance': i.relevance, 'doc_id': i.doc_id, 'retrieved_in_100': retrieved_in_100, 'median_rank': median_rank, 'retrieved_in_10': retrieved_in_10}]
 
     return [i for i in ret.values()]
 
@@ -137,7 +165,8 @@ def main():
 
     qrels = []
     for dataset_name in datasets:
-        qrels += create_qrel_details(dataset_name)
+        run_name_to_run_file = {i: tira.get_run_output(i, IRDS_TO_TIREX_DATASET[dataset_name]) + '/run.txt' for i in tira_runs}
+        qrels += create_qrel_details(dataset_name, run_name_to_run_file)
 
     with open('ui/qrel-details.jsonl', 'w') as f:
         for l in qrels:

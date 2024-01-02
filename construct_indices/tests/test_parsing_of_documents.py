@@ -1,5 +1,4 @@
 import importlib
-# load construct indexes from ../construct_indexes.py
 parse_documents = importlib.import_module('construct_indexes').parse_documents
 extract_from_file = importlib.import_module('construct_indexes').extract_from_file
 import unittest
