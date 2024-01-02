@@ -36,6 +36,7 @@ export default function register_app() {
     const routes = [
       {path: '/', component: IrDatasetsExplorer},
       {path: '/docs', component: DocumentPage},
+      {path: '/github-page-tutorial/docs', component: DocumentPage},
 
       // Fallback: everything matches to home.
       {path: '/:pathMatch(.*)*', component: IrDatasetsExplorer},
