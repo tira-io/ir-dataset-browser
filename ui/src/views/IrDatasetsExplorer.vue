@@ -6,11 +6,11 @@
   <div class="d-flex">
     <v-data-table v-model="selected_topics" :items="filtered_topics" item-value="query_id" :headers="filtered_headers" show-select hover dense>
     <template v-slot:header.dataset="{ header }">
-      <v-text-field clearable label="Filter datasets &hellip;" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="dataset_filter"/>
+      <v-autocomplete clearable label="Filter datasets &hellip;" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="dataset_filter" multiple :items="uniqueElements(topics, 'dataset')"/>
       Dataset
     </template>
     <template v-slot:header.query_id="{ header }">
-      <v-text-field clearable label="Filter number &hellip;" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="topic_num_filter"/>
+      <v-autocomplete clearable label="Filter number &hellip;" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="topic_num_filter" multiple :items="queries_for_autocomplete"/>
       Num
     </template>
     <template v-slot:header.default_text="{ header }">
@@ -62,7 +62,7 @@
 
 <script lang="ts">
 import topics from '@/ir_datasets';
-import {extractFromUrl, updateUrl} from "@/utils";
+import {extractFromUrl, updateUrl, uniqueElements, filter_topics} from "@/utils";
 import {is_mobile} from "@/main";
 import RunDetails from '@/components/RunDetails.vue';
 import QrelDetails from '@/components/QrelDetails.vue';
@@ -109,6 +109,9 @@ export default {
   methods: {
     updateFilter() {
       updateUrl(this.topic_num_filter, this.dataset_filter, this.query_filter);
+    },
+    uniqueElements(element: any[], key: string) {
+      return uniqueElements(element, key)
     }
   },
   beforeMount() {
@@ -120,20 +123,10 @@ export default {
   },
   computed: {
     filtered_topics() {
-      let topics = this.topics
-      if (this.topic_num_filter) {
-        topics = topics.filter(topic => topic.query_id.includes(this.topic_num_filter))
-      }
-
-      if (this.dataset_filter) {
-        topics = topics.filter(topic => topic.dataset.includes(this.dataset_filter))
-      }
-
-      if (this.query_filter) {
-        topics = topics.filter(topic => topic.default_text.includes(this.query_filter))
-      }
-
-      return topics;
+      return filter_topics(this.topics, this.topic_num_filter, this.dataset_filter, this.query_filter)
+    },
+    queries_for_autocomplete() {
+      return uniqueElements(filter_topics(this.topics, null, this.dataset_filter, this.query_filter), 'query_id');
     },
     filtered_topics_map() {
       return this.topics.reduce((map, obj) => {

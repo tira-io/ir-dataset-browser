@@ -63,3 +63,25 @@ export function extractFromUrl(param: string, default_value: string | null = nul
 
     return decodeURI(href.split(param + '=')[1].split('&')[0]);
 }
+
+export function uniqueElements(elements: any[], key: string) {
+	return [...new Set(elements.map(i => i[key]))]
+}
+
+export function filter_topics(topics: {query_id: string, dataset: string, default_text: string}[], topic_num_filters: string | null = null, dataset_filters: string | null = null, query_filter: string | null = null): {query_id: string, dataset: string, default_text: string}[] {
+	let ret: {query_id: string, dataset: string, default_text: string}[] = []
+
+	for (let topic of topics) {
+		let match_topic_num_filters = topic_num_filters == null || topic_num_filters == '' || ('' + topic_num_filters).split(',').some(i => i && i == topic.query_id)
+
+		let match_dataset_filters = dataset_filters == null || dataset_filters == '' || ('' + dataset_filters).split(',').some(i => i && i == topic.dataset)
+
+		let match_query_filter = !query_filter || topic.default_text.toLowerCase().includes(query_filter.toLowerCase())
+
+		if (match_topic_num_filters && match_dataset_filters && match_query_filter) {
+			ret.push(topic)
+		}
+	}
+
+	return ret;
+}

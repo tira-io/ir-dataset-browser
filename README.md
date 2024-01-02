@@ -3,7 +3,7 @@
 Components:
 
 - [Indexing Backend](construct_indices) (test coverage: ![test coverage backend](construct_indices/coverage.svg))
-- [UI](ui) (test coverage: ![Coverage of the frontend](ui/coverage/badge-functions.svg))
+- [UI](ui) (test coverage: ![Coverage of the frontend](ui/coverage/badge-lines.svg))
 
 ## Setup Your Development Environment
 
