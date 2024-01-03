@@ -9,7 +9,7 @@ import App from './App.vue'
 
 // Composables
 import { createApp } from 'vue'
-import { createRouter,createWebHistory} from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 // Plugins
 import { registerPlugins } from '@/plugins'
@@ -17,7 +17,7 @@ import DocumentPage from "@/views/DocumentPage.vue";
 import IrDatasetsExplorer from "@/views/IrDatasetsExplorer.vue";
 import { useDisplay } from 'vuetify'
 
-export function is_mobile() {   
+export function is_mobile() {
     const { mobile } = useDisplay()
     return mobile.value
 }

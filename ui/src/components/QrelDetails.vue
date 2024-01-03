@@ -1,22 +1,26 @@
 <template>
-    <h3>Topic {{topics[0].query_id}} ({{topics[0].dataset}})</h3>
-    <Bar :data="chartData" />
+  <h3>Topic {{topics[0].query_id}} ({{topics[0].dataset}})</h3>
+  <Bar :data="chartData" />
   
-    <v-data-table :items="filtered_qrels" :headers="filtered_headers" hover dense />
+  <v-data-table :items="filtered_qrels" :headers="filtered_headers" hover dense>
+    <template #item.doc_id="{ item }">
+      <document-window :doc_id="item.doc_id" :dataset="item.dataset" :start="item.doc_id_to_offset.start" :end="item.doc_id_to_offset.end" />
+    </template>
+  </v-data-table>
 </template>
     
 <script lang="ts">
   import { get } from '@/utils'
-    
   import { Bar } from 'vue-chartjs'
   import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
   ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+  import DocumentWindow from '../views/DocumentWindow'
 
 
     export default {
       name: "qrel-details",
       props: ['topics', 'selected_qrel_headers'],
-      components: {Bar},
+      components: {Bar, DocumentWindow},
       watch: {
         topics(newValue) {this.fetchData()},
         selected_qrel_headers(newValue) {this.fetchData()},

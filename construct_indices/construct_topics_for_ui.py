@@ -8,11 +8,24 @@ import json
 import numpy as np
 from construct_indexes import parse_run_details
 import pandas as pd
+import gzip
 
 tira = Client()
 datasets = {i: ir_datasets.load(i) for i in [
-    #'antique/test', 'argsme/2020-04-01/touche-2020-task-1', 'argsme/2020-04-01/touche-2021-task-1', 'cord19/fulltext/trec-covid', 'cranfield', 'msmarco-passage/trec-dl-2019/judged', 'msmarco-passage/trec-dl-2020/judged', 
-                                             'vaswani', ]}
+    'antique/test', 'argsme/2020-04-01/touche-2020-task-1', 'argsme/2020-04-01/touche-2021-task-1', 'cranfield', 'msmarco-passage/trec-dl-2019/judged', 'msmarco-passage/trec-dl-2020/judged', 
+                                             'vaswani', 
+                                             #'cord19/fulltext/trec-covid', 
+                                             ]}
+
+datasets_to_index = {
+    'antique/test': 'static/indexes/antique.json.gz',
+    'argsme/2020-04-01/touche-2020-task-1': 'static/indexes/argsme.json.gz',
+    'argsme/2020-04-01/touche-2021-task-1': 'static/indexes/argsme.json.gz',
+    'cranfield': 'static/indexes/cranfield.json.gz',
+    'vaswani': 'static/indexes/vaswani.json.gz',
+    'msmarco-passage/trec-dl-2019/judged': 'static/indexes/ms-marco.json.gz',
+    'msmarco-passage/trec-dl-2020/judged': 'static/indexes/ms-marco.json.gz',
+}
 
 qrels = {n: list(d.qrels_iter()) for n, d in datasets.items()}
 
@@ -138,6 +151,8 @@ def create_qrel_details(dataset_name, run_files):
             if i.doc_id not in run_to_qid_to_docid_to_rank[run_name][i.query_id]:
                 run_to_qid_to_docid_to_rank[run_name][i.query_id][i.doc_id] = int(i['rank'])
 
+    doc_id_to_offset = json.load(gzip.open(datasets_to_index[dataset_name], 'rt'))
+
     for i in qrels[dataset_name]:
         qid = str(i.query_id)
         if qid not in ret:
@@ -150,7 +165,7 @@ def create_qrel_details(dataset_name, run_files):
             retrieved_in_100 = len([i for i in ranks if i <= 100])
             retrieved_in_10 = len([i for i in ranks if i <= 10])
 
-        ret[qid]['qrels'] += [{'qid': i.query_id, 'relevance': i.relevance, 'doc_id': i.doc_id, 'retrieved_in_100': retrieved_in_100, 'median_rank': median_rank, 'retrieved_in_10': retrieved_in_10}]
+        ret[qid]['qrels'] += [{'qid': i.query_id, 'relevance': i.relevance, 'doc_id': i.doc_id, 'retrieved_in_100': retrieved_in_100, 'median_rank': median_rank, 'retrieved_in_10': retrieved_in_10, 'doc_id_to_offset': doc_id_to_offset[i.doc_id]}]
 
     return [i for i in ret.values()]
 
