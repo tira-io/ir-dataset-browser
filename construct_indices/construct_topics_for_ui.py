@@ -187,6 +187,23 @@ def main():
         for l in qrels:
             f.write(json.dumps(l) + '\n')
 
+    topics = []
+    for dataset_name in datasets:
+        for i in datasets[dataset_name].queries_iter():
+            topic = {"dataset": dataset_name, "qid": str(i.query_id), "default_text": i.default_text()}
+            try:
+                topic['description'] = i.description
+                topic['narrative'] = i.narrative
+            except:
+                pass
+
+            topics += [topic]
+
+    with open('ui/topic-details.jsonl', 'w') as f:
+        for l in topics:
+            f.write(json.dumps(l) + '\n')
+
+    topics = parse_run_details('ui/topic-details.jsonl')
     runs = parse_run_details('ui/run-details.jsonl')
     qrels = parse_run_details('ui/qrel-details.jsonl')
     data = []
@@ -197,6 +214,7 @@ def main():
     for i in data:
         i['run_details'] = {'start': runs[i['dataset']][i['query_id']]['start'], 'end': runs[i['dataset']][i['query_id']]['end'] - 1, 'path': 'run-details.jsonl'}
         i['qrel_details'] = {'start': qrels[i['dataset']][i['query_id']]['start'], 'end': qrels[i['dataset']][i['query_id']]['end'] - 1, 'path': 'qrel-details.jsonl'}
+        i['topic_details'] = {'start': topics[i['dataset']][i['query_id']]['start'], 'end': topics[i['dataset']][i['query_id']]['end'] - 1, 'path': 'qrel-details.jsonl'}
 
     json.dump(data,  open('ui/src/topics.json', 'w'), indent=4)
 

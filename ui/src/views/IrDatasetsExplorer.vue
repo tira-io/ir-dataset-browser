@@ -4,7 +4,7 @@
   </h1>
 
   <div class="d-flex">
-    <v-data-table v-model="selected_topics" :items="filtered_topics" item-value="query_id" :headers="filtered_headers" show-select hover dense>
+    <v-data-table v-model="selected_topics" :items="filtered_topics" item-value="dataset_id_and_query_id" :headers="filtered_headers" show-select hover dense>
     <template v-slot:header.dataset="{ header }">
       <v-autocomplete clearable label="Filter datasets &hellip;" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="dataset_filter" multiple :items="uniqueElements(topics, 'dataset')"/>
       Dataset
@@ -39,8 +39,7 @@
         <v-expansion-panel-text>
           <v-row class="justify-center mx-2">
             <v-col :cols="columns" v-for="selected_topic in selected_topics">
-              <h3>Topic {{filtered_topics_map[selected_topic].query_id}} ({{filtered_topics_map[selected_topic].dataset}})</h3>
-              ToDo: Details, including some information derived from the runs.
+              <topic-details :topic="filtered_topics_map[selected_topic]" />
             </v-col>
           </v-row>
           
@@ -86,10 +85,11 @@ import {extractFromUrl, updateUrl, uniqueElements, filter_topics} from "@/utils"
 import {is_mobile} from "@/main";
 import RunDetails from '@/components/RunDetails.vue';
 import QrelDetails from '@/components/QrelDetails.vue';
+import TopicDetails from '@/components/TopicDetails.vue';
 
 export default {
   name: "ir-datasets-explorer",
-  components: {RunDetails, QrelDetails},
+  components: {RunDetails, QrelDetails, TopicDetails},
   data() {
     return {
       topic_num_filter: extractFromUrl('topic'),
@@ -148,6 +148,9 @@ export default {
     }
   },
   beforeMount() {
+    for (let t of this.topics) {
+      t['dataset_id_and_query_id'] = t['dataset'] + '____' + t['query_id']
+    }
   },
   watch: {
     topic_num_filter: function () { this.updateFilter() },
@@ -163,7 +166,7 @@ export default {
     },
     filtered_topics_map() {
       return this.topics.reduce((map, obj) => {
-        map[obj.query_id] = obj;
+        map[obj.dataset_id_and_query_id] = obj;
         return map;
       }, {});
     },
