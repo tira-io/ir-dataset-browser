@@ -1,53 +1,77 @@
 <template>
-  <h2>Document {{ doc_id }} on Dataset {{ ir_dataset }}</h2>
-  <v-divider/>
+  <v-row class="ma-2">
+    <v-col cols="4">
+      <v-autocomplete clearable label="Select dataset &hellip;" v-model="ir_dataset" :items="uniqueElements(topics, 'dataset')"/>
+    </v-col>
+    <v-col cols="4">
+      <v-text-field clearable :disabled="!ir_dataset" label="Document IDs (comma seperated) &hellip;" v-model="doc_ids"/>
+    </v-col>
 
-  {{ text }}
+    <v-col cols="4">
+      <v-btn block size="large" :disabled="!ir_dataset || !doc_ids" color="primary" @click="load_document_id">Load</v-btn>
+    </v-col>
+  </v-row>
+
+  <v-row class="ma-2" v-if="ir_dataset && (!texts || !texts[ir_dataset] || !texts[ir_dataset][doc_id_iter[0]] || texts[ir_dataset][doc_id_iter[0]] == 'loading...')">
+    <v-col cols="4"/>
+    <v-col cols="4">Example document IDs include {{ example_doc_id }}</v-col>
+    <v-col cols="4"/>
+  </v-row>
+
+  <v-divider v-if="texts[ir_dataset]"/>
+
+  <div v-if="texts[ir_dataset]" v-for="doc_id of doc_id_iter">
+    <div v-if="texts[ir_dataset][doc_id] && texts[ir_dataset][doc_id] != 'loading...'">  
+      <h1 class="font-weight-bold text-h2 text-center justify-center py-6">Document: {{doc_id}}</h1>
+      <v-textarea readonly class="ma-2" v-model="texts[ir_dataset][doc_id]" label="Default Text"/>
+    </div>
+  </div>
 </template>
 
 <script lang="ts">
-import { execute_get, extractFromUrl } from "@/utils"
-import { createDbWorker } from "sql.js-httpvfs"
+import { extractFromUrl, uniqueElements, updateUrl } from "@/utils"
+import { load_document } from "@/random_document_access"
 import { data_access } from "@/ir_datasets"
-
-const workerUrl = new URL(
-  "sql.js-httpvfs/dist/sqlite.worker.js",
-  import.meta.url,
-);
-const wasmUrl = new URL(
-  "sql.js-httpvfs/dist/sql-wasm.wasm",
-  import.meta.url,
-);
+import topics from '@/ir_datasets';
 
 
 export default {
   data: () => ({
+    topics: topics.default,
     ir_dataset: extractFromUrl('dataset'),
-    doc_id: extractFromUrl('doc_id'),
-    databases: data_access.databases,
-    documents: data_access.documents,
-    text: 'loading...',
+    doc_ids: extractFromUrl('doc_ids'),
+    example_doc_id: '<TBD>',
+    texts: {},
   }),
   methods: {
     async load_document_id() {
-      console.log(this.databases[this.ir_dataset])
-      const config = {
-        from: "inline",
-        config: {
-          serverMode: "full", // file is just a plain old full sqlite database
-          requestChunkSize: 4096, // the page size of the  sqlite database (by default 4096)
-          url: this.databases[this.ir_dataset],
-        },
+      updateUrl(null, this.ir_dataset, null, this.doc_ids);
+
+      if (!(this.ir_dataset in data_access.databases)) {
+        this.ir_dataset = null;
       }
 
-      const maxBytesToRead = 10 * 1024 * 1024;
-      const worker = await createDbWorker([config], workerUrl.toString(), wasmUrl.toString(), maxBytesToRead);
+      if (!(this.ir_dataset in this.texts)) {
+        this.texts[this.ir_dataset] = {}
+      }
 
-      let result = await worker.db.exec(`select * from documents where id = ?`, [this.doc_id])//[0]['values'];
-      result = result[0]['values'][0]
-      result = result[1] + '-' + (result[2] -1)
-      execute_get(this.documents[this.ir_dataset], result).then((i) => this.text = i);
+      for (let doc_id of this.doc_id_iter) {
+        if (this.ir_dataset && doc_id) {
+          load_document(this.ir_dataset, doc_id).then(i => this.texts[this.ir_dataset][doc_id] = i.text)
+        }
+      }
     },
+    uniqueElements(element: any[], key: string) {
+      return uniqueElements(element, key)
+    },
+  },
+  computed: {
+    doc_id_iter() {
+      return this.doc_ids ? this.doc_ids.split(',') : []
+    },
+  },
+  watch: {
+    ir_dataset: function () { this.load_document_id() }
   },
   beforeMount() {
     this.load_document_id();

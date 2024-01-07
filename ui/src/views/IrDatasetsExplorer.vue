@@ -1,8 +1,4 @@
 <template>
-  <h1 class="font-weight-bold text-h2 text-center justify-center py-6">
-    ir_datasets Explorer
-  </h1>
-
   <div class="d-flex">
     <v-data-table v-model="selected_topics" :items="filtered_topics" item-value="dataset_id_and_query_id" :headers="filtered_headers" show-select hover dense>
     <template v-slot:header.dataset="{ header }">

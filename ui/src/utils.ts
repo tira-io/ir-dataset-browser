@@ -32,7 +32,7 @@ export async function get(request: any, obj: any): Promise<any> {
 	return response;
 }
 
-export function updateUrl(topic: string|null = null, dataset: string|null = null, query: string|null = null) {
+export function updateUrl(topic: string|null = null, dataset: string|null = null, query: string|null = null, doc_ids: string|null = null) {
     var loc = (ref(window.location).value.href + '?').split('?')[0]
     var params = []
 
@@ -48,10 +48,14 @@ export function updateUrl(topic: string|null = null, dataset: string|null = null
         params.push('query=' + query)
     }
 
-	let ret = params.length == 0 ? loc : loc + '?' + params.join('&')
-	history.replaceState({'url': ret}, 'ir_datasets explorer', ret)
+    if (doc_ids != null && doc_ids != '') {
+        params.push('doc_ids=' + doc_ids)
+    }
 
-	return ret
+    let ret = params.length == 0 ? loc : loc + '?' + params.join('&')
+    history.replaceState({'url': ret}, 'ir_datasets explorer', ret)
+
+    return ret
 }
 
 export function extractFromUrl(param: string, default_value: string | null = null): string | null {

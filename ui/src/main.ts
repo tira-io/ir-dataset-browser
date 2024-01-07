@@ -34,9 +34,9 @@ export default function register_app() {
     console.log('Mount vue app to location: ' + window.location)
 
     const routes = [
-      {path: '/', component: IrDatasetsExplorer},
+      {path: '/', component: IrDatasetsExplorer, name: 'Browse Topics'},
       {path: '/docs', component: DocumentPage},
-      {path: '/github-page-tutorial/docs', component: DocumentPage},
+      {path: '/github-page-tutorial/docs', component: DocumentPage, name: 'Browse Documents'},
 
       // Fallback: everything matches to home.
       {path: '/:pathMatch(.*)*', component: IrDatasetsExplorer},
