@@ -2,6 +2,7 @@
 from pathlib import Path
 import json
 import pandas as pd
+import requests
 
 DATASET_IDS = ['argsme-touche-2020-task-1-20230209-training']
 CORPUS = []
@@ -21,6 +22,17 @@ def extract_from_file(path: Path, start: int, end: int) -> str:
     with open(path, "rb") as file:
         file.seek(start)
         return file.read(end - start).decode('utf-8').strip()
+
+def extract_from_remote(url: str, start: int, end: int) -> str:
+    """
+    Extracts the content of a url between the given start and end byte range.
+
+    :param url: URL where the content is to be extracted from
+    :param start: Start byte range
+    :param end: End byte range
+    :return: Content of the file between the given byte range
+    """
+    return requests.get(url, headers={'Range': f'bytes={start}-{end-1}'}).content.decode('utf-8').strip()
 
 def parse_qrels(path: Path) -> Dict:
     """

@@ -1,4 +1,5 @@
 import * as topics from './topics.json'
+import * as example_documents from './example-documents.json'
 
 export default topics
 
@@ -21,4 +22,4 @@ let data_access = {
   }
 }
 
-export { data_access }
+export { data_access, example_documents }

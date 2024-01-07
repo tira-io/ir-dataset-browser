@@ -6,14 +6,15 @@ import ir_datasets
 from statistics import median
 import json
 import numpy as np
-from construct_indexes import parse_run_details
+from construct_indexes import parse_run_details, extract_from_remote
 import pandas as pd
 import gzip
 
 tira = Client()
 datasets = {i: ir_datasets.load(i) for i in [
+
     'antique/test', 'argsme/2020-04-01/touche-2020-task-1', 'argsme/2020-04-01/touche-2021-task-1', 'cranfield', 'msmarco-passage/trec-dl-2019/judged', 'msmarco-passage/trec-dl-2020/judged', 
-                                             'vaswani', 
+    #'vaswani', 
                                              #'cord19/fulltext/trec-covid', 
                                              ]}
 
@@ -170,6 +171,23 @@ def create_qrel_details(dataset_name, run_files):
     return [i for i in ret.values()]
 
 def main():
+    static_indexes = json.load(open('ui/src/document_indexes.json'))
+    example_docs = {}
+    for dataset in datasets:
+        with gzip.open(datasets_to_index[dataset], 'rt') as f:
+            print(dataset)
+            l = f.read(1000)
+            l = json.loads("{" + l[1:].split('}')[0] + '}}')
+            doc_id = list(l.keys())[0]
+            example_doc = json.loads(extract_from_remote(static_indexes[datasets_to_index[dataset]], l[doc_id]['start'], l[doc_id]['end']))
+
+            if doc_id != example_doc['docno']:
+                raise ValueError(f'Expected doc_id {doc_id} but found {example_doc["docno"]}.')
+
+            example_docs[dataset] = {doc_id: example_doc}
+
+    json.dump(example_docs, open('ui/src/example-documents.json', 'w'), indent=4)
+
     runs = []
     for dataset_name in datasets:
         runs += create_run_details(dataset_name)

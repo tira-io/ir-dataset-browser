@@ -1,0 +1,57 @@
+{
+    "antique/test": {
+        "2020338_0": {
+            "docno": "2020338_0",
+            "text": "A small group of politicians believed strongly that the fact that Saddam Hussien remained in power after the first Gulf War was a signal of weakness to the rest of the world, one that invited attacks and terrorism. Shortly after taking power with George Bush in 2000 and after the attack on 9/11, they were able to use the terrorist attacks to justify war with Iraq on this basis and exaggerated threats of the development of weapons of mass destruction. The military strength of the U.S. and the brutality of Saddam's regime led them to imagine that the military and political victory would be relatively easy.",
+            "original_document": {
+                "doc_id": "2020338_0",
+                "text": "A small group of politicians believed strongly that the fact that Saddam Hussien remained in power after the first Gulf War was a signal of weakness to the rest of the world, one that invited attacks and terrorism. Shortly after taking power with George Bush in 2000 and after the attack on 9/11, they were able to use the terrorist attacks to justify war with Iraq on this basis and exaggerated threats of the development of weapons of mass destruction. The military strength of the U.S. and the brutality of Saddam's regime led them to imagine that the military and political victory would be relatively easy."
+            }
+        }
+    },
+    "argsme/2020-04-01/touche-2020-task-1": {
+        "Sb38112c8-A443a9828": {
+            "docno": "Sb38112c8-A443a9828",
+            "text": "Done. school"
+        }
+    },
+    "argsme/2020-04-01/touche-2021-task-1": {
+        "Sb38112c8-A443a9828": {
+            "docno": "Sb38112c8-A443a9828",
+            "text": "Done. school"
+        }
+    },
+    "cranfield": {
+        "1": {
+            "docno": "1",
+            "text": "experimental investigation of the aerodynamics of a\nwing in a slipstream . experimental investigation of the aerodynamics of a\nwing in a slipstream .\n  an experimental study of a wing in a propeller slipstream was\nmade in order to determine the spanwise distribution of the lift\nincrease due to slipstream at different angles of attack of the wing\nand at different free stream to slipstream velocity ratios .  the\nresults were intended in part as an evaluation basis for different\ntheoretical treatments of this problem .\n  the comparative span loading curves, together with\nsupporting evidence, showed that a substantial part of the lift increment\nproduced by the slipstream was due to a /destalling/ or\nboundary-layer-control effect .  the integrated remaining lift\nincrement, after subtracting this destalling lift, was found to agree\nwell with a potential flow theory .\n  an empirical evaluation of the destalling effects was made for\nthe specific configuration of the experiment .",
+            "original_document": {
+                "doc_id": "1",
+                "title": "experimental investigation of the aerodynamics of a\nwing in a slipstream .",
+                "text": "experimental investigation of the aerodynamics of a\nwing in a slipstream .\n  an experimental study of a wing in a propeller slipstream was\nmade in order to determine the spanwise distribution of the lift\nincrease due to slipstream at different angles of attack of the wing\nand at different free stream to slipstream velocity ratios .  the\nresults were intended in part as an evaluation basis for different\ntheoretical treatments of this problem .\n  the comparative span loading curves, together with\nsupporting evidence, showed that a substantial part of the lift increment\nproduced by the slipstream was due to a /destalling/ or\nboundary-layer-control effect .  the integrated remaining lift\nincrement, after subtracting this destalling lift, was found to agree\nwell with a potential flow theory .\n  an empirical evaluation of the destalling effects was made for\nthe specific configuration of the experiment .",
+                "author": "brenckman,m.",
+                "bib": "j. ae. scs. 25, 1958, 324."
+            }
+        }
+    },
+    "msmarco-passage/trec-dl-2019/judged": {
+        "0": {
+            "docno": "0",
+            "text": "The presence of communication amid scientific minds was equally important to the success of the Manhattan Project as scientific intellect was. The only cloud hanging over the impressive achievement of the atomic researchers and engineers is what their success truly meant; hundreds of thousands of innocent lives obliterated.",
+            "original_document": {
+                "doc_id": "0",
+                "text": "The presence of communication amid scientific minds was equally important to the success of the Manhattan Project as scientific intellect was. The only cloud hanging over the impressive achievement of the atomic researchers and engineers is what their success truly meant; hundreds of thousands of innocent lives obliterated."
+            }
+        }
+    },
+    "msmarco-passage/trec-dl-2020/judged": {
+        "0": {
+            "docno": "0",
+            "text": "The presence of communication amid scientific minds was equally important to the success of the Manhattan Project as scientific intellect was. The only cloud hanging over the impressive achievement of the atomic researchers and engineers is what their success truly meant; hundreds of thousands of innocent lives obliterated.",
+            "original_document": {
+                "doc_id": "0",
+                "text": "The presence of communication amid scientific minds was equally important to the success of the Manhattan Project as scientific intellect was. The only cloud hanging over the impressive achievement of the atomic researchers and engineers is what their success truly meant; hundreds of thousands of innocent lives obliterated."
+            }
+        }
+    }
+}
