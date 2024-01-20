@@ -4,5 +4,5 @@
     "static/indexes/antique.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/antique/documents.jsonl",
     "static/indexes/cranfield.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/cranfield/documents.jsonl",
     "static/indexes/ms-marco.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/ms-marco/documents.jsonl",
-    "static/indexes/ir-lab-jena-leipzig-wise-2023.json.gz": "mnt/ceph/storage/web/files/data-in-progress/dataset-explorer-in-progress/ir-lab-jena-leipzig-wise-2023/inputs/jena-topics-20231026-test/documents.jsonl"
+    "static/indexes/ir-lab-jena-leipzig-wise-2023.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/ir-lab-jena-leipzig-wise-2023/inputs/jena-topics-20231026-test/documents.jsonl"
 }
