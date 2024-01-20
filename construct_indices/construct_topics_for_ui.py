@@ -1,8 +1,10 @@
+#!/usr/bin/env python3
 from tira.rest_api_client import Client
 from tira.tirex import IRDS_TO_TIREX_DATASET
+from tira.ir_datasets_util import ir_dataset_from_tira_fallback_to_original_ir_datasets
 from tqdm import tqdm
 import ir_measures
-import ir_datasets
+ir_datasets = ir_dataset_from_tira_fallback_to_original_ir_datasets()
 from statistics import median
 import json
 import numpy as np
@@ -13,7 +15,8 @@ import gzip
 tira = Client()
 datasets = {i: ir_datasets.load(i) for i in [
 
-    'antique/test', 'argsme/2020-04-01/touche-2020-task-1', 'argsme/2020-04-01/touche-2021-task-1', 'cranfield', 'msmarco-passage/trec-dl-2019/judged', 'msmarco-passage/trec-dl-2020/judged', 
+    #'antique/test', 'argsme/2020-04-01/touche-2020-task-1', 'argsme/2020-04-01/touche-2021-task-1', 'cranfield', 'msmarco-passage/trec-dl-2019/judged', 'msmarco-passage/trec-dl-2020/judged',
+    'ir-lab-jena-leipzig-wise-2023/validation-20231104-training',
     #'vaswani', 
                                              #'cord19/fulltext/trec-covid', 
                                              ]}
@@ -35,11 +38,20 @@ MEASURES = [ir_measures.nDCG@10, ir_measures.P@10, ir_measures.Judged@10]
 RANK_NOT_RETRIEVED = 99999
 
 tira_runs = [
-    "ir-benchmarks/tira-ir-starter/BM25 Re-Rank (tira-ir-starter-pyterrier)",
-    "ir-benchmarks/tira-ir-starter/MonoT5 Base (tira-ir-starter-gygaggle)",
-    "ir-benchmarks/tira-ir-starter/MonoT5 Large (tira-ir-starter-gygaggle)",
-    "ir-benchmarks/tira-ir-starter/DirichletLM Re-Rank (tira-ir-starter-pyterrier)",
-    "ir-benchmarks/tira-ir-starter/TASB msmarco-distilbert-base-dot (tira-ir-starter-beir)"
+#    "ir-benchmarks/tira-ir-starter/BM25 Re-Rank (tira-ir-starter-pyterrier)",
+#    "ir-benchmarks/tira-ir-starter/MonoT5 Base (tira-ir-starter-gygaggle)",
+#    "ir-benchmarks/tira-ir-starter/MonoT5 Large (tira-ir-starter-gygaggle)",
+#    "ir-benchmarks/tira-ir-starter/DirichletLM Re-Rank (tira-ir-starter-pyterrier)",
+#    "ir-benchmarks/tira-ir-starter/TASB msmarco-distilbert-base-dot (tira-ir-starter-beir)"
+
+
+"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/silent-fork",
+"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/rounded-teak",
+"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/clear-solenoid",
+"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/nippy-skin",
+"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/recent-cordon",
+"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/fast-upload",
+
 ]
 
 
