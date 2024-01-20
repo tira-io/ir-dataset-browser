@@ -13,6 +13,9 @@ import pandas as pd
 import gzip
 
 tira = Client()
+
+IRDS_TO_TIREX_DATASET['ir-lab-jena-leipzig-wise-2023/validation-20231104-training'] = 'validation-20231104-training'
+
 datasets = {i: ir_datasets.load(i) for i in [
 
     #'antique/test', 'argsme/2020-04-01/touche-2020-task-1', 'argsme/2020-04-01/touche-2021-task-1', 'cranfield', 'msmarco-passage/trec-dl-2019/judged', 'msmarco-passage/trec-dl-2020/judged',
@@ -29,6 +32,7 @@ datasets_to_index = {
     'vaswani': 'static/indexes/vaswani.json.gz',
     'msmarco-passage/trec-dl-2019/judged': 'static/indexes/ms-marco.json.gz',
     'msmarco-passage/trec-dl-2020/judged': 'static/indexes/ms-marco.json.gz',
+    'ir-lab-jena-leipzig-wise-2023/validation-20231104-training': 'static/indexes/ir-lab-jena-leipzig-wise-2023.json.gz',
 }
 
 qrels = {n: list(d.qrels_iter()) for n, d in datasets.items()}
@@ -46,11 +50,11 @@ tira_runs = [
 
 
 "ir-lab-jena-leipzig-wise-2023/geometric-tortoise/silent-fork",
-"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/rounded-teak",
-"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/clear-solenoid",
-"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/nippy-skin",
-"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/recent-cordon",
-"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/fast-upload",
+#"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/rounded-teak",
+#"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/clear-solenoid",
+#"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/nippy-skin",
+#"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/recent-cordon",
+#"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/fast-upload",
 
 ]
 
