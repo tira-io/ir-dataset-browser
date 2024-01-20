@@ -32,7 +32,7 @@ datasets_to_index = {
     'vaswani': 'static/indexes/vaswani.json.gz',
     'msmarco-passage/trec-dl-2019/judged': 'static/indexes/ms-marco.json.gz',
     'msmarco-passage/trec-dl-2020/judged': 'static/indexes/ms-marco.json.gz',
-    'ir-lab-jena-leipzig-wise-2023/validation-20231104-training': 'static/indexes/ir-lab-jena-leipzig-wise-2023.json.gz',
+    'ir-lab-jena-leipzig-wise-2023/validation-20231104-training': 'static/indexes/ir-lab-jena-leipzig-wise-2023-validation.json.gz',
 }
 
 qrels = {n: list(d.qrels_iter()) for n, d in datasets.items()}
