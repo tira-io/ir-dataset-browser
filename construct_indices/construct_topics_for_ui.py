@@ -15,11 +15,22 @@ import gzip
 tira = Client()
 
 IRDS_TO_TIREX_DATASET['ir-lab-jena-leipzig-wise-2023/validation-20231104-training'] = 'validation-20231104-training'
+IRDS_TO_TIREX_DATASET['ir-lab-jena-leipzig-wise-2023/leipzig-topics-20231025-test'] = 'leipzig-topics-20231025-test'
+IRDS_TO_TIREX_DATASET['ir-lab-jena-leipzig-wise-2023/jena-topics-20231026-test'] = 'jena-topics-20231026-test'
+
+ALTERNATIVES = {
+    'jena-topics-20231026-test': 'jena-topics-small-20240119-training',
+    'leipzig-topics-20231025-test': 'leipzig-topics-small-20240119-training'
+}
+
 
 datasets = {i: ir_datasets.load(i) for i in [
 
+    #'ir-lab-jena-leipzig-wise-2023/validation-20231104-training',
+    'ir-lab-jena-leipzig-wise-2023/jena-topics-20231026-test','ir-lab-jena-leipzig-wise-2023/leipzig-topics-20231025-test',
+
     #'antique/test', 'argsme/2020-04-01/touche-2020-task-1', 'argsme/2020-04-01/touche-2021-task-1', 'cranfield', 'msmarco-passage/trec-dl-2019/judged', 'msmarco-passage/trec-dl-2020/judged',
-    'ir-lab-jena-leipzig-wise-2023/validation-20231104-training',
+
     #'vaswani', 
                                              #'cord19/fulltext/trec-covid', 
                                              ]}
@@ -33,6 +44,8 @@ datasets_to_index = {
     'msmarco-passage/trec-dl-2019/judged': 'static/indexes/ms-marco.json.gz',
     'msmarco-passage/trec-dl-2020/judged': 'static/indexes/ms-marco.json.gz',
     'ir-lab-jena-leipzig-wise-2023/validation-20231104-training': 'static/indexes/ir-lab-jena-leipzig-wise-2023-validation.json.gz',
+    'ir-lab-jena-leipzig-wise-2023/jena-topics-20231026-test': 'static/indexes/ir-lab-jena-leipzig-wise-2023.json.gz',
+    'ir-lab-jena-leipzig-wise-2023/leipzig-topics-20231025-test': 'static/indexes/ir-lab-jena-leipzig-wise-2023.json.gz',
 }
 
 qrels = {n: list(d.qrels_iter()) for n, d in datasets.items()}
@@ -50,7 +63,7 @@ tira_runs = [
 
 
 "ir-lab-jena-leipzig-wise-2023/geometric-tortoise/silent-fork",
-#"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/rounded-teak",
+"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/rounded-teak",
 #"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/clear-solenoid",
 #"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/nippy-skin",
 #"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/recent-cordon",
@@ -67,7 +80,7 @@ def process_dataset(dataset_name):
         ret[str(i.query_id)] = {"dataset": dataset_name, "query_id": str(i.query_id), "default_text": i.default_text()}
 
     for tira_run in tqdm(tira_runs, desc=f"Processing {dataset_name}"):
-        run = ir_measures.read_trec_run(tira.get_run_output(tira_run, IRDS_TO_TIREX_DATASET[dataset_name]) + '/run.txt')
+        run = ir_measures.read_trec_run(load_run(tira_run, dataset_name))
 
         for i in ir_measures.iter_calc(MEASURES, qrels[dataset_name], run):
             measure = str(i.measure)
@@ -116,13 +129,19 @@ def relevance_vector(qid, run, qrels):
 
     return ret
 
+def load_run(tira_run, dataset_name):
+    try:
+        return tira.get_run_output(tira_run, IRDS_TO_TIREX_DATASET[dataset_name]) + '/run.txt'
+    except:
+        return tira.get_run_output(tira_run, ALTERNATIVES[IRDS_TO_TIREX_DATASET[dataset_name]]) + '/run.txt'
+
 def create_run_details(dataset_name):
     dataset = datasets[dataset_name]
     ret = {}
     qid_to_default_text = {str(i.query_id): i.default_text() for i in dataset.queries_iter()}
 
     for tira_run in tqdm(tira_runs, desc=f"Construct details on runs: {dataset_name}"):
-        run = [i for i in ir_measures.read_trec_run(tira.get_run_output(tira_run, IRDS_TO_TIREX_DATASET[dataset_name]) + '/run.txt')]
+        run = [i for i in ir_measures.read_trec_run(load_run(tira_run, dataset_name))]
 
         for i in ir_measures.iter_calc(MEASURES, qrels[dataset_name], run):
             measure = str(i.measure)
@@ -214,7 +233,7 @@ def main():
 
     qrels = []
     for dataset_name in datasets:
-        run_name_to_run_file = {i: tira.get_run_output(i, IRDS_TO_TIREX_DATASET[dataset_name]) + '/run.txt' for i in tira_runs}
+        run_name_to_run_file = {i: load_run(i, dataset_name) for i in tira_runs}
         qrels += create_qrel_details(dataset_name, run_name_to_run_file)
 
     with open('ui/qrel-details.jsonl', 'w') as f:
