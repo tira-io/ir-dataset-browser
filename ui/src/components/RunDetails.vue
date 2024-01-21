@@ -1,15 +1,21 @@
 <template>
   <h3>Topic {{topics[0].query_id}} ({{topics[0].dataset}})</h3>
 
-  <v-data-table v-model="selected_runs" :items="filtered_runs" show-select hover dense />
+  <v-data-table v-model="selected_runs" :items="filtered_runs" show-select hover dense>
+    <template v-slot:item.relevance="{ item }">
+      <dense-run-overview :judgments="item.relevance" />
+    </template>
+  </v-data-table>
 </template>
   
 <script lang="ts">
   import { get } from '@/utils'
+  import DenseRunOverview from './DenseRunOverview.vue'
   
   export default {
     name: "run-details",
     props: ['topics'],
+    components: {DenseRunOverview},
     watch: {
       topics(newValue) {this.fetchData()},
     },

@@ -4,7 +4,7 @@
       <v-tab :to="'/github-page-tutorial/'">Browse Topics</v-tab>
       <v-tab to="/github-page-tutorial/docs">Browse Documents</v-tab>
       <v-tab to="/github-page-tutorial/runs">Browse Runs</v-tab>
-      <v-tab to="/github-page-tutorial/qrels">Browse Qrels</v-tab>
+      <!--<v-tab to="/github-page-tutorial/qrels">Browse Qrels</v-tab>-->
     </v-tabs>
     <v-menu v-if="is_mobile">
       <template v-slot:activator="{ props }">
@@ -14,7 +14,7 @@
         <v-list-item to="/github-page-tutorial/">Browse Topics</v-list-item>
         <v-list-item to="/github-page-tutorial/docs">Browse Documents</v-list-item>
         <v-list-item to="/github-page-tutorial/runs">Browse Runs</v-list-item>
-        <v-list-item to="/github-page-tutorial/qrels">Browse Qrels</v-list-item>
+        <!--<v-list-item to="/github-page-tutorial/qrels">Browse Qrels</v-list-item>-->
       </v-list>
     </v-menu>
   </v-toolbar>

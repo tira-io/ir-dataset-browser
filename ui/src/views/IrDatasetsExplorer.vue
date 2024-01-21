@@ -44,10 +44,8 @@
 
       <v-expansion-panel>
         <v-expansion-panel-title>
-          Relevance Judgments (ToDo: Deep Link here)
-          <v-select menu-icon="mdi-cog" variant="plain" v-model="selected_qrel_headers" item-title="name" item-value="value" :items="available_qrel_headers" hide-headers multiple style="max-width: 100px;" class="ma-2">
-            <template v-slot:selection="{ item, index }"/>
-          </v-select>
+          Relevance Judgments 
+          <!--(ToDo: Deep Link here)-->
         </v-expansion-panel-title>
         <v-expansion-panel-text>
           <v-row class="justify-center mx-2">
@@ -55,7 +53,10 @@
               <qrel-details :selected_qrel_headers="selected_qrel_headers" :topics="[filtered_topics_map[selected_topic]]" />
             </v-col>
           </v-row>
-          <h3>TODO: Add visualization(s) and implement the dummy columns.</h3>
+          <!--<h3>TODO: Add visualization(s) and implement the dummy columns.</h3>-->
+          <v-select menu-icon="mdi-cog" variant="plain" v-model="selected_qrel_headers" item-title="name" item-value="value" :items="available_qrel_headers" hide-headers multiple style="max-width: 100px;" class="ma-2">
+            <template v-slot:selection="{ item, index }"/>
+          </v-select>
         </v-expansion-panel-text>
       </v-expansion-panel>
 
@@ -68,7 +69,7 @@
             </v-col>
           </v-row>
 
-          <h3>TODO: Add visualization as in the ir_measures explorer using the Relevance vector from the table above.</h3>
+          <!--<h3>TODO: Add visualization as in the ir_measures explorer using the Relevance vector from the table above.</h3>-->
         </v-expansion-panel-text>
       </v-expansion-panel>
     </v-expansion-panels>

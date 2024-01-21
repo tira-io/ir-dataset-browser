@@ -14,6 +14,7 @@ import { createRouter, createWebHistory } from 'vue-router'
 // Plugins
 import { registerPlugins } from '@/plugins'
 import DocumentPage from "@/views/DocumentPage.vue";
+import RunPage from "@/views/RunPage.vue";
 import IrDatasetsExplorer from "@/views/IrDatasetsExplorer.vue";
 import { useDisplay } from 'vuetify'
 
@@ -37,6 +38,8 @@ export default function register_app() {
       {path: '/', component: IrDatasetsExplorer, name: 'Browse Topics'},
       {path: '/docs', component: DocumentPage},
       {path: '/github-page-tutorial/docs', component: DocumentPage, name: 'Browse Documents'},
+      {path: '/runs', component: RunPage},
+      {path: '/github-page-tutorial/runs', component: RunPage, name: 'Browse runs'},
 
       // Fallback: everything matches to home.
       {path: '/:pathMatch(.*)*', component: IrDatasetsExplorer},

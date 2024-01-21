@@ -34,14 +34,7 @@
             {title: 'Median Rank', value: 'median_rank', sortable: true},
             {title: 'Retrieved (Top 10)', value: 'retrieved_in_10', sortable: true},
             {title: 'Retrieved (Top 100)', value: 'retrieved_in_100', sortable: true},
-          ],
-          chartData: {
-            labels: [ 'January', 'February', 'March'],
-            datasets: [
-              {label: 'Data One', backgroundColor: '#f87979', data: [40, 20, 12]},
-              {label: 'Data Two', backgroundColor: '#f01212', data: [30, 12, 14]},
-            ]
-          }
+          ]
         }
       },
       methods: {
@@ -52,6 +45,23 @@
         },
       },
       computed: {
+        chartData() {
+          let ret = {}
+          for (let qrel of this.filtered_qrels) {
+            if (!ret[qrel['relevance']]) {
+              ret[qrel['relevance']] = 1
+            }
+
+            ret[qrel['relevance']] += 1
+          }
+
+          return {
+            labels: [''],
+            datasets: Object.entries(ret).map(([k, v]) => {
+              return {label: k, backgroundColor: '#f87979', data: [v]}
+            })
+          }
+        },
         filtered_qrels() {
           let ret = []
   
