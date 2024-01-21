@@ -1,7 +1,8 @@
 <template>
-  <v-toolbar density="compact" title="Explore ir_datasets">
+  <v-toolbar density="compact" title="IR Lab WS 2023/24">
     <v-tabs v-if="!is_mobile">
-      <v-tab :to="'/github-page-tutorial/'">Browse Topics</v-tab>
+      <v-tab to="/github-page-tutorial/">About</v-tab>
+      <v-tab to="/github-page-tutorial/topics">Browse Topics</v-tab>
       <v-tab to="/github-page-tutorial/docs">Browse Documents</v-tab>
       <v-tab to="/github-page-tutorial/runs">Browse Runs</v-tab>
       <!--<v-tab to="/github-page-tutorial/qrels">Browse Qrels</v-tab>-->
@@ -11,7 +12,8 @@
         <v-btn icon="mdi-menu" v-bind="props"></v-btn>
       </template>
       <v-list>
-        <v-list-item to="/github-page-tutorial/">Browse Topics</v-list-item>
+        <v-list-item to="/github-page-tutorial/">About</v-list-item>
+        <v-list-item to="/github-page-tutorial/topics">Browse Topics</v-list-item>
         <v-list-item to="/github-page-tutorial/docs">Browse Documents</v-list-item>
         <v-list-item to="/github-page-tutorial/runs">Browse Runs</v-list-item>
         <!--<v-list-item to="/github-page-tutorial/qrels">Browse Qrels</v-list-item>-->
