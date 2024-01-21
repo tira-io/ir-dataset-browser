@@ -2,8 +2,11 @@
 
 Some examples:
 
-- [https://mam10eks.github.io/github-page-tutorial/docs?dataset=argsme/2020-04-01/touche-2020-task-1&doc_id=Sdc660a59-Ab62ff0d9](https://mam10eks.github.io/github-page-tutorial/docs?dataset=argsme/2020-04-01/touche-2020-task-1&doc_id=Sdc660a59-Ab62ff0d9)
-- [https://mam10eks.github.io/github-page-tutorial/docs?dataset=msmarco-passage/trec-dl-2019/judged&doc_id=88565](https://mam10eks.github.io/github-page-tutorial/docs?dataset=msmarco-passage/trec-dl-2019/judged&doc_id=88565)
+- [Topic with high nDCG@10 variange](https://tira-io.github.io/ir-lab-ws-23/topics?topic=5&dataset=ir-lab-jena-leipzig-wise-2023/leipzig-topics-20231025-test)
+- [Topic with low nDCG@10 variance](https://tira-io.github.io/ir-lab-ws-23/topics?topic=16&dataset=ir-lab-jena-leipzig-wise-2023/leipzig-topics-20231025-test)
+- [Topic with single relevant document retrieved by almost all systems on position 1](https://tira-io.github.io/ir-lab-ws-23/topics?topic=19&dataset=ir-lab-jena-leipzig-wise-2023/leipzig-topics-20231025-test)
+- [Browsing some documents](https://tira-io.github.io/ir-lab-ws-23/docs?dataset=ir-lab-jena-leipzig-wise-2023/jena-topics-20231026-test&doc_ids=doc062201800042)
+- More examples to come.
 
 Components:
 
