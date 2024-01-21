@@ -38,11 +38,11 @@ export default function register_app() {
     const routes = [
       {path: '/', component: LandingPage},
       {path: '/topics', component: IrDatasetsExplorer, name: 'Browse Topics'},
-      {path: '/github-page-tutorial/topics', component: IrDatasetsExplorer, name: 'Browse Topics'},
+      {path: '/ir-lab-ws-23/topics', component: IrDatasetsExplorer, name: 'Browse Topics'},
       {path: '/docs', component: DocumentPage},
-      {path: '/github-page-tutorial/docs', component: DocumentPage, name: 'Browse Documents'},
+      {path: '/ir-lab-ws-23/docs', component: DocumentPage, name: 'Browse Documents'},
       {path: '/runs', component: RunPage},
-      {path: '/github-page-tutorial/runs', component: RunPage, name: 'Browse runs'},
+      {path: '/ir-lab-ws-23/runs', component: RunPage, name: 'Browse runs'},
 
       // Fallback: everything matches to home.
       {path: '/:pathMatch(.*)*', component: LandingPage},

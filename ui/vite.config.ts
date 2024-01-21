@@ -53,7 +53,7 @@ export default defineConfig({
   experimental: {
     renderBuiltUrl(filename: string, { hostType }: { hostType: 'js' | 'css' | 'html' }) {
       // Github pages places the resourecs/assets at this location
-      return '/github-page-tutorial/dist/' + filename
+      return '/ir-lab-ws-23/dist/' + filename
     }
   }
 })
