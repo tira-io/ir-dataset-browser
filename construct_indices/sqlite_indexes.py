@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import sqlite3
 import gzip
 import json
@@ -31,5 +32,7 @@ if __name__ == '__main__':
     #create_db('static/indexes/antique.json.gz')
     #create_db('static/indexes/cranfield.json.gz')
     #create_db('static/indexes/vaswani.json.gz')
+    #create_db('static/indexes/ir-lab-jena-leipzig-wise-2023.json.gz')
+    create_db('static/indexes/ir-lab-jena-leipzig-wise-2023-validation.json.gz')
     
     

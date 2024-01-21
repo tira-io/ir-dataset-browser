@@ -62,13 +62,51 @@ tira_runs = [
 #    "ir-benchmarks/tira-ir-starter/TASB msmarco-distilbert-base-dot (tira-ir-starter-beir)"
 
 
-"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/silent-fork",
-"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/rounded-teak",
-#"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/clear-solenoid",
-#"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/nippy-skin",
-#"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/recent-cordon",
-#"ir-lab-jena-leipzig-wise-2023/geometric-tortoise/fast-upload",
+    "ir-lab-jena-leipzig-wise-2023/geometric-tortoise/silent-fork",
+    "ir-lab-jena-leipzig-wise-2023/geometric-tortoise/rounded-teak",
+    "ir-lab-jena-leipzig-wise-2023/geometric-tortoise/clear-solenoid",
+    "ir-lab-jena-leipzig-wise-2023/geometric-tortoise/nippy-skin",
+    "ir-lab-jena-leipzig-wise-2023/geometric-tortoise/recent-cordon",
+    "ir-lab-jena-leipzig-wise-2023/geometric-tortoise/fast-upload",
+    'ir-lab-jena-leipzig-wise-2023/ul-lucid-lovelace/resultant-associate',
+    'ir-lab-jena-leipzig-wise-2023/ul-lucid-lovelace/cyan-comptroller',
+    'ir-lab-jena-leipzig-wise-2023/ul-lucid-lovelace/rapid-ketchup',
+    'ir-lab-jena-leipzig-wise-2023/ul-lucid-lovelace/spicy-chianti',
+    'ir-lab-jena-leipzig-wise-2023/ul-lucid-lovelace/mashed-demon',
+    'ir-lab-jena-leipzig-wise-2023/ul-trusting-neumann/auburn-land',
+    'ir-lab-jena-leipzig-wise-2023/ul-hungry-ramanujan/plain-pool',
+    'ir-lab-jena-leipzig-wise-2023/ul-dreamy-zuse/chief-walk',
+    'ir-lab-jena-leipzig-wise-2023/ul-dreamy-zuse/caramelized-callable',
+    'ir-lab-jena-leipzig-wise-2023/ul-dreamy-zuse/pureed-sack',
+    'ir-lab-jena-leipzig-wise-2023/ul-dreamy-zuse/fundamental-wrap',
+    "ir-lab-jena-leipzig-wise-2023/galapagos-tortoise/null-strait",
+    "ir-lab-jena-leipzig-wise-2023/galapagos-tortoise/mild-duck",
+    "ir-lab-jena-leipzig-wise-2023/galapagos-tortoise/edible-status",
+    "ir-lab-jena-leipzig-wise-2023/galapagos-tortoise/poky-claim",
+    "ir-lab-jena-leipzig-wise-2023/ul-kangaroo-query-crew/merry-chrysler",
+    "ir-lab-jena-leipzig-wise-2023/ul-ecstatic-dijkstra/parameter-05",
+    "ir-lab-jena-leipzig-wise-2023/ul-ecstatic-dijkstra/grim-engineer",
+    "ir-lab-jena-leipzig-wise-2023/ul-ecstatic-dijkstra/parameter-50",
+    "ir-lab-jena-leipzig-wise-2023/ul-ecstatic-dijkstra/recent-market",
+    'ir-lab-jena-leipzig-wise-2023/ul-the-golden-retrievers/the-golden-retrievers-rev2',
+    'ir-lab-jena-leipzig-wise-2023/ul-the-golden-retrievers/bo1-query-expansion',
+    'ir-lab-jena-leipzig-wise-2023/ul-the-golden-retrievers/icy-guitar',
+    'ir-lab-jena-leipzig-wise-2023/ul-nostalgic-turing/moderato-order',
+    'ir-lab-jena-leipzig-wise-2023/ul-nostalgic-turing/succulent-scene',
+    'ir-lab-jena-leipzig-wise-2023/ul-nostalgic-turing/dry-elbow',
+    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/proud-humanist',
+    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/fancy-department',
+    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/senile-portico',
+    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/bordeaux-bounce',
+    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/lead-pizza',
+    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/thick-major',
 
+    # todo: Double check
+    #"ir-lab-jena-leipzig-wise-2023/ul-ecstatic-dijkstra/acyclic-yogurt",
+    #"ir-lab-jena-leipzig-wise-2023/ul-ecstatic-dijkstra/mechanical-body",
+#    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/bare-rectangle',
+#    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/direct-manifold',
+#    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/pizzicato-combination',
 ]
 
 
@@ -135,10 +173,23 @@ def load_run(tira_run, dataset_name):
     except:
         return tira.get_run_output(tira_run, ALTERNATIVES[IRDS_TO_TIREX_DATASET[dataset_name]]) + '/run.txt'
 
+def create_run_overview(dataset_name):
+    ret = []
+    for tira_run in tqdm(tira_runs, desc=f"Construct details on runs: {dataset_name}"):
+        run = [i for i in ir_measures.read_trec_run(load_run(tira_run, dataset_name))]
+        run_entry = {'dataset': dataset_name, 'team': tira_run.split('/')[1], 'run': tira_run.split('/')[2], 'tira_run': tira_run}
+
+        for k,v in ir_measures.calc_aggregate(MEASURES, qrels[dataset_name], run).items():
+            run_entry[str(k)] = float("{:.3f}".format(v))
+        ret += [run_entry]
+        
+    return ret
+
 def create_run_details(dataset_name):
     dataset = datasets[dataset_name]
     ret = {}
     qid_to_default_text = {str(i.query_id): i.default_text() for i in dataset.queries_iter()}
+    doc_id_to_offset = json.load(gzip.open(datasets_to_index[dataset_name], 'rt'))
 
     for tira_run in tqdm(tira_runs, desc=f"Construct details on runs: {dataset_name}"):
         run = [i for i in ir_measures.read_trec_run(load_run(tira_run, dataset_name))]
@@ -157,9 +208,13 @@ def create_run_details(dataset_name):
                 ret[qid]['runs'][tira_run] = {'name': tira_run}
 
             ret[qid]['runs'][tira_run][measure] = float("{:.3f}".format(i.value))
-        
+
         for qid in ret:
             ret[qid]['runs'][tira_run]['relevance'] = relevance_vector(qid, run, qrels[dataset_name])
+            try:
+                ret[qid]['runs'][tira_run]['docs'] = [{'doc_id': j.doc_id,  'doc_id_to_offset': doc_id_to_offset[j.doc_id]} for j in run if str(j.query_id) == str(qid)][:10]
+            except:
+                ret[qid]['runs'][tira_run]['docs'] = []
 
     for qid in ret:
         ret[qid]['runs'] = [i for i in ret[qid]['runs'].values()]
@@ -167,13 +222,16 @@ def create_run_details(dataset_name):
     return [i for i in ret.values()]
 
 def run_with_derived_rank(run):
-    df = pd.DataFrame([{'query_id': i.query_id, 'doc_id': i.doc_id, 'score': i.score} for i in ir_measures.read_trec_run(run)])
+    try:
+        df = pd.DataFrame([{'query_id': i.query_id, 'doc_id': i.doc_id, 'score': i.score} for i in ir_measures.read_trec_run(run)])
 
-    df = df.sort_values(["query_id", "score", "doc_id"], ascending=[True,False,False]).reset_index()
-    df["rank"] = 1
-    df["rank"] = df.groupby("query_id")["rank"].cumsum()
+        df = df.sort_values(["query_id", "score", "doc_id"], ascending=[True,False,False]).reset_index()
+        df["rank"] = 1
+        df["rank"] = df.groupby("query_id")["rank"].cumsum()
 
-    return df
+        return df
+    except:
+        return pd.DataFrame()
 
 def create_qrel_details(dataset_name, run_files):
     ret = {}
@@ -222,6 +280,12 @@ def main():
             example_docs[dataset] = {doc_id: example_doc}
 
     json.dump(example_docs, open('ui/src/example-documents.json', 'w'), indent=4)
+
+    run_overview = []
+    for dataset_name in datasets:
+        run_overview += create_run_overview(dataset_name)
+
+    json.dump(run_overview, open('ui/src/run_overview.json', 'w'))
 
     runs = []
     for dataset_name in datasets:
