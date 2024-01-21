@@ -1,10 +1,12 @@
 import {ref} from 'vue'
 
 export async function execute_get(url: string, range: string): Promise<any> {
-	if (process.env.NODE_ENV !== 'development') {
-		url = '/ir-lab-ws-23' + url
-	} else if (!url.startsWith('http')) {
+	if (!url.startsWith('http')) {
 		url = '/' + url
+
+		if (process.env.NODE_ENV !== 'development') {
+			url = '/ir-lab-ws-23' + url
+		}
 	}
 
 	const response = await fetch(url, {

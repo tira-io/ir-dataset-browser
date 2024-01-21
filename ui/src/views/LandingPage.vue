@@ -24,7 +24,7 @@
             </v-btn>
           </v-col>
           <v-col cols="auto">
-            <v-btn class="home-button" href="https://github.com/webis-de/ir-lab-ws-23" target="_blank" min-width="228" rel="noopener noreferrer" size="x-large" variant="flat">
+            <v-btn class="home-button" href="https://github.com/tira-io/ir-lab-ws-23" target="_blank" min-width="228" rel="noopener noreferrer" size="x-large" variant="flat">
               <v-icon icon="mdi-github" size="large" start/>
               GitHub
             </v-btn>
