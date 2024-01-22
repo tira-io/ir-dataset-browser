@@ -17,6 +17,7 @@ import DocumentPage from "@/views/DocumentPage.vue";
 import RunPage from "@/views/RunPage.vue";
 import LandingPage from "@/views/LandingPage.vue";
 import IrDatasetsExplorer from "@/views/IrDatasetsExplorer.vue";
+import Milestones from "@/views/Milestones.vue";
 import { useDisplay } from 'vuetify'
 
 export function is_mobile() {
@@ -39,6 +40,8 @@ export default function register_app() {
       {path: '/', component: LandingPage},
       {path: '/topics', component: IrDatasetsExplorer, name: 'Browse Topics'},
       {path: '/ir-lab-ws-23/topics', component: IrDatasetsExplorer, name: 'Browse Topics'},
+      {path: '/milestones', component: Milestones, name: 'Milestones'},
+      {path: '/ir-lab-ws-23/milestones', component: Milestones, name: 'Milestones'},
       {path: '/docs', component: DocumentPage},
       {path: '/ir-lab-ws-23/docs', component: DocumentPage, name: 'Browse Documents'},
       {path: '/runs', component: RunPage},

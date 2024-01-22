@@ -1,4 +1,6 @@
-# Github Page
+# IR Lab WS 2023/24 at Leipzig/Jena
+
+See [https://tira-io.github.io/ir-lab-ws-23/](https://tira-io.github.io/ir-lab-ws-23/) for details.
 
 Some examples:
 
