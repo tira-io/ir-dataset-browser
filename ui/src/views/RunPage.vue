@@ -29,17 +29,21 @@
     Please select runs for browsing in the table above.
   </div>
   <div class="d-flex" v-if="selected_runs">
-    <v-row class="justify-center mx-2">
-      <v-col cols="8">
-        <v-select :items="filtered_topics" item-value="query_id" item-title="default_text" v-model="selected_topic"/>
+    <v-row class="justify-center ma-0 pa-0" dense>
+      <v-col cols="8" class="text-caption ma-0 pa-0">
+        Render run with <a href="https://github.com/capreolus-ir/diffir" target="_blank">DiffIR</a>:
+      </v-col>
+      <v-col cols="8" class="ma-0 pa-0">
+        <v-select class="ma-0 pa-0" :items="filtered_topics" item-value="query_id" item-title="default_text" v-model="selected_topic" label="Topic"/>
       </v-col>
     </v-row>
   </div>
-  
+
+  <div class="d-flex" v-if="selected_runs">Reference run: {{ reference_run_id }}</div>
   <div class="d-flex" v-if="selected_runs">
     <v-row v-if="selected_topic" class="justify-center mx-2">
-      <v-col :cols="columns" v-for="selected_run in selected_runs">
-        <serp :run="selected_run" :topic="selected_topic"/>
+      <v-col :cols="columns" v-for="selected_run of selected_runs">
+        <serp :run="selected_run" :topic="selected_topic" :reference_run_id="reference_run_id" @activate_run="activate_run"/>
       </v-col>
     </v-row>
   </div> 
@@ -81,11 +85,15 @@
         {name: 'nDCG@10', value: 'nDCG@10'},
         {name: 'P@10', value: 'P@10'},
       ],
+      'reference_run_id': null,
     }),
     methods: {
       uniqueElements(element: any[], key: string) {
         return uniqueElements(element, key)
       },
+      activate_run(run: string) {
+        this.reference_run_id = run
+      }
     },
     computed: {
       filtered_topics() {

@@ -13,4 +13,5 @@
   - diffir rendering of runs.
   - Add message to everything that looks like a "leaderboard" to clearly communicate that the position on the leaderboard does not matter and that there are many different ways to analyze them, tradeoffs, etc.
   - code snippets on how to load the data for all interesting cases (e.g., loading the datasets, loading the ).
+  - add required license statement.
 </template>
