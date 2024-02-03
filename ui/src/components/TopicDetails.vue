@@ -29,7 +29,7 @@
         this.title = ''
         this.description = ''
         this.narrative = ''
-        if(this.topic['topic_details']['start'] && this.topic['topic_details']['end']) {
+        if(this.topic['topic_details']['end']) {
           execute_get('topic-details.jsonl', this.topic['topic_details']['start'] + '-' + this.topic['topic_details']['end']).then(i => {
             this.title = i['default_text']
             this.description = i['description']
