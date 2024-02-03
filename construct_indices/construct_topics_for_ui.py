@@ -226,7 +226,10 @@ def create_run_details(dataset_name):
             ret[qid]['runs'][tira_run][measure] = float("{:.3f}".format(i.value))
 
         run_with_ranks = run_with_derived_rank(load_run(tira_run, dataset_name))
-        run_with_ranks = run_with_ranks[run_with_ranks['rank'] <= 10]
+        try:
+            run_with_ranks = run_with_ranks[run_with_ranks['rank'] <= 10]
+        except:
+            pass
         
 
         for qid in ret:
@@ -245,6 +248,11 @@ def create_run_details(dataset_name):
     docstore = dataset_to_docsstore[dataset_name]
     for qid in tqdm(ret, 'Generate snippets.'):
         doc_ids = set()
+        
+        for qrel in qrels[dataset_name]:
+            if str(qrel.query_id) == str(qid):
+                doc_ids.add(qrel.doc_id)
+        
         for run in ret[qid]['runs']:
             doc_ids.update([i['doc_id'] for i in run['ranking']])
         snippets = {}
@@ -259,6 +267,9 @@ def create_run_details(dataset_name):
             weights = diffir.weight.score_document_regions(qid_to_query[qid], doc, 0)
             snippet = diffir.find_snippet(weights, doc)
             assert snippet['field'] == 'text'
+            if snippet['start'] != 0:
+                snippet['weights'] = [[i[0] + 3, i[1] + 3, i[2]] for i in snippet['weights']]
+            
             text = ('' if snippet['start'] == 0 else '...') + doc.text[snippet['start']: snippet['stop']] + ('' if snippet['stop'] >= (len(doc.text) - 20) else '...')
 
             snippets[doc_id] = {'snippet': text, 'weights': snippet['weights']}

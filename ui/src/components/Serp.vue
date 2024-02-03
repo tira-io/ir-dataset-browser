@@ -4,7 +4,7 @@
     <br>
     
     <diff-ir 
-      :docs="serp_docs" :run="serp_run" />
+      :docs="topic_details['docs']" :run="serp_run" v-if="topic_details"/>
   </div>
 </template>
 
@@ -15,11 +15,8 @@ import DiffIr from '@/components/DiffIr.vue'
 
 export default {
   name: "serp",
-  props: ['run', 'topic', 'run_id', 'reference_run_id'],
+  props: ['run', 'topic', 'run_id', 'reference_run_id', 'topic_details'],
   components: {DiffIr},
-  watch: {
-    topics(newValue) {this.fetchData()},
-  },
   data() {
     return {
       ranking: [{'doc_id': '1', 'relevance': 1, 'color': 'green'}, {'doc_id': '2', 'relevance': 0, 'color': 'red'}, {'doc_id': '3', 'relevance': 'U', 'color': 'grey'}],
@@ -29,9 +26,6 @@ export default {
     }
   },
   methods: {
-    fetchData() {
-        get(this.topic_data['run_details'], this)
-    },
     make_this_run_active(active) {
       if(active && this.reference_run_id != this.run) {
         this.$emit('activate_run', this.run);
@@ -46,7 +40,15 @@ export default {
       return {'1': {'relevance': 1, 'snippet': 'doc 1: foo', 'weights': []}, '2': {'relevance': 0, 'snippet': 'doc 2: tmp 1', 'weights': []}, '3': {'relevance': 2, 'snippet': 'doc 3: tmp 2', 'weights': [(1,3,1)]}}
     },
     serp_run() {
-      return [{'rank': 1, 'score': 3, 'doc_id': '1'}, {'rank': 2, 'score': 2, 'doc_id': '3'}, {'rank': 23, 'score': 1, 'doc_id': '2'}]
+      //return [{'rank': 1, 'score': 3, 'doc_id': '1'}, {'rank': 2, 'score': 2, 'doc_id': '3'}, {'rank': 23, 'score': 1, 'doc_id': '2'}]
+      for (let i of this.topic_details['runs']) {
+        if (i['name'] == this.run.split('____')[1]) {
+          console.log(i)
+          return i['ranking'];
+        }
+      }
+
+      return []
     },
     topic_data() {
       let expected_dataset = this.run.split('____')[0]
@@ -81,9 +83,6 @@ export default {
 
       return []
     }
-  },
-  beforeMount() {
-    this.fetchData();
   }
 }
 </script>

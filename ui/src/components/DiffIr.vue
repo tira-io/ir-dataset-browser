@@ -32,15 +32,16 @@ function markup(text, weights) {
   }
 
   var ret = text.substring(0, weights[0][0])
-  for (let i in weights) {
-    weight = weights[i]
+  for (let i: number in weights) {
+    i = parseInt(i)
+    let weight = weights[i]
     if (typeof weight[2] === 'string') {
       var weightColor = weight[2];
     } else {
       var weightColor = 'rgba(255, 237, 140, ' + weight[2].toString() + ')';
     }
 
-    ret += '<mark background="' + weightColor + ' run1="' + weight[3] + '" run2="' + weight[4] + '">' + text.substring(weight[0], weight[1]) + '</mark>'
+    ret += '<mark background="' + weightColor + ' run1="' + weight[3] + '" run2="0">' + text.substring(weight[0], weight[1]) + '</mark>'
 
     if (i + 1 < weights.length) {
       ret += '<span>' + text.substring(weight[1], weights[i + 1][0]) + '</span>'
@@ -101,11 +102,10 @@ function colorizeWeights(mergedWeights) {
           ret.push({
             'score': i['score'],
             'doc_id': i['doc_id'],
-            'snippet': markup(doc.snippet, doc.weights)
+            'snippet': markup(doc['snippet'], doc['weights'])
           })
         }
 
-        console.log(ret)
         return ret
       }
     },

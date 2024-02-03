@@ -34,7 +34,7 @@
         Render run with <a href="https://github.com/capreolus-ir/diffir" target="_blank">DiffIR</a>:
       </v-col>
       <v-col cols="8" class="ma-0 pa-0">
-        <v-select class="ma-0 pa-0" :items="filtered_topics" item-value="query_id" item-title="default_text" v-model="selected_topic" label="Topic"/>
+        <v-select class="ma-0 pa-0" :items="filtered_topics" item-value="identifier" item-title="default_text" v-model="selected_topic" label="Topic" @update:modelValue="fetch_run_data"/>
       </v-col>
     </v-row>
   </div>
@@ -43,14 +43,14 @@
   <div class="d-flex" v-if="selected_runs">
     <v-row v-if="selected_topic" class="justify-center mx-2">
       <v-col :cols="columns" v-for="selected_run of selected_runs">
-        <serp :run="selected_run" :topic="selected_topic" :reference_run_id="reference_run_id" @activate_run="activate_run"/>
+        <serp :run="selected_run" :topic="selected_topic" :topic_details="topic_details" :reference_run_id="reference_run_id" @activate_run="activate_run"/>
       </v-col>
     </v-row>
   </div> 
 </template>
   
 <script lang="ts">
-  import { extractFromUrl, uniqueElements, updateUrl } from "@/utils"
+  import { extractFromUrl, uniqueElements, updateUrl, get } from "@/utils"
   import { load_document } from "@/random_document_access"
   import { data_access, runs } from "@/ir_datasets"
   import topics from '@/ir_datasets';
@@ -70,6 +70,7 @@
       team_filter: null,
       system_filter: null,
       selected_topic: null,
+      cache: {'run-details.jsonl': {'start: 0 end: 100': {'runs': [{'name': 'does not exist', "P@10": 0.3, "nDCG@10": 0.203, "Judged@10": 0.3, 'relevance': ['U', '0', '1']}]}}},
       selected_headers: is_mobile() ? ['dataset', 'run', 'nDCG@10'] : ['dataset', 'team', 'run', 'nDCG@10', 'P@10'],
       headers: [
         { title: 'Dataset', value: 'dataset', sortable: false},
@@ -93,11 +94,25 @@
       },
       activate_run(run: string) {
         this.reference_run_id = run
+      },
+      fetch_run_data(i: any) {
+        get(this.topic['run_details'], this)
       }
     },
     computed: {
+      topic() {
+        return this.filtered_topics_map[this.selected_topic]
+      },
       filtered_topics() {
         let ret = []
+        for (let i in this.filtered_topics_map) {
+          ret.push(this.filtered_topics_map[i])
+        }
+
+        return ret
+      },
+      filtered_topics_map() {
+        let ret = {}
         let datasets = new Set()
 
         for (let run of this.filtered_runs) {
@@ -106,7 +121,9 @@
 
         for (let topic of this.topics) {
           if (datasets.has(topic['dataset'])) {
-            ret.push(topic)
+            topic = {...topic}
+            topic['identifier'] = topic.dataset + '___' +topic.query_id
+            ret[topic['identifier']] = topic
           }
         }
 
@@ -143,7 +160,7 @@
         for (let run of this.runs) {
           run = {...run}
           run['dataset_id_and_run_id'] = run['dataset'] + '____' + run['tira_run']
-          if (this.dataset_filter && this.dataset_filter.includes(run['dataset'])) {
+          if (this.dataset_filter && !this.dataset_filter.includes(run['dataset'])) {
             continue
           }
 
@@ -159,6 +176,9 @@
         }
 
         return ret;
+      },
+      topic_details() {
+        return this.cache['run-details.jsonl'][this.topic['run_details']['start'] + '-' + this.topic['run_details']['end']]
       },
       columns() {
         if(is_mobile()) {
