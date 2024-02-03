@@ -46,7 +46,7 @@
         <serp :run="selected_run" :topic="selected_topic" :topic_details="topic_details" :reference_run_id="reference_run_id" @activate_run="activate_run"/>
       </v-col>
     </v-row>
-  </div> 
+  </div>
 </template>
   
 <script lang="ts">

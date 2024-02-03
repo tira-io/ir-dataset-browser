@@ -1,21 +1,32 @@
 <template>
   <h3>Topic {{topics[0].query_id}} ({{topics[0].dataset}})</h3>
 
-  <v-data-table v-model="selected_runs" :items="filtered_runs" :headers="headers" show-select hover dense>
+  <v-data-table v-model="selected_runs" :items="filtered_runs" :headers="headers" item-value="dataset_id_and_query_id_and_run_id"  show-select hover dense>
     <template v-slot:item.relevance="{ item }">
       <dense-run-overview :judgments="item.relevance" />
     </template>
   </v-data-table>
+
+  <!--<div class="d-flex" v-if="selected_runs">Reference run: {{ reference_run_id }}</div>-->
+  <div class="d-flex" v-if="selected_runs">
+    <v-row v-if="selected_runs" class="justify-center mx-2">
+      <v-col :cols="columns" v-for="selected_run of selected_runs">
+        <serp :run="selected_run" :topic="topics[0]" :topic_details="topic_details"/>
+      </v-col>
+    </v-row>
+  </div>
 </template>
   
 <script lang="ts">
   import { get } from '@/utils'
   import DenseRunOverview from './DenseRunOverview.vue'
+  import Serp from '@/components/Serp.vue'
+  import {is_mobile} from "@/main";
   
   export default {
     name: "run-details",
     props: ['topics'],
-    components: {DenseRunOverview},
+    components: {DenseRunOverview, Serp},
     watch: {
       topics(newValue) {this.fetchData()},
     },
@@ -58,13 +69,24 @@
               run = {...run}
               run['dataset'] = topic['dataset']
               run['query_id'] = topic['query_id']
+              run['dataset_id_and_query_id_and_run_id'] = run['dataset'] + '____' + run['name'] + '____' + run['query_id']
               ret.push(run)
             }
           }
         }
 
         return ret;
-      }
+      },
+      columns() {
+        if(is_mobile()) {
+          return 12
+        }
+
+        return Math.floor(12 / this.selected_runs.length)
+      },
+      topic_details() {
+        return this.cache['run-details.jsonl'][this.topics[0]['run_details']['start'] + '-' + this.topics[0]['run_details']['end']]
+      },
     },
     beforeMount() {
       this.fetchData();
