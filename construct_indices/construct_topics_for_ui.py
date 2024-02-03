@@ -11,6 +11,9 @@ import numpy as np
 from construct_indexes import parse_run_details, extract_from_remote
 import pandas as pd
 import gzip
+import os
+from diffir import WeightBuilder
+from diffir.run import MainTask
 
 tira = Client()
 
@@ -23,6 +26,7 @@ ALTERNATIVES = {
     'leipzig-topics-20231025-test': 'leipzig-topics-small-20240119-training'
 }
 
+diffir = MainTask(measure='qrel', weight={"weights_1": None, "weights_2": None})
 
 datasets = {i: ir_datasets.load(i) for i in [
 
@@ -34,6 +38,8 @@ datasets = {i: ir_datasets.load(i) for i in [
     #'vaswani', 
                                              #'cord19/fulltext/trec-covid', 
                                              ]}
+
+dataset_to_docsstore = {i: ir_datasets.load('ir-lab-jena-leipzig-wise-2023/' + ALTERNATIVES[i.split('/')[1]]).docs_store() for i in tqdm(datasets, 'Load docsstores.')}
 
 datasets_to_index = {
     'antique/test': 'static/indexes/antique.json.gz',
@@ -101,6 +107,9 @@ tira_runs = [
     'ir-lab-jena-leipzig-wise-2023/spotted-turtle/lead-pizza',
     'ir-lab-jena-leipzig-wise-2023/spotted-turtle/thick-major',
 
+#BASELINES FROM ir-tutors: 'DFIC', 'DirichletLM', ...
+
+
     # todo: Double check
     #"ir-lab-jena-leipzig-wise-2023/ul-ecstatic-dijkstra/acyclic-yogurt",
     #"ir-lab-jena-leipzig-wise-2023/ul-ecstatic-dijkstra/mechanical-body",
@@ -109,6 +118,7 @@ tira_runs = [
 #    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/pizzicato-combination',
 ]
 
+tira_run_cache = {i: {} for i in datasets}
 
 def process_dataset(dataset_name):
     dataset = datasets[dataset_name]
@@ -168,10 +178,15 @@ def relevance_vector(qid, run, qrels):
     return ret
 
 def load_run(tira_run, dataset_name):
+    if tira_run in tira_run_cache[dataset_name]:
+        return tira_run_cache[dataset_name][tira_run]
+
     try:
-        return tira.get_run_output(tira_run, IRDS_TO_TIREX_DATASET[dataset_name]) + '/run.txt'
+        tira_run_cache[dataset_name][tira_run] = tira.get_run_output(tira_run, IRDS_TO_TIREX_DATASET[dataset_name]) + '/run.txt'
     except:
-        return tira.get_run_output(tira_run, ALTERNATIVES[IRDS_TO_TIREX_DATASET[dataset_name]]) + '/run.txt'
+        tira_run_cache[dataset_name][tira_run] = tira.get_run_output(tira_run, ALTERNATIVES[IRDS_TO_TIREX_DATASET[dataset_name]]) + '/run.txt'
+
+    return tira_run_cache[dataset_name][tira_run]
 
 def create_run_overview(dataset_name):
     ret = []
@@ -189,6 +204,7 @@ def create_run_details(dataset_name):
     dataset = datasets[dataset_name]
     ret = {}
     qid_to_default_text = {str(i.query_id): i.default_text() for i in dataset.queries_iter()}
+    qid_to_query = {str(i.query_id): i for i in dataset.queries_iter()}
     doc_id_to_offset = json.load(gzip.open(datasets_to_index[dataset_name], 'rt'))
 
     for tira_run in tqdm(tira_runs, desc=f"Construct details on runs: {dataset_name}"):
@@ -209,15 +225,45 @@ def create_run_details(dataset_name):
 
             ret[qid]['runs'][tira_run][measure] = float("{:.3f}".format(i.value))
 
+        run_with_ranks = run_with_derived_rank(load_run(tira_run, dataset_name))
+        run_with_ranks = run_with_ranks[run_with_ranks['rank'] <= 10]
+        
+
         for qid in ret:
             ret[qid]['runs'][tira_run]['relevance'] = relevance_vector(qid, run, qrels[dataset_name])
+
             try:
                 ret[qid]['runs'][tira_run]['docs'] = [{'doc_id': j.doc_id,  'doc_id_to_offset': doc_id_to_offset[j.doc_id]} for j in run if str(j.query_id) == str(qid)][:10]
+                ret[qid]['runs'][tira_run]['ranking'] = [{'rank': i['rank'], 'score': i['score'], 'doc_id': i['doc_id']} for _, i in run_with_ranks[run_with_ranks['query_id'].astype(str) == str(qid)].iterrows()]
             except:
                 ret[qid]['runs'][tira_run]['docs'] = []
+                ret[qid]['runs'][tira_run]['ranking'] = []
 
     for qid in ret:
         ret[qid]['runs'] = [i for i in ret[qid]['runs'].values()]
+
+    docstore = dataset_to_docsstore[dataset_name]
+    for qid in tqdm(ret, 'Generate snippets.'):
+        doc_ids = set()
+        for run in ret[qid]['runs']:
+            doc_ids.update([i['doc_id'] for i in run['ranking']])
+        snippets = {}
+        for doc_id in doc_ids:
+            # from diffir: https://github.com/capreolus-ir/diffir/blob/master/diffir/run.py#L147C32-L147C38
+            doc = docstore.get(doc_id)
+
+            if not doc:
+                snippets[doc_id] = {'snippet': '', 'weights': {}}
+                continue
+
+            weights = diffir.weight.score_document_regions(qid_to_query[qid], doc, 0)
+            snippet = diffir.find_snippet(weights, doc)
+            assert snippet['field'] == 'text'
+            text = ('' if snippet['start'] == 0 else '...') + doc.text[snippet['start']: snippet['stop']] + ('' if snippet['stop'] >= (len(doc.text) - 20) else '...')
+
+            snippets[doc_id] = {'snippet': text, 'weights': snippet['weights']}
+
+        ret[qid]['docs'] = snippets
 
     return [i for i in ret.values()]
 
@@ -266,6 +312,12 @@ def create_qrel_details(dataset_name, run_files):
 def main():
     static_indexes = json.load(open('ui/src/document_indexes.json'))
     example_docs = {}
+
+    for dataset_name in datasets:
+        for run in tqdm(tira_runs, f'Ensure runs available on "{dataset_name}".'):
+            if not os.path.isfile(load_run(run, dataset_name)):
+                raise ValueError(f'Could not process {run} on {dataset_name}. Does not exist: ' + load_run(run, dataset_name))
+
     for dataset in datasets:
         with gzip.open(datasets_to_index[dataset], 'rt') as f:
             print(dataset)
