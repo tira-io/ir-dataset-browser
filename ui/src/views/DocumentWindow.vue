@@ -1,7 +1,7 @@
 <template>
 <v-dialog width="90%" height="90%" v-model="dialogVisible">
   <template v-slot:activator="{ props }">
-    <a href="javascript:void(0)" v-bind="props">{{ doc_id }}</a>
+    <a href="javascript:void(0)" v-bind="props" v-if="'' + toggle == 'undefined'">{{ doc_id }}</a>
   </template>
 
   <template v-slot:default="{ isActive }">
@@ -23,8 +23,11 @@ import { data_access } from "@/ir_datasets"
 
 export default {
   name: "document-window",
-  props: ['doc_id', 'dataset', 'start', 'end'],
+  props: ['doc_id', 'dataset', 'start', 'end', 'toggle'],
   watch: {
+    toggle(newValue) {
+      this.dialogVisible = true;
+    },
     dialogVisible(visible) {
       if(visible) {
         this.fetchData()
@@ -39,10 +42,14 @@ export default {
   },
   methods: {
     fetchData() {
-      console.log('fetch data')
       this.text = ''
       execute_get(data_access.documents[this.dataset], this.start + '-' + (this.end -1)).then((i) => this.text = i['text']);
     },
   },
+  beforeMount() {
+    if ('' + this.toggle !== 'undefined') {
+      this.dialogVisible = true
+    }
+  }
 }
 </script>

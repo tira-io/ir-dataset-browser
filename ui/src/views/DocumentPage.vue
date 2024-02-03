@@ -20,28 +20,31 @@
 
   <v-divider v-if="texts[ir_dataset]"/>
 
-  <div v-if="texts[ir_dataset]" v-for="doc_id of doc_id_iter">
-    <div v-if="texts[ir_dataset][doc_id] && texts[ir_dataset][doc_id] != 'loading...'">  
-      <h1 class="font-weight-bold text-h2 text-center justify-center py-6">Document: {{doc_id}}</h1>
-      <v-textarea readonly class="ma-2" v-model="texts[ir_dataset][doc_id]['text']" label="Default Text"/>
-    </div>
+  <div v-if="document_end && doc_id">
+   <document-window :doc_id="doc_id" :dataset="ir_dataset" :start='document_start' :end="document_end" :toggle="document_window_visible"/>
   </div>
 </template>
 
 <script lang="ts">
 import { extractFromUrl, uniqueElements, updateUrl } from "@/utils"
-import { load_document } from "@/random_document_access"
+import { load_document_offsets } from "@/random_document_access"
 import { data_access, example_documents } from "@/ir_datasets"
+import DocumentWindow from '../views/DocumentWindow'
 import topics from '@/ir_datasets';
 
 
 export default {
+  components: {DocumentWindow},
   data: () => ({
     topics: topics.default,
     ir_dataset: extractFromUrl('dataset'),
     doc_ids: extractFromUrl('doc_ids'),
     example_doc_id: '<TBD>',
     texts: {...example_documents.default},
+    document_start: null,
+    document_end: null,
+    doc_id: null,
+    document_window_visible: true,
   }),
   methods: {
     async load_document_id() {
@@ -56,8 +59,14 @@ export default {
       }
 
       for (let doc_id of this.doc_id_iter) {
-        if (this.ir_dataset && doc_id && !(doc_id in this.texts[this.ir_dataset])) {
-          load_document(this.ir_dataset, doc_id).then(i => this.texts[this.ir_dataset][doc_id] = {'text': i.text})
+        if (this.ir_dataset && doc_id /*&& !(doc_id in this.texts[this.ir_dataset])*/
+        ) {
+          load_document_offsets(this.ir_dataset, doc_id).then(i => {
+            this.document_start = i['start']
+            this.document_end = i['end']
+            this.doc_id = doc_id
+            this.document_window_visible = this.document_window_visible + 'a'
+          })
         }
       }
     },

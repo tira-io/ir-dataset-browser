@@ -19,7 +19,6 @@ export async function load_document_offsets(ir_dataset: 'argsme/2020-04-01/touch
   }
 
   const maxBytesToRead = 10 * 1024 * 1024;
-  console.log('url')
   const worker = await createDbWorker(
     [{from: "inline", config: {serverMode: "full", requestChunkSize: 1024, url: data_access.databases[ir_dataset]}}],
     workerUrl.toString(),
@@ -29,11 +28,10 @@ export async function load_document_offsets(ir_dataset: 'argsme/2020-04-01/touch
 
   let result = await worker.db.exec(`select * from documents where id = ?`, [doc_id])//[0]['values'];
   if (result.length == 0) {
-    throw new Error('Could not find the document id');
+    console.log('Could not find the document id ' + doc_id)
+    throw new Error('Could not find the document id' + doc_id);
   }
-  console.log(result)
   result = result[0]['values'][0]
-  
   return {'start': result[1], 'end': result[2] -1}
 }
 

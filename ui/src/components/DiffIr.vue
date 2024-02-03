@@ -21,9 +21,7 @@
   </div>
 
   <div v-if="document_start && document_end && selected_doc_id">
-   FOOOO: {{ selected_doc_id }}@{{ ir_dataset}}: {{document_start}} -- {{document_end}}
-
-    <document-window/>
+   <document-window :doc_id="selected_doc_id" :dataset="ir_dataset" :start='document_start' :end="document_end" :toggle="document_window_visible"/>
   </div>
 </template>
 
@@ -85,7 +83,7 @@ export default {
       document_start: null,
       document_end: null,
       selected_doc_id: null,
-
+      document_window_visible: true
     }
   },
   computed: {
@@ -105,12 +103,11 @@ export default {
   },
   methods: {
     open_dialog(doc_id) {
-      this.selected_doc_id = null;
-      
       load_document_offsets(this.ir_dataset, doc_id).then(i => {
         this.document_start = i['start']
         this.document_end = i['end']
         this.selected_doc_id = doc_id
+        this.document_window_visible = this.document_window_visible + 'a'
       });
     }
   }
