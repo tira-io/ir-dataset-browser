@@ -4,7 +4,7 @@
     <br>
     
     <diff-ir 
-      :docs="topic_details['docs']" :run="serp_run" v-if="topic_details"/>
+      :docs="topic_details['docs']" :run="serp_run" :ir_dataset="this.run.split('____')[0]" v-if="topic_details"/>
   </div>
 </template>
 

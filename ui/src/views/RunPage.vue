@@ -39,7 +39,7 @@
     </v-row>
   </div>
 
-  <div class="d-flex" v-if="selected_runs">Reference run: {{ reference_run_id }}</div>
+  <!--<div class="d-flex" v-if="selected_runs">Reference run: {{ reference_run_id }}</div>-->
   <div class="d-flex" v-if="selected_runs">
     <v-row v-if="selected_topic" class="justify-center mx-2">
       <v-col :cols="columns" v-for="selected_run of selected_runs">
