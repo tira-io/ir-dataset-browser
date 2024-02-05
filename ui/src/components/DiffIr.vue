@@ -62,7 +62,7 @@ function markup(text, weights) {
 
 export default {
   name: "diff-ir",
-  props: ['run', 'reference_run', 'docs', 'ir_dataset'],
+  props: ['run', 'reference_run', 'docs', 'ir_dataset', 'qrels'],
   components: {DocumentWindow},
   data() {
     return {
@@ -91,10 +91,21 @@ export default {
       var ret = []
       for(let i of this.run) {
         let doc = this.docs[i.doc_id]
+        let judgment = 'Unjudged'
+        if (doc === undefined) {
+          ret.push({'score': i['score'], 'doc_id': i['doc_id'], 'snippet': 'no snippet available', 'relevance': judgment})
+          continue
+        }
+
+        if (this.qrels && this.qrels[i.doc_id] !== undefined) {
+          judgment = this.qrels[i.doc_id]
+        }
+
         ret.push({
           'score': i['score'],
           'doc_id': i['doc_id'],
-          'snippet': markup(doc['snippet'], doc['weights'])
+          'snippet': markup(doc['snippet'], doc['weights']),
+          'relevance': judgment,
         })
       }
 

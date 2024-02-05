@@ -1,5 +1,5 @@
 <template>
-<div class="d-flex">
+  <div class="d-flex" v-if="!paste_mode">
     <v-data-table v-model="selected_runs" :items="filtered_runs" item-value="dataset_id_and_run_id" :headers="filtered_headers" show-select hover dense>
     <template v-slot:header.dataset="{ header }">
       <v-autocomplete clearable label="Filter datasets &hellip;" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="dataset_filter" multiple :items="uniqueElements(topics, 'dataset')"/>
@@ -24,10 +24,37 @@
     </v-data-table>
   </div>
 
-
-  <div class="d-flex" v-if="!selected_runs">
-    Please select runs for browsing in the table above.
+  <div class="d-flex" v-if="paste_mode">
+    Please paste your run that you want to run or &nbsp;<a href="javascript:void(0);" @click="paste_run(false)"> select a run from the list of existing runs</a>.
   </div>
+
+  <div class="d-flex" v-if="paste_mode">
+    <v-row class="justify-center ma-0 pa-0" dense>
+      <v-col cols="12" class="ma-0 pa-0">
+        <v-autocomplete clearable label="Filter datasets &hellip;" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="dataset_filter" :items="uniqueElements(topics, 'dataset')"/>
+      </v-col>
+      <v-col cols="12" class="ma-0 pa-0">
+        <v-textarea variant="filled" auto-grow label="Paste your run file (Format: <TOPIC> <Q0> <DOCNO> <RANK> <SCORE> <SYSTEM>)" rows="4" row-height="30" shaped :disabled="!dataset_filter" v-model="manual_run" />
+      </v-col>
+      <v-col cols="12" class="ma-0 pa-0">
+        <v-select class="ma-0 pa-0" :items="topics_from_run" item-value="identifier" item-title="default_text" v-model="selected_topic" label="Topic" @update:modelValue="update_manual_run" :disabled="!dataset_filter || !manual_run"/>
+      </v-col>
+    </v-row>
+  </div>
+
+  <div class="d-flex" v-if="paste_mode && manual_run && selected_topic">
+    <v-row class="justify-center mx-2">
+      <v-col cols="12">
+        <diff-ir :run="rendered_manual_run" :docs="manual_docs" :qrels="manual_qrels" :ir_dataset="ir_dataset" />
+      </v-col>
+    </v-row>
+  </div>
+
+
+  <div class="d-flex" v-if="!selected_runs && !paste_mode">
+    Please select runs for browsing in the table above or &nbsp;<a href="javascript:void(0);" @click="paste_run(true)"> paste your run</a>.
+  </div>
+
   <div class="d-flex" v-if="selected_runs">
     <v-row class="justify-center ma-0 pa-0" dense>
       <v-col cols="8" class="text-caption ma-0 pa-0">
@@ -55,22 +82,26 @@
   import { data_access, runs } from "@/ir_datasets"
   import topics from '@/ir_datasets';
   import Serp from '@/components/Serp.vue'
+  import DiffIr from '@/components/DiffIr.vue'
   import {is_mobile} from "@/main";
   
   
   export default {
-    components: {Serp},
+    components: {Serp, DiffIr},
     data: () => ({
       topics: topics.default,
       runs: runs.default,
       ir_dataset: extractFromUrl('dataset'),
       run_filter: extractFromUrl('run'),
       selected_runs: null,
-      dataset_filter: null,
       team_filter: null,
+      dataset_filter: null,
       system_filter: null,
       selected_topic: null,
-      cache: {'run-details.jsonl': {'start: 0 end: 100': {'runs': [{'name': 'does not exist', "P@10": 0.3, "nDCG@10": 0.203, "Judged@10": 0.3, 'relevance': ['U', '0', '1']}]}}},
+      manual_run: null,
+      paste_mode: false,
+      cache: {'run-details.jsonl': {'start: 0 end: 100': {'runs': [{'name': 'does not exist', "P@10": 0.3, "nDCG@10": 0.203, "Judged@10": 0.3, 'relevance': ['U', '0', '1']}]}},
+      'qrel-details.jsonl': {'0-100': {'qrels': [{"qid": "93", "relevance": 1, "doc_id": "182", "retrieved_by": "?? / ??", "median_rank": "??", "var_rank": "??"}]}}},
       selected_headers: is_mobile() ? ['dataset', 'run', 'nDCG@10'] : ['dataset', 'team', 'run', 'nDCG@10', 'P@10'],
       headers: [
         { title: 'Dataset', value: 'dataset', sortable: false},
@@ -97,6 +128,14 @@
       },
       fetch_run_data(i: any) {
         get(this.topic['run_details'], this)
+        get(this.topic['qrel_details'], this)
+      },
+      update_manual_run(i: any) {
+        get(this.topic['run_details'], this)
+        get(this.topic['qrel_details'], this)
+      },
+      paste_run(i) {
+        this.paste_mode = i
       }
     },
     computed: {
@@ -110,6 +149,54 @@
         }
 
         return ret
+      },
+      manual_docs() {
+        let key = this.topic['run_details'].start + '-' + this.topic['run_details'].end
+
+        if (this.cache['run-details.jsonl'][key] !== undefined) {
+          return this.cache['run-details.jsonl'][key]['docs'];
+        } else {
+          return {}
+        }
+      },
+      rendered_manual_run() {
+        let ret = []
+        for (let i of (this.manual_run + '\n').split('\n')) {
+          i = i.split(' ')
+          if (i.length == 6 && i[0] == this.selected_topic.split('___')[1]) {
+            ret.push({'score': i[4], 'doc_id': i[2]})
+          }
+        }
+
+        return ret
+      },
+      manual_qrels() {
+        let qrels = this.cache['qrel-details.jsonl'][this.topic['qrel_details'].start + '-' + this.topic['qrel_details'].end]
+        let ret = {}
+
+        if (qrels !== undefined) {
+          for (let i of qrels['qrels']) {
+            ret[i['doc_id']] = i['relevance']
+          }
+        } 
+        
+        return ret
+      },
+      topics_from_run() {
+        let ret = []
+        let topics = new Set()
+
+        for (let i of (this.manual_run + '\n').split('\n')) {
+          topics.add(i.split(' ')[0]);
+        }
+
+        for (let i of this.filtered_topics) {
+          if (i['dataset'] == this.dataset_filter && topics.has(i['query_id'])) {
+            ret.push(i)
+          }
+         }
+
+         return ret;
       },
       filtered_topics_map() {
         let ret = {}
