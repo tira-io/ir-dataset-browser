@@ -25,7 +25,7 @@
   </div>
 
   <div class="d-flex" v-if="paste_mode">
-    Please paste your run that you want to run or &nbsp;<a href="javascript:void(0);" @click="paste_run(false)"> select a run from the list of existing runs</a>.
+    Please paste a run to render or &nbsp;<a href="javascript:void(0);" @click="paste_run(false)"> select an existing one</a>.
   </div>
 
   <div class="d-flex" v-if="paste_mode">
@@ -55,7 +55,7 @@
 
 
   <div class="d-flex" v-if="!selected_runs && !paste_mode">
-    Please select runs for browsing in the table above or &nbsp;<a href="javascript:void(0);" @click="paste_run(true)"> paste your run</a>.
+    Please select runs to render above or &nbsp;<a href="javascript:void(0);" @click="paste_run(true)"> paste your run</a>.
   </div>
 
   <div class="d-flex" v-if="selected_runs">
