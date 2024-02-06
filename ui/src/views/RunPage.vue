@@ -31,10 +31,13 @@
   <div class="d-flex" v-if="paste_mode">
     <v-row class="justify-center ma-0 pa-0" dense>
       <v-col cols="12" class="ma-0 pa-0">
-        <v-autocomplete clearable label="Filter datasets &hellip;" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="dataset_filter" :items="uniqueElements(topics, 'dataset')"/>
+        <v-autocomplete clearable label="Select dataset" prepend-inner-icon="mdi-magnify" variant="underlined" v-model="dataset_filter" :items="uniqueElements(topics, 'dataset')"/>
       </v-col>
       <v-col cols="12" class="ma-0 pa-0">
         <v-textarea variant="filled" auto-grow label="Paste your run file (Format: <TOPIC> <Q0> <DOCNO> <RANK> <SCORE> <SYSTEM>)" rows="4" row-height="30" shaped :disabled="!dataset_filter" v-model="manual_run" />
+      </v-col>
+      <v-col cols="12" class="text-caption ma-0 pa-0">
+        Render with <a href="https://github.com/capreolus-ir/diffir" target="_blank">DiffIR</a>:
       </v-col>
       <v-col cols="12" class="ma-0 pa-0">
         <v-select class="ma-0 pa-0" :items="topics_from_run" item-value="identifier" item-title="default_text" v-model="selected_topic" label="Topic" @update:modelValue="update_manual_run" :disabled="!dataset_filter || !manual_run"/>
@@ -58,7 +61,7 @@
   <div class="d-flex" v-if="selected_runs">
     <v-row class="justify-center ma-0 pa-0" dense>
       <v-col cols="8" class="text-caption ma-0 pa-0">
-        Render run with <a href="https://github.com/capreolus-ir/diffir" target="_blank">DiffIR</a>:
+        Render with <a href="https://github.com/capreolus-ir/diffir" target="_blank">DiffIR</a>:
       </v-col>
       <v-col cols="8" class="ma-0 pa-0">
         <v-select class="ma-0 pa-0" :items="filtered_topics" item-value="identifier" item-title="default_text" v-model="selected_topic" label="Topic" @update:modelValue="fetch_run_data"/>
