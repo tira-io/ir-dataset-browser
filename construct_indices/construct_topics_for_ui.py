@@ -31,10 +31,15 @@ diffir = MainTask(measure='qrel', weight={"weights_1": None, "weights_2": None})
 
 datasets = {i: ir_datasets.load(i) for i in [
 
-
-    'antique/test', 'argsme/2020-04-01/touche-2020-task-1', 'argsme/2020-04-01/touche-2021-task-1', 'cranfield', 'msmarco-passage/trec-dl-2019/judged', 'msmarco-passage/trec-dl-2020/judged',
-
-    'vaswani', 'cord19/fulltext/trec-covid', 
+    'antique/test',
+    'argsme/2020-04-01/touche-2020-task-1', 'argsme/2020-04-01/touche-2021-task-1',
+    'cranfield',
+    'cord19/fulltext/trec-covid',
+    'msmarco-passage/trec-dl-2019/judged', 'msmarco-passage/trec-dl-2020/judged',
+    'medline/2004/trec-genomics-2004', 'medline/2004/trec-genomics-2005',
+    'medline/2017/trec-pm-2017', 'medline/2017/trec-pm-2018',
+    'nfcorpus/test',
+    'vaswani',
 
 
     #'ir-lab-jena-leipzig-wise-2023/validation-20231104-training', 'ir-lab-jena-leipzig-wise-2023/jena-topics-20231026-test','ir-lab-jena-leipzig-wise-2023/leipzig-topics-20231025-test',
@@ -46,6 +51,7 @@ datasets_to_index = {
     'antique/test': 'static/indexes/antique.json.gz',
     'argsme/2020-04-01/touche-2020-task-1': 'static/indexes/argsme.json.gz',
     'argsme/2020-04-01/touche-2021-task-1': 'static/indexes/argsme.json.gz',
+    ''
     'cranfield': 'static/indexes/cranfield.json.gz',
     'vaswani': 'static/indexes/vaswani.json.gz',
     'cord19/fulltext/trec-covid': 'static/indexes/cord19.json.gz',
