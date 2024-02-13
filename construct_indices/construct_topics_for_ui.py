@@ -14,6 +14,7 @@ import gzip
 import os
 from diffir import WeightBuilder
 from diffir.run import MainTask
+from ir_datasets.formats.trec import TrecDoc
 
 tira = Client()
 
@@ -39,7 +40,7 @@ datasets = {i: ir_datasets.load(i) for i in [
     #'ir-lab-jena-leipzig-wise-2023/validation-20231104-training', 'ir-lab-jena-leipzig-wise-2023/jena-topics-20231026-test','ir-lab-jena-leipzig-wise-2023/leipzig-topics-20231025-test',
 ]}
 
-dataset_to_docsstore = {i: ir_datasets.load('ir-lab-jena-leipzig-wise-2023/' + ALTERNATIVES[i.split('/')[1]]).docs_store() for i in tqdm(datasets, 'Load docsstores.')}
+dataset_to_docsstore = {i: ir_datasets.load(i).docs_store() for i in tqdm(datasets, 'Load docsstores.')}
 
 datasets_to_index = {
     'antique/test': 'static/indexes/antique.json.gz',
@@ -47,6 +48,7 @@ datasets_to_index = {
     'argsme/2020-04-01/touche-2021-task-1': 'static/indexes/argsme.json.gz',
     'cranfield': 'static/indexes/cranfield.json.gz',
     'vaswani': 'static/indexes/vaswani.json.gz',
+    'cord19/fulltext/trec-covid': 'static/indexes/cord19.json.gz',
     'msmarco-passage/trec-dl-2019/judged': 'static/indexes/ms-marco.json.gz',
     'msmarco-passage/trec-dl-2020/judged': 'static/indexes/ms-marco.json.gz',
     'ir-lab-jena-leipzig-wise-2023/validation-20231104-training': 'static/indexes/ir-lab-jena-leipzig-wise-2023-validation.json.gz',
@@ -214,9 +216,13 @@ def create_run_details(dataset_name):
                 snippets[doc_id] = {'snippet': '', 'weights': {}}
                 continue
 
+            doc = TrecDoc(doc_id=doc_id, text=doc.default_text(), marked_up_doc='')
             weights = diffir.weight.score_document_regions(qid_to_query[qid], doc, 0)
             snippet = diffir.find_snippet(weights, doc)
-            assert snippet['field'] == 'text'
+            
+            if snippet['field'] != 'text':
+                print(doc)
+                raise ValueError('Got unexpected snippet fields:', snippet)
             if snippet['start'] != 0:
                 snippet['weights'] = [[i[0] + 3, i[1] + 3, i[2]] for i in snippet['weights']]
             
@@ -285,6 +291,7 @@ def main():
             l = f.read(1000)
             l = json.loads("{" + l[1:].split('}')[0] + '}}')
             doc_id = list(l.keys())[0]
+            print("extract_from_remote(" + str(static_indexes[datasets_to_index[dataset]]) + ", " + str(l[doc_id]['start']) + ", " + str(l[doc_id]['end']) + ")")
             example_doc = json.loads(extract_from_remote(static_indexes[datasets_to_index[dataset]], l[doc_id]['start'], l[doc_id]['end']))
 
             if doc_id != example_doc['docno']:
