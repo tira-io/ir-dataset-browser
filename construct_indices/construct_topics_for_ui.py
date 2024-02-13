@@ -60,6 +60,11 @@ datasets_to_index = {
     'ir-lab-jena-leipzig-wise-2023/validation-20231104-training': 'static/indexes/ir-lab-jena-leipzig-wise-2023-validation.json.gz',
     'ir-lab-jena-leipzig-wise-2023/jena-topics-20231026-test': 'static/indexes/ir-lab-jena-leipzig-wise-2023.json.gz',
     'ir-lab-jena-leipzig-wise-2023/leipzig-topics-20231025-test': 'static/indexes/ir-lab-jena-leipzig-wise-2023.json.gz',
+    'medline/2004/trec-genomics-2004': 'static/indexes/medline-genomics-2004.json.gz',
+    'medline/2004/trec-genomics-2005': 'static/indexes/medline-genomics-2004.json.gz',
+    'medline/2017/trec-pm-2017': 'static/indexes/medline-pm.json.gz',
+    'medline/2017/trec-pm-2018': 'static/indexes/medline-pm.json.gz',
+    'nfcorpus/test': 'static/indexes/nfcorpus.json.gz',
 }
 
 qrels = {n: list(d.qrels_iter()) for n, d in datasets.items()}
