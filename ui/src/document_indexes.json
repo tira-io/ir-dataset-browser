@@ -1,6 +1,6 @@
 {
     "static/indexes/argsme.json.gz": "https://zenodo.org/records/10406396/files/documents.jsonl?download=1",
-    "static/indexes/vaswani.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/vaswani/documents.json",
+    "static/indexes/vaswani.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/vaswani/documents.jsonl",
     "static/indexes/antique.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/antique/documents.jsonl",
     "static/indexes/cranfield.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/cranfield/documents.jsonl",
     "static/indexes/ms-marco.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/ms-marco/documents.jsonl",
