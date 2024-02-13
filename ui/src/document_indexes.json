@@ -6,5 +6,8 @@
     "static/indexes/ms-marco.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/ms-marco/documents.jsonl",
     "static/indexes/ir-lab-jena-leipzig-wise-2023.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/ir-lab-jena-leipzig-wise-2023/inputs/jena-topics-20231026-test/documents.jsonl",
     "static/indexes/ir-lab-jena-leipzig-wise-2023-validation.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/ir-lab-jena-leipzig-wise-2023/inputs/validation-20231104-training/documents.jsonl",
-    "static/indexes/cord19.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/cord19/documents.jsonl"
+    "static/indexes/cord19.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/cord19/documents.jsonl",
+    "static/indexes/nfcorpus.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/nfcorpus/documents.jsonl",
+    "static/indexes/medline-genomics-2004.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/medline-genomics-2004/documents.jsonl",
+    "static/indexes/medline-pm.json.gz": "https://files.webis.de/data-in-progress/dataset-explorer-in-progress/medline-pm/documents.jsonl"
 }
