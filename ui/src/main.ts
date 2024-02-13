@@ -17,7 +17,6 @@ import DocumentPage from "@/views/DocumentPage.vue";
 import RunPage from "@/views/RunPage.vue";
 import LandingPage from "@/views/LandingPage.vue";
 import IrDatasetsExplorer from "@/views/IrDatasetsExplorer.vue";
-import Milestones from "@/views/Milestones.vue";
 import { useDisplay } from 'vuetify'
 
 export function is_mobile() {
@@ -39,13 +38,11 @@ export default function register_app() {
     const routes = [
       {path: '/', component: LandingPage},
       {path: '/topics', component: IrDatasetsExplorer, name: 'Browse Topics'},
-      {path: '/ir-lab-ws-23/topics', component: IrDatasetsExplorer, name: 'Browse Topics'},
-      {path: '/milestones', component: Milestones, name: 'Milestones'},
-      {path: '/ir-lab-ws-23/milestones', component: Milestones, name: 'Milestones'},
+      {path: '/ir-dataset-browser/topics', component: IrDatasetsExplorer, name: 'Browse Topics'},
       {path: '/docs', component: DocumentPage},
-      {path: '/ir-lab-ws-23/docs', component: DocumentPage, name: 'Browse Documents'},
+      {path: '/ir-dataset-browser/docs', component: DocumentPage, name: 'Browse Documents'},
       {path: '/runs', component: RunPage},
-      {path: '/ir-lab-ws-23/runs', component: RunPage, name: 'Browse runs'},
+      {path: '/ir-dataset-browser/runs', component: RunPage, name: 'Browse runs'},
 
       // Fallback: everything matches to home.
       {path: '/:pathMatch(.*)*', component: LandingPage},
