@@ -34,6 +34,9 @@ if __name__ == '__main__':
     #create_db('static/indexes/vaswani.json.gz')
     #create_db('static/indexes/ir-lab-jena-leipzig-wise-2023.json.gz')
     #create_db('static/indexes/ir-lab-jena-leipzig-wise-2023-validation.json.gz')
-    create_db('static/indexes/cord19.json.gz')
+    #create_db('static/indexes/cord19.json.gz')
+    create_db('static/indexes/nfcorpus.json.gz')
+    create_db('static/indexes/medline-genomics-2004.json.gz')
+    create_db('static/indexes/medline-pm.json.gz')
     
     
