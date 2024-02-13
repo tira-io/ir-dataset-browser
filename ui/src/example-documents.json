@@ -34,36 +34,6 @@
             }
         }
     },
-    "msmarco-passage/trec-dl-2019/judged": {
-        "0": {
-            "docno": "0",
-            "text": "The presence of communication amid scientific minds was equally important to the success of the Manhattan Project as scientific intellect was. The only cloud hanging over the impressive achievement of the atomic researchers and engineers is what their success truly meant; hundreds of thousands of innocent lives obliterated.",
-            "original_document": {
-                "doc_id": "0",
-                "text": "The presence of communication amid scientific minds was equally important to the success of the Manhattan Project as scientific intellect was. The only cloud hanging over the impressive achievement of the atomic researchers and engineers is what their success truly meant; hundreds of thousands of innocent lives obliterated."
-            }
-        }
-    },
-    "msmarco-passage/trec-dl-2020/judged": {
-        "0": {
-            "docno": "0",
-            "text": "The presence of communication amid scientific minds was equally important to the success of the Manhattan Project as scientific intellect was. The only cloud hanging over the impressive achievement of the atomic researchers and engineers is what their success truly meant; hundreds of thousands of innocent lives obliterated.",
-            "original_document": {
-                "doc_id": "0",
-                "text": "The presence of communication amid scientific minds was equally important to the success of the Manhattan Project as scientific intellect was. The only cloud hanging over the impressive achievement of the atomic researchers and engineers is what their success truly meant; hundreds of thousands of innocent lives obliterated."
-            }
-        }
-    },
-    "vaswani": {
-        "1": {
-            "docno": "1",
-            "text": "compact memories have flexible capacities  a digital data storage\nsystem with capacity up to bits and random and or sequential access\nis described\n",
-            "original_document": {
-                "doc_id": "1",
-                "text": "compact memories have flexible capacities  a digital data storage\nsystem with capacity up to bits and random and or sequential access\nis described\n"
-            }
-        }
-    },
     "cord19/fulltext/trec-covid": {
         "ug7v899j": {
             "docno": "ug7v899j",
@@ -148,6 +118,82 @@
                         ""
                     ]
                 ]
+            }
+        }
+    },
+    "msmarco-passage/trec-dl-2019/judged": {
+        "0": {
+            "docno": "0",
+            "text": "The presence of communication amid scientific minds was equally important to the success of the Manhattan Project as scientific intellect was. The only cloud hanging over the impressive achievement of the atomic researchers and engineers is what their success truly meant; hundreds of thousands of innocent lives obliterated.",
+            "original_document": {
+                "doc_id": "0",
+                "text": "The presence of communication amid scientific minds was equally important to the success of the Manhattan Project as scientific intellect was. The only cloud hanging over the impressive achievement of the atomic researchers and engineers is what their success truly meant; hundreds of thousands of innocent lives obliterated."
+            }
+        }
+    },
+    "msmarco-passage/trec-dl-2020/judged": {
+        "0": {
+            "docno": "0",
+            "text": "The presence of communication amid scientific minds was equally important to the success of the Manhattan Project as scientific intellect was. The only cloud hanging over the impressive achievement of the atomic researchers and engineers is what their success truly meant; hundreds of thousands of innocent lives obliterated.",
+            "original_document": {
+                "doc_id": "0",
+                "text": "The presence of communication amid scientific minds was equally important to the success of the Manhattan Project as scientific intellect was. The only cloud hanging over the impressive achievement of the atomic researchers and engineers is what their success truly meant; hundreds of thousands of innocent lives obliterated."
+            }
+        }
+    },
+    "medline/2004/trec-genomics-2004": {
+        "10605436": {
+            "docno": "10605436",
+            "text": "Concerning the localization of steroids in centrioles and basal bodies by immunofluorescence. Specific steroid antibodies, by the immunofluorescence technique, regularly reveal fluorescent centrioles and cilia-bearing basal bodies in target and nontarget cells. Although the precise identity of the immunoreactive steroid substance has not yet been established, it seems noteworthy that exogenous steroids can be vitally concentrated by centrioles, perhaps by exchange with steroids already present at this level. This unexpected localization suggests that steroids may affect cell growth and differentiation in some way different from the two-step receptor mechanism.",
+            "original_document": {
+                "doc_id": "10605436",
+                "title": "Concerning the localization of steroids in centrioles and basal bodies by immunofluorescence.",
+                "abstract": "Specific steroid antibodies, by the immunofluorescence technique, regularly reveal fluorescent centrioles and cilia-bearing basal bodies in target and nontarget cells. Although the precise identity of the immunoreactive steroid substance has not yet been established, it seems noteworthy that exogenous steroids can be vitally concentrated by centrioles, perhaps by exchange with steroids already present at this level. This unexpected localization suggests that steroids may affect cell growth and differentiation in some way different from the two-step receptor mechanism."
+            }
+        }
+    },
+    "medline/2004/trec-genomics-2005": {
+        "10605436": {
+            "docno": "10605436",
+            "text": "Concerning the localization of steroids in centrioles and basal bodies by immunofluorescence. Specific steroid antibodies, by the immunofluorescence technique, regularly reveal fluorescent centrioles and cilia-bearing basal bodies in target and nontarget cells. Although the precise identity of the immunoreactive steroid substance has not yet been established, it seems noteworthy that exogenous steroids can be vitally concentrated by centrioles, perhaps by exchange with steroids already present at this level. This unexpected localization suggests that steroids may affect cell growth and differentiation in some way different from the two-step receptor mechanism.",
+            "original_document": {
+                "doc_id": "10605436",
+                "title": "Concerning the localization of steroids in centrioles and basal bodies by immunofluorescence.",
+                "abstract": "Specific steroid antibodies, by the immunofluorescence technique, regularly reveal fluorescent centrioles and cilia-bearing basal bodies in target and nontarget cells. Although the precise identity of the immunoreactive steroid substance has not yet been established, it seems noteworthy that exogenous steroids can be vitally concentrated by centrioles, perhaps by exchange with steroids already present at this level. This unexpected localization suggests that steroids may affect cell growth and differentiation in some way different from the two-step receptor mechanism."
+            }
+        }
+    },
+    "medline/2017/trec-pm-2017": {
+        "AACR_2012-4595": {
+            "docno": "AACR_2012-4595",
+            "text": "Molecular imaging of urothelial cancer using EGFR-binding peptides INTRODUCTION White light cystoscopy (WLC), the current standard for bladder cancer diagnosis, has recognized shortcomings in differentiating non-papillary urothelial carcinoma from inflammation. Confocal laser endomicroscopy (CLE) with fluorescein (a non-specific contrast agent) can provide in vivo microscopy of the bladder as an adjunct to WLC. Targeted CLE with fluorescently labeled peptides against tumor surface markers may further enhance the utility of CLE for real time endoscopic imaging. Epidermal growth factor receptor (EGFR) is over-expressed in most bladder cancer cells, but absent in the superficial layer of normal urothelium, making it an attractive target for cancer-specific imaging. We report our efforts to identify a non-activating, EGFR-binding peptide labeled with FITC as a cancer-specific contrast agent for ex vivo bladder imaging with CLE. METHODS To screen for EGFR binding peptides, fragments of the EGFR-binding motif of human EGF (EGF14) were displayed on phage surface. Binding affinity of the phage to recombinant EGFR and EGFR-expressing bladder cancer cell line was measured by ELISA. Peptides with the highest EGFR affinity were chemically synthesized and FITC labeled. Potential for activation of EGFR by the peptides was assessed in two EGFR-expressing cell lines by Western blot. For ex vivo imaging of urothelial cancer, fresh human bladder (n=1) or ureter (n=2) specimens were instilled and incubated with FITC-EGFR binding peptide, or a random sequence negative control peptide. Excess peptide was drained, specimens were opened and suspicious and normal appearing mucosa were imaged with CLE. Imaged tissue sections were excised for histopathologic comparison. The bladder and one ureter were first imaged with negative control peptide followed by imaging with the EGF peptide. RESULTS All phage displaying EGF peptides showed greater affinity to recombinant EGFR and EGFR-expressing cells compared to wild type phage. The two phage with highest affinity for EGFR in both ELISA assays were synthesized. Cell stimulation with both peptides did not induce phosphorylation of EGFR or downstream signaling molecules. In bladder and ureter specimens, greater fluorescence intensity was detected in areas of tumor compared to normal urothelium on CLE with EGF4-FITC. Histopathology confirmed that the suspicious regions of the bladder and ureter imaged were urothelial carcinoma. The random peptide showed minimal fluorescent signal on both normal and tumor areas imaged, and subsequent imaging of the same areas with EGF4-FITC demonstrated abundant fluorescent signal in tumor areas only. CONCLUSION We identified peptides derived from the EGF sequence that specifically bind, but do not activate EGFR. Ex vivo imaging of urothelial cancer with EGF4 peptide suggests that it can be used for cancer-specific molecular imaging. Future studies will be aimed at in vivo validation of EGF4 peptide on animal models for urothelial cancer."
+        }
+    },
+    "medline/2017/trec-pm-2018": {
+        "AACR_2012-4595": {
+            "docno": "AACR_2012-4595",
+            "text": "Molecular imaging of urothelial cancer using EGFR-binding peptides INTRODUCTION White light cystoscopy (WLC), the current standard for bladder cancer diagnosis, has recognized shortcomings in differentiating non-papillary urothelial carcinoma from inflammation. Confocal laser endomicroscopy (CLE) with fluorescein (a non-specific contrast agent) can provide in vivo microscopy of the bladder as an adjunct to WLC. Targeted CLE with fluorescently labeled peptides against tumor surface markers may further enhance the utility of CLE for real time endoscopic imaging. Epidermal growth factor receptor (EGFR) is over-expressed in most bladder cancer cells, but absent in the superficial layer of normal urothelium, making it an attractive target for cancer-specific imaging. We report our efforts to identify a non-activating, EGFR-binding peptide labeled with FITC as a cancer-specific contrast agent for ex vivo bladder imaging with CLE. METHODS To screen for EGFR binding peptides, fragments of the EGFR-binding motif of human EGF (EGF14) were displayed on phage surface. Binding affinity of the phage to recombinant EGFR and EGFR-expressing bladder cancer cell line was measured by ELISA. Peptides with the highest EGFR affinity were chemically synthesized and FITC labeled. Potential for activation of EGFR by the peptides was assessed in two EGFR-expressing cell lines by Western blot. For ex vivo imaging of urothelial cancer, fresh human bladder (n=1) or ureter (n=2) specimens were instilled and incubated with FITC-EGFR binding peptide, or a random sequence negative control peptide. Excess peptide was drained, specimens were opened and suspicious and normal appearing mucosa were imaged with CLE. Imaged tissue sections were excised for histopathologic comparison. The bladder and one ureter were first imaged with negative control peptide followed by imaging with the EGF peptide. RESULTS All phage displaying EGF peptides showed greater affinity to recombinant EGFR and EGFR-expressing cells compared to wild type phage. The two phage with highest affinity for EGFR in both ELISA assays were synthesized. Cell stimulation with both peptides did not induce phosphorylation of EGFR or downstream signaling molecules. In bladder and ureter specimens, greater fluorescence intensity was detected in areas of tumor compared to normal urothelium on CLE with EGF4-FITC. Histopathology confirmed that the suspicious regions of the bladder and ureter imaged were urothelial carcinoma. The random peptide showed minimal fluorescent signal on both normal and tumor areas imaged, and subsequent imaging of the same areas with EGF4-FITC demonstrated abundant fluorescent signal in tumor areas only. CONCLUSION We identified peptides derived from the EGF sequence that specifically bind, but do not activate EGFR. Ex vivo imaging of urothelial cancer with EGF4 peptide suggests that it can be used for cancer-specific molecular imaging. Future studies will be aimed at in vivo validation of EGF4 peptide on animal models for urothelial cancer."
+        }
+    },
+    "nfcorpus/test": {
+        "MED-1": {
+            "docno": "MED-1",
+            "text": "Birth Weight, Head Circumference, and Prenatal Exposure to Acrylamide from Maternal Diet: The European Prospective Mother\u2013Child Study (NewGeneris) Abstract Background: Acrylamide is a common dietary exposure that crosses the human placenta. It is classified as a probable human carcinogen, and developmental toxicity has been observed in rodents. Objectives: We examined the associations between prenatal exposure to acrylamide and birth outcomes in a prospective European mother\u2013child study. Methods: Hemoglobin (Hb) adducts of acrylamide and its metabolite glycidamide were measured in cord blood (reflecting cumulated exposure in the last months of pregnancy) from 1,101 singleton pregnant women recruited in Denmark, England, Greece, Norway, and Spain during 2006\u20132010. Maternal diet was estimated through food-frequency questionnaires. Results: Both acrylamide and glycidamide Hb adducts were associated with a statistically significant reduction in birth weight and head circumference. The estimated difference in birth weight for infants in the highest versus lowest quartile of acrylamide Hb adduct levels after adjusting for gestational age and country was \u2013132 g (95% CI: \u2013207, \u201356); the corresponding difference for head circumference was \u20130.33 cm (95% CI: \u20130.61, \u20130.06). Findings were similar in infants of nonsmokers, were consistent across countries, and remained after adjustment for factors associated with reduced birth weight. Maternal consumption of foods rich in acrylamide, such as fried potatoes, was associated with cord blood acrylamide adduct levels and with reduced birth weight. Conclusions: Dietary exposure to acrylamide was associated with reduced birth weight and head circumference. Consumption of specific foods during pregnancy was associated with higher acrylamide exposure in utero. If confirmed, these findings suggest that dietary intake of acrylamide should be reduced among pregnant women.",
+            "original_document": {
+                "doc_id": "MED-1",
+                "url": "http://www.ncbi.nlm.nih.gov/pubmed/23092936",
+                "title": "Birth Weight, Head Circumference, and Prenatal Exposure to Acrylamide from Maternal Diet: The European Prospective Mother\u2013Child Study (NewGeneris)",
+                "abstract": "Abstract Background: Acrylamide is a common dietary exposure that crosses the human placenta. It is classified as a probable human carcinogen, and developmental toxicity has been observed in rodents. Objectives: We examined the associations between prenatal exposure to acrylamide and birth outcomes in a prospective European mother\u2013child study. Methods: Hemoglobin (Hb) adducts of acrylamide and its metabolite glycidamide were measured in cord blood (reflecting cumulated exposure in the last months of pregnancy) from 1,101 singleton pregnant women recruited in Denmark, England, Greece, Norway, and Spain during 2006\u20132010. Maternal diet was estimated through food-frequency questionnaires. Results: Both acrylamide and glycidamide Hb adducts were associated with a statistically significant reduction in birth weight and head circumference. The estimated difference in birth weight for infants in the highest versus lowest quartile of acrylamide Hb adduct levels after adjusting for gestational age and country was \u2013132 g (95% CI: \u2013207, \u201356); the corresponding difference for head circumference was \u20130.33 cm (95% CI: \u20130.61, \u20130.06). Findings were similar in infants of nonsmokers, were consistent across countries, and remained after adjustment for factors associated with reduced birth weight. Maternal consumption of foods rich in acrylamide, such as fried potatoes, was associated with cord blood acrylamide adduct levels and with reduced birth weight. Conclusions: Dietary exposure to acrylamide was associated with reduced birth weight and head circumference. Consumption of specific foods during pregnancy was associated with higher acrylamide exposure in utero. If confirmed, these findings suggest that dietary intake of acrylamide should be reduced among pregnant women."
+            }
+        }
+    },
+    "vaswani": {
+        "1": {
+            "docno": "1",
+            "text": "compact memories have flexible capacities  a digital data storage\nsystem with capacity up to bits and random and or sequential access\nis described\n",
+            "original_document": {
+                "doc_id": "1",
+                "text": "compact memories have flexible capacities  a digital data storage\nsystem with capacity up to bits and random and or sequential access\nis described\n"
             }
         }
     }

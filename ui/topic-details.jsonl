@@ -522,6 +522,56 @@
 {"dataset": "cranfield", "qid": "356", "default_text": "papers on shear buckling of unstiffened rectangular plates under shear ."}
 {"dataset": "cranfield", "qid": "360", "default_text": "in practice, how close to reality are the assumptions that the flow\nin a hypersonic shock tube using nitrogen is non-viscous and in\nthermodynamic equilibrium ."}
 {"dataset": "cranfield", "qid": "365", "default_text": "what design factors can be used to control lift-drag ratios at mach\nnumbers above 5 ."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "1", "default_text": "coronavirus origin", "description": "what is the origin of COVID-19", "narrative": "seeking range of information about the SARS-CoV-2 virus's origin, including its evolution, animal source, and first transmission into humans"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "2", "default_text": "coronavirus response to weather changes", "description": "how does the coronavirus respond to changes in the weather", "narrative": "seeking range of information about the SARS-CoV-2 virus viability in different weather/climate conditions as well as information related to transmission of the virus in different climate conditions"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "3", "default_text": "coronavirus immunity", "description": "will SARS-CoV2 infected people develop immunity? Is cross protection possible?", "narrative": "seeking studies of immunity developed due to infection with SARS-CoV2 or cross protection gained due to infection with other coronavirus types"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "4", "default_text": "how do people die from the coronavirus", "description": "what causes death from Covid-19?", "narrative": "Studies looking at mechanisms of death from Covid-19."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "5", "default_text": "animal models of COVID-19", "description": "what drugs have been active against SARS-CoV or SARS-CoV-2 in animal studies?", "narrative": "Papers that describe the results  of testing drugs that bind to spike proteins of the virus or any other drugs in any animal models. Papers about SARS-CoV-2 infection in cell culture assays are also relevant."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "6", "default_text": "coronavirus test rapid testing", "description": "what types of rapid testing for Covid-19 have been developed?", "narrative": "Looking for studies identifying ways to diagnose Covid-19 more rapidly."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "7", "default_text": "serological tests for coronavirus", "description": "are there serological tests that detect antibodies to coronavirus?", "narrative": "Looking for assays that measure immune response to COVID-19 that will help determine past infection and subsequent possible immunity."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "8", "default_text": "coronavirus under reporting", "description": "how has lack of testing availability led to underreporting of true incidence of Covid-19?", "narrative": "Looking for studies answering questions of impact of lack of complete testing for Covid-19 on incidence and prevalence of Covid-19."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "9", "default_text": "coronavirus in Canada", "description": "how has COVID-19 affected Canada", "narrative": "seeking data related to infections (confirm, suspected, and projected) and health outcomes (symptoms, hospitalization, intensive care, mortality)"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "10", "default_text": "coronavirus social distancing impact", "description": "has social distancing had an impact on slowing the spread of COVID-19?", "narrative": "seeking specific information on studies that have measured COVID-19's transmission in one or more social distancing (or non-social distancing) approaches"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "11", "default_text": "coronavirus hospital rationing", "description": "what are the guidelines for triaging patients infected with coronavirus?", "narrative": "Seeking information on any guidelines for prioritizing COVID-19 patients infected with coronavirus based on demographics, clinical signs, serology and other tests."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "12", "default_text": "coronavirus quarantine", "description": "what are best practices in hospitals and at home in maintaining quarantine?", "narrative": "Seeking information on best practices for activities and duration of quarantine for those exposed and/ infected to COVID-19 virus."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "13", "default_text": "how does coronavirus spread", "description": "what are the transmission routes of coronavirus?", "narrative": "Looking for information on all possible ways to contract COVID-19 from people, animals and objects"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "14", "default_text": "coronavirus super spreaders", "description": "what evidence is there related to COVID-19 super spreaders", "narrative": "seeking range of information related to the number and proportion of super spreaders, their patterns of behavior that lead to spread, and potential prevention strategies targeted specifically toward super spreaders"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "15", "default_text": "coronavirus outside body", "description": "how long can the coronavirus live outside the body", "narrative": "seeking range of information on the SARS-CoV-2's virus's survival in different environments (surfaces, liquids, etc.) outside the human body while still being viable for transmission to another human"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "16", "default_text": "how long does coronavirus survive on surfaces", "description": "how long does coronavirus remain stable  on surfaces?", "narrative": "Studies of time SARS-CoV-2 remains stable after being deposited from an infected person on everyday surfaces in a household or hospital setting, such as through coughing or touching objects."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "17", "default_text": "coronavirus clinical trials", "description": "are there any clinical trials available for the coronavirus", "narrative": "seeking specific COVID-19 clinical trials ranging from trials in recruitment to completed trials with results"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "18", "default_text": "masks prevent coronavirus", "description": "what are the best masks for preventing infection by Covid-19?", "narrative": "What types of masks should or should not be used to prevent infection by Covid-19?"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "19", "default_text": "what alcohol sanitizer kills coronavirus", "description": "what type of hand sanitizer is needed to destroy Covid-19?", "narrative": "Studies assessing chemicals and their concentrations needed to destroy the Covid-19 virus."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "20", "default_text": "coronavirus and ACE inhibitors", "description": "are patients taking Angiotensin-converting enzyme inhibitors (ACE) at increased risk for COVID-19?", "narrative": "Looking for information on interactions between  coronavirus and  angiotensin converting enzyme 2 (ACE2) receptors, risk for patients taking these medications, and recommendations for these patients."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "21", "default_text": "coronavirus mortality", "description": "what are the mortality rates overall and in specific populations", "narrative": "Seeking  information on COVID-19 fatality rates in different countries and in different population groups based on gender, blood types, or other factors"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "22", "default_text": "coronavirus heart impacts", "description": "are cardiac complications likely in patients with COVID-19?", "narrative": "Seeking information on the types, frequency and mechanisms of cardiac complications caused by coronavirus."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "23", "default_text": "coronavirus hypertension", "description": "what kinds of complications related to COVID-19 are associated with hypertension?", "narrative": "seeking specific outcomes that hypertensive  (any type) patients are more/less likely to face if infected with the virus"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "24", "default_text": "coronavirus diabetes", "description": "what kinds of complications related to COVID-19 are associated with diabetes", "narrative": "seeking specific outcomes that diabetic (any type) patients are more/less likely to face if infected with the virus"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "25", "default_text": "coronavirus biomarkers", "description": "which biomarkers predict the severe clinical course of 2019-nCOV infection?", "narrative": "Looking for information on biomarkers that predict disease outcomes in people infected with coronavirus, specifically those that predict severe and fatal outcomes."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "26", "default_text": "coronavirus early symptoms", "description": "what are the initial symptoms of Covid-19?", "narrative": "Studies of patients and the first clinical manifestations they develop upon active infection?"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "27", "default_text": "coronavirus asymptomatic", "description": "what is known about those infected with Covid-19 but are asymptomatic?", "narrative": "Studies of people who are known to be infected with Covid-19 but show no symptoms?"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "28", "default_text": "coronavirus hydroxychloroquine", "description": "what evidence is there for the value of hydroxychloroquine in treating Covid-19?", "narrative": "Basic science or clinical studies assessing the benefit and harms of treating Covid-19 with hydroxychloroquine."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "29", "default_text": "coronavirus drug repurposing", "description": "which SARS-CoV-2 proteins-human proteins interactions indicate potential for drug targets. Are there approved drugs that can be repurposed based on this information?", "narrative": "Seeking information about protein-protein interactions for any of the SARS-CoV-2  structural proteins that represent a promising therapeutic target,  and the drug  molecules that may inhibit the virus and the host cell receptors at entry step."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "30", "default_text": "coronavirus remdesivir", "description": "is remdesivir an effective treatment for COVID-19", "narrative": "seeking specific information on clinical outcomes in COVID-19 patients treated with remdesivir"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "31", "default_text": "difference between coronavirus and flu", "description": "How does the coronavirus differ from seasonal flu?", "narrative": "Includes studies ranging from those focusing on genomic differences to global public health impacts, but must draw direct comparisons between COVID-19 and seasonal influenza."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "32", "default_text": "coronavirus subtypes", "description": "Does SARS-CoV-2 have any subtypes, and if so what are they?", "narrative": "Papers that discuss subtypes of the virus, from named subtypes to speculative subtypes based on genomic or geographic clustering."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "33", "default_text": "coronavirus vaccine candidates", "description": "What vaccine candidates are being tested for Covid-19?", "narrative": "Seeking studies that discuss possible, but specific, COVID-19 vaccines. Includes articles from those describing the mechanisms of action of specific proposed vaccines to actual clinical trials, but excluding articles that do not name a specific vaccine candidate."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "34", "default_text": "coronavirus recovery", "description": "What are the longer-term complications of those who recover from COVID-19?", "narrative": "Seeking information on the health outcomes for those that recover from the virus. Excludes studies only focusing on adverse effects related to a particular COVID-19 drug."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "35", "default_text": "coronavirus public datasets", "description": "What new public datasets are available related to COVID-19?", "narrative": "Seeking articles that specifically release new data related to SARS-CoV-2 or COVID-19, including genomic data, patient data, public health data, etc. Articles that reference previously existing datasets are not relevant."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "36", "default_text": "SARS-CoV-2 spike structure", "description": "What is the protein structure of the SARS-CoV-2 spike?", "narrative": "Looking for studies of the structure of the spike protein on the virus using any methods, such as cryo-EM or crystallography"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "37", "default_text": "SARS-CoV-2 phylogenetic analysis", "description": "What is the result of phylogenetic analysis of SARS-CoV-2 genome sequence?", "narrative": "Looking for a range of studies which provide the results of phylogenetic network analysis on the SARS-CoV-2 genome"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "38", "default_text": "COVID inflammatory response", "description": "What is the mechanism of inflammatory response and pathogenesis of COVID-19 cases?", "narrative": "Looking for a range of studies which describes the inflammatory response cells and pathogenesis during the Coronavirus Disease 2019 (COVID-19) outbreak, including the mechanism of anti-inflammatory drugs, corticosteroids, and vitamin supplements"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "39", "default_text": "COVID-19 cytokine storm", "description": "What is the mechanism of cytokine storm syndrome on the COVID-19?", "narrative": "Looking for studies that describes mechanism of development of cytokine storm syndrome among COVID-19 cases and the range of drugs used for the therapy of cytokine storm"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "40", "default_text": "coronavirus mutations", "description": "What are the observed mutations in the SARS-CoV-2 genome and how often do the mutations occur?", "narrative": "Looking for studies that describes the emergence of genomic diversity of the coronavirus due to recurrent mutations which explore the potential genomic site of the mutation, mechanisms and its potential or observed clinical implications in the pathogenicity of the virus"}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "41", "default_text": "COVID-19 in African-Americans", "description": "What are the impacts of COVID-19 among African-Americans that differ from the rest of the U.S. population?", "narrative": "Looking for studies that analyze burden of illness and death among the African-American/black racial/ethnic group. This includes potential reasons for transmission, morbidity, and mortality. This may include discussion of other minority groups, but all studies should contain specific information on the health disparities faced by African-Americans in this pandemic."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "42", "default_text": "Vitamin D and COVID-19", "description": "Does Vitamin D impact COVID-19 prevention and treatment?", "narrative": "This includes studies describing possible role of Vitamin D in prevention of COVID-19, suppression of cytokine storm, clinical outcomes, and associations between Vitamin D status and COVID-19 mortality."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "43", "default_text": "violence during pandemic", "description": "How has the COVID-19 pandemic impacted violence in society, including violent crimes?", "narrative": "Looking for analyses and data on how the pandemic is impacting rates of violence, including domestic/family violence related to quarantine."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "44", "default_text": "impact of masks on coronavirus transmission", "description": "How much impact do masks have on preventing the spread of the COVID-19?", "narrative": "Looking for studies of how masks slow SARS-CoV-2 transmission, including impact on R0. Studies can include both lab and population studies."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "45", "default_text": "coronavirus mental health impact", "description": "How has the COVID-19 pandemic impacted mental health?", "narrative": "Includes increasing/decreasing rates of depression, anxiety, panic disorder, and other psychiatric and mental health conditions."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "46", "default_text": "dexamethasone coronavirus", "description": "what evidence is there for dexamethasone as a treatment for COVID-19?", "narrative": "Looking for studies on the impact of dexamethasone treatment in COVID-19 patients, including health benefits as well as adverse effects. This also includes specific populations that are benefitted/harmed by dexamethasone."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "47", "default_text": "COVID-19 outcomes in children", "description": "what are the health outcomes for children who contract COVID-19?", "narrative": "Looking for studies on health outcomes in children related to COVID-19. This includes studies attempting to explain the underlying biological mechanisms for why children differ from adults in response to infection."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "48", "default_text": "school reopening coronavirus", "description": "what are the benefits and risks of re-opening schools in the midst of the COVID-19 pandemic?", "narrative": "With the possibility of schools re-opening while the COVID-19 pandemic is still ongoing, this topic is looking for evidence or projections on what the potential implications of this are in terms of COVID-19 cases, hospitalizations, or deaths, as well as other benefits or harms to re-opening schools. This includes both the impact on students, teachers, families, and the wider community."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "49", "default_text": "post-infection COVID-19 immunity", "description": "do individuals who recover from COVID-19 show sufficient immune response, including antibody levels and T-cell mediated immunity, to prevent re-infection?", "narrative": "There is concern about re-infection for COVID-19, so this topic is looking for studies suggesting post-infection immunity, including post-infection antibody levels (over time) and evidence for individuals who have been infected more than once."}
+{"dataset": "cord19/fulltext/trec-covid", "qid": "50", "default_text": "mRNA vaccine coronavirus", "description": "what is known about an mRNA vaccine for the SARS-CoV-2 virus?", "narrative": "Looking for studies specifically focusing on mRNA vaccines for COVID-19, including how mRNA vaccines work, why they are promising, and any results from actual clinical studies."}
 {"dataset": "msmarco-passage/trec-dl-2019/judged", "qid": "156493", "default_text": "do goldfish grow"}
 {"dataset": "msmarco-passage/trec-dl-2019/judged", "qid": "1110199", "default_text": "what is wifi vs bluetooth"}
 {"dataset": "msmarco-passage/trec-dl-2019/judged", "qid": "1063750", "default_text": "why did the us volunterilay enter ww1"}
@@ -619,6 +669,511 @@
 {"dataset": "msmarco-passage/trec-dl-2020/judged", "qid": "938400", "default_text": "when did family feud come out?"}
 {"dataset": "msmarco-passage/trec-dl-2020/judged", "qid": "940547", "default_text": "when did rock n roll begin?"}
 {"dataset": "msmarco-passage/trec-dl-2020/judged", "qid": "997622", "default_text": "where is the show shameless filmed"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "1", "default_text": "Ferroportin-1 in humans"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "2", "default_text": "Generating transgenic mice"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "3", "default_text": "Time course for gene expression in mouse kidney"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "4", "default_text": "Gene expression profiles for kidney in mice"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "5", "default_text": "Protocols for isolating cell nuclei"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "6", "default_text": "FancD2"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "7", "default_text": "DNA repair and oxidative stress"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "8", "default_text": "Correlation between DNA repair pathways and skin cancer"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "9", "default_text": "mutY"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "10", "default_text": "NEIL1"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "11", "default_text": "Carcinogenesis and hairless mice"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "12", "default_text": "Genes regulated by Smad4"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "13", "default_text": "Role of TGFB in angiogenesis in skin"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "14", "default_text": "Expression or Regulation of TGFB in HNSCC cancers"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "15", "default_text": "ATPase and apoptosis"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "16", "default_text": "AAA proteins"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "17", "default_text": "DO1 antibody"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "18", "default_text": "Gis4"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "19", "default_text": "Comparison of Promoters of GAL1 and SUC1"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "20", "default_text": "Substrate modification by ubiquitin"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "21", "default_text": "Role of p63 and p73 in relation to DNA damage"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "22", "default_text": "Relative response of p53 family members to agents causing single-stranded versus double-stranded DNA breaks"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "23", "default_text": "Saccharomyces cerevisiae proteins involved in ubiquitin system"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "24", "default_text": "Mouse peptidoglycan recognition proteins (PGRP)"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "25", "default_text": "Cause of scleroderma"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "26", "default_text": "Function of BUB2/BFA1 in the process of cytokinesis"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "27", "default_text": "Role of autophagy in apoptosis"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "28", "default_text": "Proteases that function in both apoptosis and autophagy cell death"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "29", "default_text": "Phenotypes of gyrA mutations"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "30", "default_text": "Regulatory targets of the Nkx gene family members"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "31", "default_text": "TOR signaling in neurofibromatosis"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "32", "default_text": "Xenograft animal models of tumorogenesis"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "33", "default_text": "Mice, mutant strains, and Histoplasmosis"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "34", "default_text": "Gene products of Cryptococcus important to fungal survival"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "35", "default_text": "WD40 repeat-containing proteins"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "36", "default_text": "RAB3A"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "37", "default_text": "PAM"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "38", "default_text": "Risk factors for stroke"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "39", "default_text": "Hypertension"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "40", "default_text": "Antigens expressed by lung epithelial cells"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "41", "default_text": "Mutations in the Cystic Fibrosis conductance regulator gene"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "42", "default_text": "Genes altered by chromosome translocations"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "43", "default_text": "Sleeping Beauty"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "44", "default_text": "Proteins involved in the nerve growth factor pathway"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "45", "default_text": "Mental Health Wellness-1"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "46", "default_text": "RSK2"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "47", "default_text": "Human gene BCL-2 antagonists and inhibitors"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "48", "default_text": "Human homologues of C. elegans UNC genes"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "49", "default_text": "Glyphosate tolerance gene sequence"}
+{"dataset": "medline/2004/trec-genomics-2004", "qid": "50", "default_text": "Low temperature protein expression in E. coli"}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "100", "default_text": "Describe the procedure or methods for how to \"open up\" a cell through a process called \"electroporation.\""}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "101", "default_text": "Describe the procedure or methods for exact reactions that take place when you do glutathione S-transferase (GST) cleavage during affinity chromatography."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "102", "default_text": "Describe the procedure or methods for different quantities of different components to use when pouring a gel to make it more or less porous."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "103", "default_text": "Describe the procedure or methods for green fluorescent protein (GFP) tagged proteins to do experiments with tagged proteins."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "104", "default_text": "Describe the procedure or methods for how to do a microsomal budding assay, i.e., budding of vesicles from microsomes in vitro."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "105", "default_text": "Describe the procedure or methods for purification of rat IgM."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "106", "default_text": "Describe the procedure or methods for chromatin IP (Immuno Precipitations) to isolate proteins that are bound to DNA in order to precipitate the proteins out of the DNA."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "107", "default_text": "Describe the procedure or methods for normalization procedures that are used for microarray data."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "108", "default_text": "Describe the procedure or methods for identifying in vivo protein-protein interactions in time and space in the living cell."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "109", "default_text": "Describe the procedure or methods for fluorogenic 5'-nuclease assay."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "110", "default_text": "Provide information about the role of the gene Interferon-beta in the disease Multiple Sclerosis."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "111", "default_text": "Provide information about the role of the gene PRNP in the disease Mad Cow Disease."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "112", "default_text": "Provide information about the role of the gene IDE gene in the disease Alzheimer's Disease."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "113", "default_text": "Provide information about the role of the gene MMS2 in the disease Cancer."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "114", "default_text": "Provide information about the role of the gene APC (adenomatous polyposis coli) in the disease Colon Cancer."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "115", "default_text": "Provide information about the role of the gene Nurr-77 in the disease Parkinson's Disease."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "116", "default_text": "Provide information about the role of the gene Insulin receptor gene in the disease Cancer."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "117", "default_text": "Provide information about the role of the gene Apolipoprotein E (ApoE) in the disease Alzheimer's Disease."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "118", "default_text": "Provide information about the role of the gene Transforming growth factor-beta1 (TGF-beta1) in the disease Cerebral Amyloid Angiopathy (CAA)."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "119", "default_text": "Provide information about the role of the gene GSTM1 in the disease Breast Cancer."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "120", "default_text": "Provide information on the role of the gene nucleoside diphosphate kinase  (NM23) in the process of tumor progression."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "121", "default_text": "Provide information on the role of the gene BARD1 in the process of BRCA1 regulation."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "122", "default_text": "Provide information on the role of the gene APC (adenomatous polyposis coli) in the process of actin assembly."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "123", "default_text": "Provide information on the role of the gene COP2 in the process of transport of CFTR out of the endoplasmic reticulum."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "124", "default_text": "Provide information on the role of the gene casein kinase II in the process of ribosome assembly."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "125", "default_text": "Provide information on the role of the gene Nurr-77 in the process of preventing auto-immunity by deleting reactive T-cells  before they migrate to the spleen or the lymph nodes."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "126", "default_text": "Provide information on the role of the gene P53 in the process of apoptosis."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "127", "default_text": "Provide information on the role of the gene alpha7 nicotinic receptor subunit gene in the process of ethanol metabolism."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "128", "default_text": "Provide information on the role of the gene gamma-aminobutyric acid receptors (GABABRs) in the process of inhibitory synaptic transmission."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "129", "default_text": "Provide information on the role of the gene Interferon-beta in the process of viral entry into host cell."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "130", "default_text": "Provide information about the genes BRCA1 regulation of ubiquitin in cancer."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "131", "default_text": "Provide information about the genes L1 and L2 in the HPV11 virus in the role of L2 in the viral capsid."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "132", "default_text": "Provide information about the genes APC (adenomatous polyposis coli) and wnt in colon cancer."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "133", "default_text": "Provide information about the genes phospholipase A2 (PLA2) and SAR1 in Endoplasmic reticulum transport (i.e. vesicle budding from the ER)."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "134", "default_text": "Provide information about the genes CFTR and Sec61 in degradation of CFTRwhich leads to cystic fibrosis."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "135", "default_text": "Provide information about the genes Bop and Pes in cell growth."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "136", "default_text": "Provide information about the genes alpha7 nicotinic receptor gene and ApoE gene in the neurotoxic effects of ethanol."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "137", "default_text": "Provide information about the genes Insulin-like GF and insulin receptor gene in the function in skin."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "138", "default_text": "Provide information about the genes HNF4 and COUP-TF I in the suppression in the function of the liver."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "139", "default_text": "Provide information about the genes Ret and GDNF in kidney development."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "140", "default_text": "Provide information about BRCA1 185delAG mutation and its/their role in ovarian cancer."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "141", "default_text": "Provide information about Huntingtin mutations and its/their role in Huntington's Disease."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "142", "default_text": "Provide information about Sonic hedgehog mutations and its/their role in developmental disorders."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "143", "default_text": "Provide information about Mutations of NM23 and its/their impact on tracheal development."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "144", "default_text": "Provide information about Mutations in metazoan Pes and its/their effect on cell growth."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "145", "default_text": "Provide information about Mutations of hypocretin receptor 2 and its/their role in narcolepsy."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "146", "default_text": "Provide information about Mutations of presenilin-1 gene and its/their biological impact in Alzheimer's disease."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "147", "default_text": "Provide information about Mutations of alpha7 nAChR gene and its/their biological impact in alcoholism."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "148", "default_text": "Provide information about Mutation of familial hemiplegic migraine type 1 (FHM1) and its/their neuronal Ca2+ influx in hippocampal neurons."}
+{"dataset": "medline/2004/trec-genomics-2005", "qid": "149", "default_text": "Provide information about Mutations of the alpha 4-GABAA receptor and its/their impact on behavior."}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "1", "default_text": "Liposarcoma CDK4 Amplification 38-year-old male GERD"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "2", "default_text": "Colon cancer KRAS (G13D), BRAF (V600E) 52-year-old male Type II Diabetes, Hypertension"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "3", "default_text": "Meningioma NF2 (K322), AKT1(E17K) 45-year-old female None"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "4", "default_text": "Breast cancer FGFR1 Amplification, PTEN (Q171) 67-year-old female Depression, Hypertension, Heart Disease"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "5", "default_text": "Melanoma BRAF (V600E), CDKN2A Deletion 45-year-old female None"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "6", "default_text": "Melanoma NRAS (Q61K) 55-year-old male Hypertension"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "7", "default_text": "Lung cancer EGFR (L858R) 50-year-old female Lupus"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "8", "default_text": "Lung cancer EML4-ALK Fusion transcript 52-year-old male Hypertension, Osteoarthritis"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "9", "default_text": "Gastrointestinal stromal tumor KIT Exon 9 (A502_Y503dup) 49-year-old female None"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "10", "default_text": "Lung adenocarcinoma KRAS (G12C) 61-year-old female Hypertension, Hypercholesterolemia"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "11", "default_text": "Gastric cancer PIK3CA (E545K) 54-year-old male Depression"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "12", "default_text": "Colon cancer BRAF (V600E) 35-year-old male None"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "13", "default_text": "Cholangiocarcinoma BRCA2 72-year-old male Diabetes"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "14", "default_text": "Cholangiocarcinoma IDH1 (R132H) 64-year-old male Neuropathy"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "15", "default_text": "Cervical cancer STK11 26-year-old female None"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "16", "default_text": "Pancreatic cancer CDKN2A 54-year-old male Diabetes, Hypertension"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "17", "default_text": "Prostate cancer PTEN Inactivating 81-year-old male Hypertension, Depression"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "18", "default_text": "Pancreatic cancer CDK6 Amplification 48-year-old male None"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "19", "default_text": "Colorectal cancer FGFR1 Amplification 35-year-old female None"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "20", "default_text": "Liposarcoma MDM2 Amplification 26-year-old male None"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "21", "default_text": "Lung adenocarcinoma ALK Fusion 64-year-old female Emphysema"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "22", "default_text": "Lung cancer ERBB2 Amplification 70-year-old male Arthritis"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "23", "default_text": "Breast cancer PTEN Loss 54-year-old female Congestive Heart Failure"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "24", "default_text": "Lung cancer NTRK1 58-year-old female Depression, Hypertension, Diabetes"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "25", "default_text": "Lung adenocarcinoma MET Amplification 48-year-old male Emphysema"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "26", "default_text": "Breast cancer NRAS Amplification 35-year-old female None"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "27", "default_text": "Pancreatic adenocarcinoma KRAS, TP53 49-year-old female None"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "28", "default_text": "Pancreatic ductal adenocarcinoma ERBB3 73-year-old female Whipple, FNA"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "29", "default_text": "Ampullary carcinoma KRAS 61-year-old male None"}
+{"dataset": "medline/2017/trec-pm-2017", "qid": "30", "default_text": "Pancreatic adenocarcinoma RB1, TP53, KRAS 57-year-old female None"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "1", "default_text": "melanoma BRAF (V600E) 64-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "2", "default_text": "melanoma BRAF (V600K) 54-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "3", "default_text": "melanoma BRAF (V600R) 80-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "4", "default_text": "melanoma BRAF (K601E) 38-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "5", "default_text": "melanoma BRAF (V600E), PTEN loss of function 57-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "6", "default_text": "melanoma BRAF (V600E), NRAS (Q61R) 67-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "7", "default_text": "melanoma BRAF amplification 61-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "8", "default_text": "melanoma NRAS (Q61R) 63-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "9", "default_text": "melanoma NRAS (Q61L) 34-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "10", "default_text": "melanoma KIT (L576P) 65-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "11", "default_text": "melanoma KIT (L576P), KIT amplification 56-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "12", "default_text": "melanoma KIT (K642E) 62-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "13", "default_text": "melanoma KIT (N822Y) 39-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "14", "default_text": "melanoma KIT amplification 66-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "15", "default_text": "melanoma NF1 truncation 70-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "16", "default_text": "melanoma NTRK1 rearrangement 60-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "17", "default_text": "melanoma TP53 loss of function 72-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "18", "default_text": "melanoma tumor cells with >50% membranous PD-L1 expression 48-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "19", "default_text": "melanoma tumor cells negative for PD-L1 expression 73-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "20", "default_text": "melanoma high tumor mutational burden 86-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "21", "default_text": "melanoma extensive tumor infiltrating lymphocytes 49-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "22", "default_text": "melanoma no tumor infiltrating lymphocytes 74-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "23", "default_text": "melanoma PTEN loss of function 68-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "24", "default_text": "melanoma APC loss of function 47-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "25", "default_text": "melanoma high serum LDH levels 69-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "26", "default_text": "colorectal cancer NRAS 49-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "27", "default_text": "medullary thyroid carcinoma RET 45-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "28", "default_text": "neuroblastoma ALK 4-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "29", "default_text": "esophageal cancer EGFR 67-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "30", "default_text": "lung cancer ROS1 71-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "31", "default_text": "head and neck squamous cell carcinoma CDKN2A 64-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "32", "default_text": "leukemia ABL1 4-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "33", "default_text": "gastric cancer EGFR 60-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "34", "default_text": "sarcoma MDM2 78-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "35", "default_text": "breast cancer CDKN2A 73-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "36", "default_text": "lung cancer ERBB2 49-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "37", "default_text": "non-small cell carcinoma MET 68-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "38", "default_text": "cholangiocarcinoma IDH1 50-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "39", "default_text": "anaplastic large cell lymphoma ALK 18-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "40", "default_text": "breast cancer ERBB2 56-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "41", "default_text": "papillary thyroid carcinoma NTRK1 46-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "42", "default_text": "glioblastoma CDK6 84-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "43", "default_text": "basal cell carcinoma PTCH1 56-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "44", "default_text": "glioma BRAF 82-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "45", "default_text": "thyroid cancer BRAF 40-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "46", "default_text": "lung cancer FGFR1 57-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "47", "default_text": "prostate cancer PTEN 70-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "48", "default_text": "adenoid cystic carcinoma KIT 58-year-old female"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "49", "default_text": "acute myeloid leukemia IDH1 1-year-old male"}
+{"dataset": "medline/2017/trec-pm-2018", "qid": "50", "default_text": "acute myeloid leukemia FLT3 13-year-old male"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1008", "default_text": "deafness"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1018", "default_text": "dha"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-102", "default_text": "stopping heart disease in childhood"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1028", "default_text": "dietary scoring"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1039", "default_text": "domoic acid"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1050", "default_text": "dr. dean ornish"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1066", "default_text": "dr. walter willett"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1078", "default_text": "duncan hines"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1088", "default_text": "ecmo"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1098", "default_text": "eggnog"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1109", "default_text": "endocrine disruptors"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1119", "default_text": "energy drinks"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-112", "default_text": "food dyes and adhd"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1130", "default_text": "ergothioneine"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1141", "default_text": "evidence-based medicine"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1151", "default_text": "factory farming practices"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1161", "default_text": "fava beans"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1172", "default_text": "fenugreek"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1183", "default_text": "finland"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1193", "default_text": "flax oil"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-12", "default_text": "exploiting autophagy to live longer"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1203", "default_text": "folic acid"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1214", "default_text": "fosamax"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1225", "default_text": "fructose"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-123", "default_text": "how citrus might help keep your hands warm"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1236", "default_text": "galactosemia"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1249", "default_text": "genetic manipulation"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1262", "default_text": "global burden of disease study"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1275", "default_text": "goji berries"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1288", "default_text": "grapes"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1299", "default_text": "growth promoters"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1309", "default_text": "halibut"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1320", "default_text": "harvard physicians \u2019 study ii"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-133", "default_text": "starving tumors of their blood supply"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1331", "default_text": "hearing"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1342", "default_text": "heme iron"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1353", "default_text": "hernia"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1363", "default_text": "hiroshima"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1374", "default_text": "hormonal dysfunction"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1387", "default_text": "hyperactivity"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1398", "default_text": "igf-1"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1409", "default_text": "industrial toxins"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1419", "default_text": "insects"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1429", "default_text": "iowa women \u2019 s health study"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-143", "default_text": "are dental x-rays safe ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1441", "default_text": "japan"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1453", "default_text": "junk food"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1463", "default_text": "kidney beans"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1473", "default_text": "kohlrabi"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1485", "default_text": "lard"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1496", "default_text": "leeks"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1506", "default_text": "leucine"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1516", "default_text": "lindane"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1527", "default_text": "liver disease"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-153", "default_text": "how should i take probiotics ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1537", "default_text": "low-carb diets"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1547", "default_text": "lyme disease"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1557", "default_text": "magnesium"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1568", "default_text": "maple syrup"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1579", "default_text": "mastitis"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1590", "default_text": "medical ethics"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1601", "default_text": "memory"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1611", "default_text": "mesquite"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1621", "default_text": "mevacor"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1635", "default_text": "milk"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1645", "default_text": "molasses"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-165", "default_text": "breast cancer & alcohol : how much is safe ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1656", "default_text": "mouth cancer"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1667", "default_text": "muscle health"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1679", "default_text": "myelopathy"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1690", "default_text": "national academy of sciences"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1700", "default_text": "native americans"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1710", "default_text": "neurocysticercosis"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1721", "default_text": "nih-aarp study"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1731", "default_text": "norovirus"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1741", "default_text": "nuts"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-175", "default_text": "diet and cellulite"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1752", "default_text": "okra"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1762", "default_text": "oral intraepithelial neoplasia"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1772", "default_text": "organotins"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1784", "default_text": "oxen meat"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1794", "default_text": "panama"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1805", "default_text": "parkinson 's disease"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1817", "default_text": "peanut butter"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1827", "default_text": "peoria"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1837", "default_text": "pesticides"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1847", "default_text": "philippines"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1857", "default_text": "phytic acid"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-186", "default_text": "best treatment for constipation"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1867", "default_text": "pineapples"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1877", "default_text": "plant-based diet"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1887", "default_text": "poisonous plants"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1897", "default_text": "polypropylene plastic"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1909", "default_text": "pork"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1919", "default_text": "poultry workers"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1929", "default_text": "prenatal vitamins"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1940", "default_text": "prolactin"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1950", "default_text": "prunes"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-196", "default_text": "should we avoid titanium dioxide ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1962", "default_text": "pumpkin"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1972", "default_text": "quinine"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1983", "default_text": "rapamycin"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-1995", "default_text": "red tea"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2", "default_text": "do cholesterol statin drugs cause breast cancer ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2009", "default_text": "rhabdomyolysis"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2019", "default_text": "rickets"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2030", "default_text": "rutin"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2040", "default_text": "salmon"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2051", "default_text": "saturated fat"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2061", "default_text": "seafood"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-207", "default_text": "avoiding cooked meat carcinogens"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2071", "default_text": "serotonin"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2081", "default_text": "shelf life"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2092", "default_text": "sirtuins"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2102", "default_text": "smoking"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2113", "default_text": "soil health"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2124", "default_text": "spearmint"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2134", "default_text": "splenda"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2145", "default_text": "st. john 's wort"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2156", "default_text": "stevia"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2167", "default_text": "subsidies"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-217", "default_text": "plant-based diets for psoriasis"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2177", "default_text": "sulfur"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2187", "default_text": "suppositories"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2197", "default_text": "sweeteners"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2209", "default_text": "taro"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2220", "default_text": "tempeh"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2230", "default_text": "thiamine"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2240", "default_text": "titanium dioxide"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2250", "default_text": "tongue worm"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2261", "default_text": "trans fats"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-227", "default_text": "increasing muscle strength with fenugreek"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2271", "default_text": "tufts"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2281", "default_text": "turnips"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2291", "default_text": "ultra-processed foods"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-23", "default_text": "how to reduce exposure to alkylphenols through your diet"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2301", "default_text": "uterine health"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2311", "default_text": "veal"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2321", "default_text": "veggie chicken"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2332", "default_text": "viral infections"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2343", "default_text": "vitamin k"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2354", "default_text": "walnut oil"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2364", "default_text": "weight gain"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2375", "default_text": "whiting"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-238", "default_text": "how chemically contaminated are we ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2386", "default_text": "worms"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2396", "default_text": "yale"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2408", "default_text": "zoloft"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2430", "default_text": "preventing brain loss with b vitamins ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2440", "default_text": "more than an apple a day : combating common diseases"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2450", "default_text": "are organic foods safer ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2460", "default_text": "diabetes as a disease of fat toxicity"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2470", "default_text": "is milk good for our bones ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-248", "default_text": "treating an enlarged prostate with diet"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2480", "default_text": "preventing ulcerative colitis with diet"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2490", "default_text": "the actual benefit of diet vs. drugs"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2500", "default_text": "the saturated fat studies : buttering up the public"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2510", "default_text": "coffee and artery function"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2520", "default_text": "caloric restriction vs. plant-based diets"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2530", "default_text": "infectobesity : adenovirus 36 and childhood obesity"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2540", "default_text": "does cholesterol size matter ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2550", "default_text": "barriers to heart disease prevention"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2560", "default_text": "childhood constipation and cow \u2019 s milk"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2570", "default_text": "diabetics should take their pulses"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2580", "default_text": "academy of nutrition and dietetics conflicts of interest"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-259", "default_text": "optimal phytosterol dose and source"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2590", "default_text": "do vegetarians get enough protein ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2600", "default_text": "eggs and arterial function"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2610", "default_text": "treating asthma with plants vs. supplements ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2620", "default_text": "phytates for the treatment of cancer"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2630", "default_text": "alkylphenol endocrine disruptors and allergies"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2640", "default_text": "chicken salmonella thanks to meat industry lawsuit"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2650", "default_text": "turmeric curcumin and osteoarthritis"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2660", "default_text": "how long to detox from fish before pregnancy ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2670", "default_text": "is caramel color carcinogenic ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2680", "default_text": "counteracting the effects of dioxins through diet"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2690", "default_text": "chronic headaches and pork tapeworms"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-270", "default_text": "is caffeinated tea really dehydrating ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2700", "default_text": "heart disease starts in childhood"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2710", "default_text": "artificial food colors and adhd"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2720", "default_text": "keeping your hands warm with citrus"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2730", "default_text": "anti-angiogenesis : cutting off tumor supply lines"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2740", "default_text": "cancer risk from ct scan radiation"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2750", "default_text": "preventing the common cold with probiotics ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2760", "default_text": "eating healthy on a budget"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2770", "default_text": "flaxseeds & breast cancer survival : clinical evidence"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2780", "default_text": "do fruit & nut bars cause weight gain ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2790", "default_text": "titanium dioxide & inflammatory bowel disease"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-280", "default_text": "mercury testing recommended before pregnancy"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2800", "default_text": "prolonged liver function enhancement from broccoli"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2810", "default_text": "apple juice may be worse than sugar water"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2820", "default_text": "preventing strokes with diet"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2830", "default_text": "neurobiology of artificial sweeteners"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2840", "default_text": "benefits of fenugreek seeds"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2850", "default_text": "more antibiotics in white meat or dark meat ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2860", "default_text": "bpa plastic and male sexual dysfunction"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2870", "default_text": "filled full of lead"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2880", "default_text": "the answer to the pritikin puzzle"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2890", "default_text": "to snack or not to snack ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2900", "default_text": "boosting good bacteria in the colon without probiotics"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-291", "default_text": "stool size and breast cancer risk"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2910", "default_text": "optimal phytosterol dose"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2920", "default_text": "human neurotransmitters in plants"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2930", "default_text": "kiwifruit for irritable bowel syndrome"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2940", "default_text": "dietary treatment of crohn 's disease"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2950", "default_text": "unsafe at any feed"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2960", "default_text": "pharmacists versus health food store employees : who gives better advice ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2970", "default_text": "preventing cataracts with diet"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2981", "default_text": "cheese mites and maggots"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-2991", "default_text": "cholesterol and lower back pain"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3001", "default_text": "epic findings on lymphoma"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3014", "default_text": "sometimes the enzyme myth is true"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3026", "default_text": "vitamin c-enriched bacon"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3037", "default_text": "out of the lab onto the track"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3053", "default_text": "dragon 's blood"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3063", "default_text": "better than goji berries"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-307", "default_text": "vitamin d : shedding some light on the new recommendations"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3074", "default_text": "how to help prevent abdominal aortic aneurysms"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3085", "default_text": "the difficulty of arriving at a vitamin d recommendation"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3097", "default_text": "amyloid and apple juice"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3116", "default_text": "dietary guidelines : from dairies to berries"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3131", "default_text": "are avocados good for you ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3141", "default_text": "relieving yourself of excess estrogen"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3151", "default_text": "too much iodine can be as bad as too little"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3161", "default_text": "is milk and mucus a myth ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3171", "default_text": "convergence of evidence"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3181", "default_text": "is dragon fruit good for you ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3191", "default_text": "is distilled fish oil toxin-free ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-320", "default_text": "breast cancer and diet"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3201", "default_text": "acne & cancer connection"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3211", "default_text": "overdosing on greens"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3221", "default_text": "dietary theory of alzheimer 's"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3231", "default_text": "meat & multiple myeloma"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3241", "default_text": "apthous ulcer mystery solved"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3251", "default_text": "epic study"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3261", "default_text": "update on herbalife \u00ae"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3271", "default_text": "saturated fat & cancer progression"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3281", "default_text": "aluminum in vaccines vs. food"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3292", "default_text": "are multivitamins good for you ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-33", "default_text": "what \u2019 s driving america \u2019 s obesity problem ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3302", "default_text": "fish fog"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3312", "default_text": "sexually transmitted fish toxin"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-332", "default_text": "can antioxidant-rich spices counteract the effects of a high-fat meal ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3322", "default_text": "veggies vs. cancer"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3332", "default_text": "alcohol risks vs. benefits"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3342", "default_text": "is coconut milk good for you ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3352", "default_text": "boosting heart nerve control"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3362", "default_text": "kuna indian secret"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3372", "default_text": "the healthiest sweetener"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3382", "default_text": "are artificial colors bad for you ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3392", "default_text": "healthiest airplane beverage"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3402", "default_text": "antioxidant content of 300 foods"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3412", "default_text": "plant vs. cow calcium"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3422", "default_text": "vitamin supplements worth taking"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3432", "default_text": "healthy chocolate milkshakes"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-344", "default_text": "dioxins stored in our own fat may increase diabetes risk"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3442", "default_text": "the healthiest vegetables"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3452", "default_text": "bowel movement frequency"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3462", "default_text": "olive oil and artery function"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-3472", "default_text": "how doctors responded to being named a leading killer"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-358", "default_text": "didn 't another study show carnitine was good for the heart ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-371", "default_text": "any update on the scary in vitro avocado data ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-383", "default_text": "what do you think of dr. jenkins ' take on paleolithic diets ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-395", "default_text": "what about pepper plus turmeric in v8 juice ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-407", "default_text": "is annatto food coloring safe ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-418", "default_text": "fresh fruit versus frozen--which is better ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-430", "default_text": "are krill oil supplements better than fish oil capsules ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-44", "default_text": "who should be careful about curcumin ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-441", "default_text": "is apple cider vinegar good for you ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-457", "default_text": "how can you believe in any scientific study ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-468", "default_text": "is vitamin d3 ( cholecalciferol ) preferable to d2 ( ergocalciferol ) ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-478", "default_text": "accidents"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-488", "default_text": "adenovirus 36"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-499", "default_text": "african-american"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-510", "default_text": "airport scanners"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-520", "default_text": "alli"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-531", "default_text": "alternative medicine"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-541", "default_text": "american dental association"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-551", "default_text": "amnesia"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-56", "default_text": "foods for glaucoma"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-561", "default_text": "aneurysm"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-571", "default_text": "anisakis"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-583", "default_text": "antinutrients"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-593", "default_text": "apnea"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-603", "default_text": "arkansas"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-613", "default_text": "ascorbic acid"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-623", "default_text": "atkins diet"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-634", "default_text": "avocados"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-645", "default_text": "bagels"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-660", "default_text": "beans"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-671", "default_text": "benzene"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-68", "default_text": "what is actually in chicken nuggets ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-681", "default_text": "betel nuts"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-691", "default_text": "bioavailability"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-701", "default_text": "black raspberries"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-711", "default_text": "blood clots"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-721", "default_text": "bmaa"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-731", "default_text": "bone fractures"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-741", "default_text": "bph"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-751", "default_text": "brca genes"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-761", "default_text": "breast pain"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-771", "default_text": "bronchiolitis obliterans"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-78", "default_text": "what do meat purge and cola have in common ?"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-782", "default_text": "bush administration"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-792", "default_text": "cadaverine"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-806", "default_text": "caloric restriction"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-817", "default_text": "canker sores"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-827", "default_text": "carcinogens"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-838", "default_text": "carrageenan"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-850", "default_text": "cauliflower"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-860", "default_text": "center for food safety"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-872", "default_text": "chanterelle mushrooms"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-882", "default_text": "chernobyl"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-892", "default_text": "chickpeas"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-902", "default_text": "chlorophyll"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-91", "default_text": "chronic headaches and pork parasites"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-913", "default_text": "cinnamon"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-924", "default_text": "cocaine"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-934", "default_text": "coffee"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-946", "default_text": "coma"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-956", "default_text": "cooking methods"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-966", "default_text": "cortisol"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-977", "default_text": "crib death"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-987", "default_text": "cumin"}
+{"dataset": "nfcorpus/test", "qid": "PLAIN-997", "default_text": "czechoslovakia"}
 {"dataset": "vaswani", "qid": "1", "default_text": "MEASUREMENT OF DIELECTRIC CONSTANT OF LIQUIDS BY THE USE OF MICROWAVE TECHNIQUES\n"}
 {"dataset": "vaswani", "qid": "2", "default_text": "MATHEMATICAL ANALYSIS AND DESIGN DETAILS OF WAVEGUIDE FED MICROWAVE RADIATIONS\n"}
 {"dataset": "vaswani", "qid": "3", "default_text": "USE OF DIGITAL COMPUTERS IN THE DESIGN OF BAND PASS FILTERS HAVING GIVEN PHASE AND ATTENUATION CHARACTERISTICS\n"}
@@ -712,53 +1267,3 @@
 {"dataset": "vaswani", "qid": "91", "default_text": "RESISTIVITY OF METALLIC THIN FILMS RELATED TO SURFACE ROUGHNESS\n"}
 {"dataset": "vaswani", "qid": "92", "default_text": "THE PHENOMENON OF RADIATION CAUSED BY CHARGED PARTICLES MOVING IN VARYING ELECTRIC AND MAGNETIC FIELDS\n"}
 {"dataset": "vaswani", "qid": "93", "default_text": "HIGH FREQUENCY OSCILLATORS USING TRANSISTORS THEORETICAL TREATMENT AND PRACTICAL CIRCUIT DETAILS\n"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "1", "default_text": "coronavirus origin", "description": "what is the origin of COVID-19", "narrative": "seeking range of information about the SARS-CoV-2 virus's origin, including its evolution, animal source, and first transmission into humans"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "2", "default_text": "coronavirus response to weather changes", "description": "how does the coronavirus respond to changes in the weather", "narrative": "seeking range of information about the SARS-CoV-2 virus viability in different weather/climate conditions as well as information related to transmission of the virus in different climate conditions"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "3", "default_text": "coronavirus immunity", "description": "will SARS-CoV2 infected people develop immunity? Is cross protection possible?", "narrative": "seeking studies of immunity developed due to infection with SARS-CoV2 or cross protection gained due to infection with other coronavirus types"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "4", "default_text": "how do people die from the coronavirus", "description": "what causes death from Covid-19?", "narrative": "Studies looking at mechanisms of death from Covid-19."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "5", "default_text": "animal models of COVID-19", "description": "what drugs have been active against SARS-CoV or SARS-CoV-2 in animal studies?", "narrative": "Papers that describe the results  of testing drugs that bind to spike proteins of the virus or any other drugs in any animal models. Papers about SARS-CoV-2 infection in cell culture assays are also relevant."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "6", "default_text": "coronavirus test rapid testing", "description": "what types of rapid testing for Covid-19 have been developed?", "narrative": "Looking for studies identifying ways to diagnose Covid-19 more rapidly."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "7", "default_text": "serological tests for coronavirus", "description": "are there serological tests that detect antibodies to coronavirus?", "narrative": "Looking for assays that measure immune response to COVID-19 that will help determine past infection and subsequent possible immunity."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "8", "default_text": "coronavirus under reporting", "description": "how has lack of testing availability led to underreporting of true incidence of Covid-19?", "narrative": "Looking for studies answering questions of impact of lack of complete testing for Covid-19 on incidence and prevalence of Covid-19."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "9", "default_text": "coronavirus in Canada", "description": "how has COVID-19 affected Canada", "narrative": "seeking data related to infections (confirm, suspected, and projected) and health outcomes (symptoms, hospitalization, intensive care, mortality)"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "10", "default_text": "coronavirus social distancing impact", "description": "has social distancing had an impact on slowing the spread of COVID-19?", "narrative": "seeking specific information on studies that have measured COVID-19's transmission in one or more social distancing (or non-social distancing) approaches"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "11", "default_text": "coronavirus hospital rationing", "description": "what are the guidelines for triaging patients infected with coronavirus?", "narrative": "Seeking information on any guidelines for prioritizing COVID-19 patients infected with coronavirus based on demographics, clinical signs, serology and other tests."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "12", "default_text": "coronavirus quarantine", "description": "what are best practices in hospitals and at home in maintaining quarantine?", "narrative": "Seeking information on best practices for activities and duration of quarantine for those exposed and/ infected to COVID-19 virus."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "13", "default_text": "how does coronavirus spread", "description": "what are the transmission routes of coronavirus?", "narrative": "Looking for information on all possible ways to contract COVID-19 from people, animals and objects"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "14", "default_text": "coronavirus super spreaders", "description": "what evidence is there related to COVID-19 super spreaders", "narrative": "seeking range of information related to the number and proportion of super spreaders, their patterns of behavior that lead to spread, and potential prevention strategies targeted specifically toward super spreaders"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "15", "default_text": "coronavirus outside body", "description": "how long can the coronavirus live outside the body", "narrative": "seeking range of information on the SARS-CoV-2's virus's survival in different environments (surfaces, liquids, etc.) outside the human body while still being viable for transmission to another human"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "16", "default_text": "how long does coronavirus survive on surfaces", "description": "how long does coronavirus remain stable  on surfaces?", "narrative": "Studies of time SARS-CoV-2 remains stable after being deposited from an infected person on everyday surfaces in a household or hospital setting, such as through coughing or touching objects."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "17", "default_text": "coronavirus clinical trials", "description": "are there any clinical trials available for the coronavirus", "narrative": "seeking specific COVID-19 clinical trials ranging from trials in recruitment to completed trials with results"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "18", "default_text": "masks prevent coronavirus", "description": "what are the best masks for preventing infection by Covid-19?", "narrative": "What types of masks should or should not be used to prevent infection by Covid-19?"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "19", "default_text": "what alcohol sanitizer kills coronavirus", "description": "what type of hand sanitizer is needed to destroy Covid-19?", "narrative": "Studies assessing chemicals and their concentrations needed to destroy the Covid-19 virus."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "20", "default_text": "coronavirus and ACE inhibitors", "description": "are patients taking Angiotensin-converting enzyme inhibitors (ACE) at increased risk for COVID-19?", "narrative": "Looking for information on interactions between  coronavirus and  angiotensin converting enzyme 2 (ACE2) receptors, risk for patients taking these medications, and recommendations for these patients."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "21", "default_text": "coronavirus mortality", "description": "what are the mortality rates overall and in specific populations", "narrative": "Seeking  information on COVID-19 fatality rates in different countries and in different population groups based on gender, blood types, or other factors"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "22", "default_text": "coronavirus heart impacts", "description": "are cardiac complications likely in patients with COVID-19?", "narrative": "Seeking information on the types, frequency and mechanisms of cardiac complications caused by coronavirus."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "23", "default_text": "coronavirus hypertension", "description": "what kinds of complications related to COVID-19 are associated with hypertension?", "narrative": "seeking specific outcomes that hypertensive  (any type) patients are more/less likely to face if infected with the virus"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "24", "default_text": "coronavirus diabetes", "description": "what kinds of complications related to COVID-19 are associated with diabetes", "narrative": "seeking specific outcomes that diabetic (any type) patients are more/less likely to face if infected with the virus"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "25", "default_text": "coronavirus biomarkers", "description": "which biomarkers predict the severe clinical course of 2019-nCOV infection?", "narrative": "Looking for information on biomarkers that predict disease outcomes in people infected with coronavirus, specifically those that predict severe and fatal outcomes."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "26", "default_text": "coronavirus early symptoms", "description": "what are the initial symptoms of Covid-19?", "narrative": "Studies of patients and the first clinical manifestations they develop upon active infection?"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "27", "default_text": "coronavirus asymptomatic", "description": "what is known about those infected with Covid-19 but are asymptomatic?", "narrative": "Studies of people who are known to be infected with Covid-19 but show no symptoms?"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "28", "default_text": "coronavirus hydroxychloroquine", "description": "what evidence is there for the value of hydroxychloroquine in treating Covid-19?", "narrative": "Basic science or clinical studies assessing the benefit and harms of treating Covid-19 with hydroxychloroquine."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "29", "default_text": "coronavirus drug repurposing", "description": "which SARS-CoV-2 proteins-human proteins interactions indicate potential for drug targets. Are there approved drugs that can be repurposed based on this information?", "narrative": "Seeking information about protein-protein interactions for any of the SARS-CoV-2  structural proteins that represent a promising therapeutic target,  and the drug  molecules that may inhibit the virus and the host cell receptors at entry step."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "30", "default_text": "coronavirus remdesivir", "description": "is remdesivir an effective treatment for COVID-19", "narrative": "seeking specific information on clinical outcomes in COVID-19 patients treated with remdesivir"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "31", "default_text": "difference between coronavirus and flu", "description": "How does the coronavirus differ from seasonal flu?", "narrative": "Includes studies ranging from those focusing on genomic differences to global public health impacts, but must draw direct comparisons between COVID-19 and seasonal influenza."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "32", "default_text": "coronavirus subtypes", "description": "Does SARS-CoV-2 have any subtypes, and if so what are they?", "narrative": "Papers that discuss subtypes of the virus, from named subtypes to speculative subtypes based on genomic or geographic clustering."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "33", "default_text": "coronavirus vaccine candidates", "description": "What vaccine candidates are being tested for Covid-19?", "narrative": "Seeking studies that discuss possible, but specific, COVID-19 vaccines. Includes articles from those describing the mechanisms of action of specific proposed vaccines to actual clinical trials, but excluding articles that do not name a specific vaccine candidate."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "34", "default_text": "coronavirus recovery", "description": "What are the longer-term complications of those who recover from COVID-19?", "narrative": "Seeking information on the health outcomes for those that recover from the virus. Excludes studies only focusing on adverse effects related to a particular COVID-19 drug."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "35", "default_text": "coronavirus public datasets", "description": "What new public datasets are available related to COVID-19?", "narrative": "Seeking articles that specifically release new data related to SARS-CoV-2 or COVID-19, including genomic data, patient data, public health data, etc. Articles that reference previously existing datasets are not relevant."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "36", "default_text": "SARS-CoV-2 spike structure", "description": "What is the protein structure of the SARS-CoV-2 spike?", "narrative": "Looking for studies of the structure of the spike protein on the virus using any methods, such as cryo-EM or crystallography"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "37", "default_text": "SARS-CoV-2 phylogenetic analysis", "description": "What is the result of phylogenetic analysis of SARS-CoV-2 genome sequence?", "narrative": "Looking for a range of studies which provide the results of phylogenetic network analysis on the SARS-CoV-2 genome"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "38", "default_text": "COVID inflammatory response", "description": "What is the mechanism of inflammatory response and pathogenesis of COVID-19 cases?", "narrative": "Looking for a range of studies which describes the inflammatory response cells and pathogenesis during the Coronavirus Disease 2019 (COVID-19) outbreak, including the mechanism of anti-inflammatory drugs, corticosteroids, and vitamin supplements"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "39", "default_text": "COVID-19 cytokine storm", "description": "What is the mechanism of cytokine storm syndrome on the COVID-19?", "narrative": "Looking for studies that describes mechanism of development of cytokine storm syndrome among COVID-19 cases and the range of drugs used for the therapy of cytokine storm"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "40", "default_text": "coronavirus mutations", "description": "What are the observed mutations in the SARS-CoV-2 genome and how often do the mutations occur?", "narrative": "Looking for studies that describes the emergence of genomic diversity of the coronavirus due to recurrent mutations which explore the potential genomic site of the mutation, mechanisms and its potential or observed clinical implications in the pathogenicity of the virus"}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "41", "default_text": "COVID-19 in African-Americans", "description": "What are the impacts of COVID-19 among African-Americans that differ from the rest of the U.S. population?", "narrative": "Looking for studies that analyze burden of illness and death among the African-American/black racial/ethnic group. This includes potential reasons for transmission, morbidity, and mortality. This may include discussion of other minority groups, but all studies should contain specific information on the health disparities faced by African-Americans in this pandemic."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "42", "default_text": "Vitamin D and COVID-19", "description": "Does Vitamin D impact COVID-19 prevention and treatment?", "narrative": "This includes studies describing possible role of Vitamin D in prevention of COVID-19, suppression of cytokine storm, clinical outcomes, and associations between Vitamin D status and COVID-19 mortality."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "43", "default_text": "violence during pandemic", "description": "How has the COVID-19 pandemic impacted violence in society, including violent crimes?", "narrative": "Looking for analyses and data on how the pandemic is impacting rates of violence, including domestic/family violence related to quarantine."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "44", "default_text": "impact of masks on coronavirus transmission", "description": "How much impact do masks have on preventing the spread of the COVID-19?", "narrative": "Looking for studies of how masks slow SARS-CoV-2 transmission, including impact on R0. Studies can include both lab and population studies."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "45", "default_text": "coronavirus mental health impact", "description": "How has the COVID-19 pandemic impacted mental health?", "narrative": "Includes increasing/decreasing rates of depression, anxiety, panic disorder, and other psychiatric and mental health conditions."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "46", "default_text": "dexamethasone coronavirus", "description": "what evidence is there for dexamethasone as a treatment for COVID-19?", "narrative": "Looking for studies on the impact of dexamethasone treatment in COVID-19 patients, including health benefits as well as adverse effects. This also includes specific populations that are benefitted/harmed by dexamethasone."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "47", "default_text": "COVID-19 outcomes in children", "description": "what are the health outcomes for children who contract COVID-19?", "narrative": "Looking for studies on health outcomes in children related to COVID-19. This includes studies attempting to explain the underlying biological mechanisms for why children differ from adults in response to infection."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "48", "default_text": "school reopening coronavirus", "description": "what are the benefits and risks of re-opening schools in the midst of the COVID-19 pandemic?", "narrative": "With the possibility of schools re-opening while the COVID-19 pandemic is still ongoing, this topic is looking for evidence or projections on what the potential implications of this are in terms of COVID-19 cases, hospitalizations, or deaths, as well as other benefits or harms to re-opening schools. This includes both the impact on students, teachers, families, and the wider community."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "49", "default_text": "post-infection COVID-19 immunity", "description": "do individuals who recover from COVID-19 show sufficient immune response, including antibody levels and T-cell mediated immunity, to prevent re-infection?", "narrative": "There is concern about re-infection for COVID-19, so this topic is looking for studies suggesting post-infection immunity, including post-infection antibody levels (over time) and evidence for individuals who have been infected more than once."}
-{"dataset": "cord19/fulltext/trec-covid", "qid": "50", "default_text": "mRNA vaccine coronavirus", "description": "what is known about an mRNA vaccine for the SARS-CoV-2 virus?", "narrative": "Looking for studies specifically focusing on mRNA vaccines for COVID-19, including how mRNA vaccines work, why they are promising, and any results from actual clinical studies."}
