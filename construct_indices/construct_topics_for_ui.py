@@ -30,14 +30,14 @@ diffir = MainTask(measure='qrel', weight={"weights_1": None, "weights_2": None})
 
 datasets = {i: ir_datasets.load(i) for i in [
 
-    #'ir-lab-jena-leipzig-wise-2023/validation-20231104-training',
-    'ir-lab-jena-leipzig-wise-2023/jena-topics-20231026-test','ir-lab-jena-leipzig-wise-2023/leipzig-topics-20231025-test',
 
-    #'antique/test', 'argsme/2020-04-01/touche-2020-task-1', 'argsme/2020-04-01/touche-2021-task-1', 'cranfield', 'msmarco-passage/trec-dl-2019/judged', 'msmarco-passage/trec-dl-2020/judged',
+    'antique/test', 'argsme/2020-04-01/touche-2020-task-1', 'argsme/2020-04-01/touche-2021-task-1', 'cranfield', 'msmarco-passage/trec-dl-2019/judged', 'msmarco-passage/trec-dl-2020/judged',
 
-    #'vaswani', 
-                                             #'cord19/fulltext/trec-covid', 
-                                             ]}
+    'vaswani', 'cord19/fulltext/trec-covid', 
+
+
+    #'ir-lab-jena-leipzig-wise-2023/validation-20231104-training', 'ir-lab-jena-leipzig-wise-2023/jena-topics-20231026-test','ir-lab-jena-leipzig-wise-2023/leipzig-topics-20231025-test',
+]}
 
 dataset_to_docsstore = {i: ir_datasets.load('ir-lab-jena-leipzig-wise-2023/' + ALTERNATIVES[i.split('/')[1]]).docs_store() for i in tqdm(datasets, 'Load docsstores.')}
 
@@ -61,61 +61,11 @@ MEASURES = [ir_measures.nDCG@10, ir_measures.P@10, ir_measures.Judged@10]
 RANK_NOT_RETRIEVED = 99999
 
 tira_runs = [
-#    "ir-benchmarks/tira-ir-starter/BM25 Re-Rank (tira-ir-starter-pyterrier)",
-#    "ir-benchmarks/tira-ir-starter/MonoT5 Base (tira-ir-starter-gygaggle)",
-#    "ir-benchmarks/tira-ir-starter/MonoT5 Large (tira-ir-starter-gygaggle)",
-#    "ir-benchmarks/tira-ir-starter/DirichletLM Re-Rank (tira-ir-starter-pyterrier)",
-#    "ir-benchmarks/tira-ir-starter/TASB msmarco-distilbert-base-dot (tira-ir-starter-beir)"
-
-
-    "ir-lab-jena-leipzig-wise-2023/geometric-tortoise/silent-fork",
-    "ir-lab-jena-leipzig-wise-2023/geometric-tortoise/rounded-teak",
-    "ir-lab-jena-leipzig-wise-2023/geometric-tortoise/clear-solenoid",
-    "ir-lab-jena-leipzig-wise-2023/geometric-tortoise/nippy-skin",
-    "ir-lab-jena-leipzig-wise-2023/geometric-tortoise/recent-cordon",
-    "ir-lab-jena-leipzig-wise-2023/geometric-tortoise/fast-upload",
-    'ir-lab-jena-leipzig-wise-2023/ul-lucid-lovelace/resultant-associate',
-    'ir-lab-jena-leipzig-wise-2023/ul-lucid-lovelace/cyan-comptroller',
-    'ir-lab-jena-leipzig-wise-2023/ul-lucid-lovelace/rapid-ketchup',
-    'ir-lab-jena-leipzig-wise-2023/ul-lucid-lovelace/spicy-chianti',
-    'ir-lab-jena-leipzig-wise-2023/ul-lucid-lovelace/mashed-demon',
-    'ir-lab-jena-leipzig-wise-2023/ul-trusting-neumann/auburn-land',
-    'ir-lab-jena-leipzig-wise-2023/ul-hungry-ramanujan/plain-pool',
-    'ir-lab-jena-leipzig-wise-2023/ul-dreamy-zuse/chief-walk',
-    'ir-lab-jena-leipzig-wise-2023/ul-dreamy-zuse/caramelized-callable',
-    'ir-lab-jena-leipzig-wise-2023/ul-dreamy-zuse/pureed-sack',
-    'ir-lab-jena-leipzig-wise-2023/ul-dreamy-zuse/fundamental-wrap',
-    "ir-lab-jena-leipzig-wise-2023/galapagos-tortoise/null-strait",
-    "ir-lab-jena-leipzig-wise-2023/galapagos-tortoise/mild-duck",
-    "ir-lab-jena-leipzig-wise-2023/galapagos-tortoise/edible-status",
-    "ir-lab-jena-leipzig-wise-2023/galapagos-tortoise/poky-claim",
-    "ir-lab-jena-leipzig-wise-2023/ul-kangaroo-query-crew/merry-chrysler",
-    "ir-lab-jena-leipzig-wise-2023/ul-ecstatic-dijkstra/parameter-05",
-    "ir-lab-jena-leipzig-wise-2023/ul-ecstatic-dijkstra/grim-engineer",
-    "ir-lab-jena-leipzig-wise-2023/ul-ecstatic-dijkstra/parameter-50",
-    "ir-lab-jena-leipzig-wise-2023/ul-ecstatic-dijkstra/recent-market",
-    'ir-lab-jena-leipzig-wise-2023/ul-the-golden-retrievers/the-golden-retrievers-rev2',
-    'ir-lab-jena-leipzig-wise-2023/ul-the-golden-retrievers/bo1-query-expansion',
-    'ir-lab-jena-leipzig-wise-2023/ul-the-golden-retrievers/icy-guitar',
-    'ir-lab-jena-leipzig-wise-2023/ul-nostalgic-turing/moderato-order',
-    'ir-lab-jena-leipzig-wise-2023/ul-nostalgic-turing/succulent-scene',
-    'ir-lab-jena-leipzig-wise-2023/ul-nostalgic-turing/dry-elbow',
-    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/proud-humanist',
-    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/fancy-department',
-    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/senile-portico',
-    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/bordeaux-bounce',
-    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/lead-pizza',
-    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/thick-major',
-
-#BASELINES FROM ir-tutors: 'DFIC', 'DirichletLM', ...
-
-
-    # todo: Double check
-    #"ir-lab-jena-leipzig-wise-2023/ul-ecstatic-dijkstra/acyclic-yogurt",
-    #"ir-lab-jena-leipzig-wise-2023/ul-ecstatic-dijkstra/mechanical-body",
-#    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/bare-rectangle',
-#    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/direct-manifold',
-#    'ir-lab-jena-leipzig-wise-2023/spotted-turtle/pizzicato-combination',
+    "ir-benchmarks/tira-ir-starter/BM25 Re-Rank (tira-ir-starter-pyterrier)",
+    "ir-benchmarks/tira-ir-starter/MonoT5 Base (tira-ir-starter-gygaggle)",
+    "ir-benchmarks/tira-ir-starter/MonoT5 Large (tira-ir-starter-gygaggle)",
+    "ir-benchmarks/tira-ir-starter/DirichletLM Re-Rank (tira-ir-starter-pyterrier)",
+    "ir-benchmarks/tira-ir-starter/TASB msmarco-distilbert-base-dot (tira-ir-starter-beir)"
 ]
 
 tira_run_cache = {i: {} for i in datasets}
