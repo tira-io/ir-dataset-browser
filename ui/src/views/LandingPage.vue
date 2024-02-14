@@ -6,7 +6,7 @@
           ir_datasets Browser
         </h1>
         <p class="mx-auto py-4 tira-explanation">
-          This is an <a href="https://ir-datasets.com/" target="_blank">ir_datasets</a> browser to browse topics, documents, and runs on publicly available datasets in <a href="https://webis.de/publications.html#froebe_2023e" target="_blank">TIREx</a>.
+          A simple <a href="https://ir-datasets.com/" target="_blank">ir_datasets</a> browser for topics, documents, and runs on published data from <a href="https://webis.de/publications.html#froebe_2023e" target="_blank">TIREx</a>.
         </p>
         <v-row class="d-flex justify-center py-4">
           <v-col cols="auto">
