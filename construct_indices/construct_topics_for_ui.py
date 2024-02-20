@@ -228,7 +228,11 @@ def create_run_details(dataset_name):
         snippets = {}
         for doc_id in doc_ids:
             # from diffir: https://github.com/capreolus-ir/diffir/blob/master/diffir/run.py#L147C32-L147C38
-            doc = docstore.get(doc_id)
+            try:
+                doc = docstore.get(doc_id)
+            except:
+                snippets[doc_id] = {'snippet': '', 'weights': {}}
+                continue
 
             if not doc:
                 snippets[doc_id] = {'snippet': '', 'weights': {}}
@@ -290,7 +294,11 @@ def create_qrel_details(dataset_name, run_files):
             retrieved_in_100 = len([i for i in ranks if i <= 100])
             retrieved_in_10 = len([i for i in ranks if i <= 10])
 
-        ret[qid]['qrels'] += [{'qid': i.query_id, 'relevance': i.relevance, 'doc_id': i.doc_id, 'retrieved_in_100': retrieved_in_100, 'median_rank': median_rank, 'retrieved_in_10': retrieved_in_10, 'doc_id_to_offset': doc_id_to_offset[i.doc_id]}]
+        try:
+            ret[qid]['qrels'] += [{'qid': i.query_id, 'relevance': i.relevance, 'doc_id': i.doc_id, 'retrieved_in_100': retrieved_in_100, 'median_rank': median_rank, 'retrieved_in_10': retrieved_in_10, 
+            'doc_id_to_offset': doc_id_to_offset[i.doc_id]}]
+        except:
+            pass
 
     return [i for i in ret.values()]
 
