@@ -3,6 +3,7 @@ from pathlib import Path
 import json
 import pandas as pd
 import requests
+import gzip
 
 DATASET_IDS = ['argsme-touche-2020-task-1-20230209-training']
 CORPUS = []
@@ -129,6 +130,28 @@ def parse_run_details(path: Path) -> Dict:
 
     return ret
 
+
+def parse_compressed_run_details(path: Path) -> Dict:
+    """
+    Compress a file with run details and returns a dictionary with the datasets and query id as key and the byte range as value.
+     
+    This method is inspired by indxr, please cite: https://github.com/AmenRa/indxr
+
+    :param path: Path to the run detals file in jsonl format  that is re-compressed to gzip
+    :return: Dictionary with the dataset and query id as key and the byte range as value
+    """
+    ret = {}
+    position = 0
+
+    with open(path.absolute() + '.gz', 'wb') as f_out, open(path, 'r') as f_in:
+        for line in f_in:
+            compressed = gzip.compress(line.encode('UTF-8'))
+            f_out.write(compressed)
+            line = json.loads(line)
+
+            ret[line['dataset']][line['qid']] = {'start': position, 'end': position + len(compressed)}
+
+    return ret
 
 def parse_documents(path: Path) -> Dict:
     """
