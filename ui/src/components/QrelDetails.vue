@@ -1,8 +1,10 @@
 <template>
   <h3>Topic {{topics[0].query_id}} ({{topics[0].dataset}})</h3>
-  <Bar :data="chartData" />
+  <loading :loading="is_loading" />
+
+  <Bar :data="chartData" v-if="!is_loading"/>
   
-  <v-data-table :items="filtered_qrels" :headers="filtered_headers" hover dense>
+  <v-data-table :items="filtered_qrels" :headers="filtered_headers" v-if="!is_loading" hover dense>
     <template #item.doc_id="{ item }">
       <document-window :doc_id="item.doc_id" :dataset="item.dataset" :start="item.doc_id_to_offset.start" :end="item.doc_id_to_offset.end" />
     </template>
@@ -15,12 +17,13 @@
   import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
   ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
   import DocumentWindow from '../views/DocumentWindow'
+  import Loading from './Loading.vue'
 
 
     export default {
       name: "qrel-details",
       props: ['topics', 'selected_qrel_headers'],
-      components: {Bar, DocumentWindow},
+      components: {Bar, DocumentWindow, Loading},
       watch: {
         topics(newValue) {this.fetchData()},
         selected_qrel_headers(newValue) {this.fetchData()},
@@ -34,13 +37,17 @@
             {title: 'Median Rank', value: 'median_rank', sortable: true},
             {title: 'Retrieved (Top 10)', value: 'retrieved_in_10', sortable: true},
             {title: 'Retrieved (Top 100)', value: 'retrieved_in_100', sortable: true},
-          ]
+          ],
+          is_loading_per_topic: {}
         }
       },
       methods: {
         fetchData() {
           for (var topic of this.topics) {
-            get(topic['qrel_details'], this)
+            this.is_loading_per_topic[topic['qrel_details']] = true
+            get(topic['qrel_details'], this).then(() => {
+              this.is_loading_per_topic[topic['qrel_details']] = false
+            })
           }
         },
       },
@@ -61,6 +68,17 @@
               return {label: k, backgroundColor: '#f87979', data: [v]}
             })
           }
+        },
+        is_loading() {
+          if (!this.is_loading_per_topic) {
+            return true
+          }
+          for (const [key, value] of Object.entries(this.is_loading_per_topic)) {
+            if (value) {
+              return true
+            }
+          }
+          return false
         },
         filtered_qrels() {
           let ret = []

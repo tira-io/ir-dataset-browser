@@ -1,18 +1,22 @@
 <template>
 <div>
   <h3>Topic {{topic.query_id}} ({{topic.dataset}})</h3>
+
+  <loading :loading="is_loading"/>
   
-  <b>Title: </b> {{title}}<br>
-  <b>Description: </b> {{description}}<br>
-  <b>Narrative: </b> {{narrative}}<br>
+  <span v-if="!is_loading"><b>Title: </b> {{title}}<br></span>
+  <span v-if="!is_loading && description"><b>Description: </b> {{description}}<br></span>
+  <span v-if="!is_loading && narrative"><b>Narrative: </b> {{narrative}}<br></span>
 </div>
 </template>
     
 <script lang="ts">
   import { execute_get } from '@/utils'
+  import Loading from './Loading.vue'
 
   export default {
     name: "topic-details",
+    components: {Loading},
     props: ['topic'],
     watch: {
       topics(newValue) {this.fetchData()},
@@ -21,11 +25,13 @@
       return {
         title: '',
         description: '',
-        narrative: ''
+        narrative: '',
+        is_loading: true
       }
     },
     methods: {
       fetchData() {
+        this.is_loading = true
         this.title = ''
         this.description = ''
         this.narrative = ''
@@ -34,6 +40,7 @@
             this.title = i['default_text']
             this.description = i['description']
             this.narrative = i['narrative']
+            this.is_loading = false
           });
         }
       },

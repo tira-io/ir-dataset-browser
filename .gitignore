@@ -9,3 +9,5 @@ ui/coverage/coverage-summary.json
 ui/coverage/lcov-report/
 ui/coverage/lcov.info
 ui/coverage/badge-functions.svg
+**/qrel-details-*.json
+**/run-details-*.json

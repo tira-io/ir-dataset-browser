@@ -1,14 +1,16 @@
 <template>
   <h3>Topic {{topics[0].query_id}} ({{topics[0].dataset}})</h3>
 
-  <v-data-table v-model="selected_runs" :items="filtered_runs" :headers="headers" item-value="dataset_id_and_query_id_and_run_id"  show-select hover dense>
+  <loading :loading="is_loading"/>
+
+  <v-data-table v-model="selected_runs" :items="filtered_runs" :headers="headers" item-value="dataset_id_and_query_id_and_run_id" v-if="!is_loading" show-select hover dense>
     <template v-slot:item.relevance="{ item }">
       <dense-run-overview :judgments="item.relevance" />
     </template>
   </v-data-table>
 
   <!--<div class="d-flex" v-if="selected_runs">Reference run: {{ reference_run_id }}</div>-->
-  <div class="d-flex" v-if="selected_runs">
+  <div class="d-flex" v-if="selected_runs && !is_loading">
     <v-row v-if="selected_runs" class="justify-center mx-2">
       <v-col :cols="columns" v-for="selected_run of selected_runs">
         <serp :run="selected_run" :topic="topics[0]" :topic_details="topic_details"/>
@@ -22,11 +24,12 @@
   import DenseRunOverview from './DenseRunOverview.vue'
   import Serp from '@/components/Serp.vue'
   import {is_mobile} from "@/main";
+  import Loading from './Loading.vue'
   
   export default {
     name: "run-details",
     props: ['topics'],
-    components: {DenseRunOverview, Serp},
+    components: {DenseRunOverview, Serp, Loading},
     watch: {
       topics(newValue) {this.fetchData()},
     },
@@ -40,13 +43,18 @@
           {title: 'nDCG@10', value: 'nDCG@10', sortable: true},
           {title: 'Judged@10', value: 'Judged@10', sortable: true},
           {title: 'Relevance', value: 'relevance', sortable: false}
-        ]
+        ],
+        is_loading_per_topic: {},
       }
     },
     methods: {
       fetchData() {
+
         for (var topic of this.topics) {
-          get(topic['run_details'], this)
+          this.is_loading_per_topic[topic['run_details']] = true
+          get(topic['run_details'], this).then(() => {
+            this.is_loading_per_topic[topic['run_details']] = false
+          })
         }
       },
     },
@@ -76,6 +84,17 @@
         }
 
         return ret;
+      },
+      is_loading() {
+        if (!this.is_loading_per_topic) {
+          return true
+        }
+        for (const [key, value] of Object.entries(this.is_loading_per_topic)) {
+          if (value) {
+            return true
+          }
+        }
+        return false
       },
       columns() {
         if(is_mobile()) {
