@@ -63,7 +63,7 @@
         let ret = []
 
         for (let topic of this.topics) {
-          let entry = this.cache['run-details.jsonl'][topic['run_details']['start'] + '-' + topic['run_details']['end']]
+          let entry = this.cache[topic['run_details']['path']]
           if (entry) {
             if (topic['dataset'] != entry['dataset']) {
                 throw new Error('dataset mismatch')
@@ -104,7 +104,7 @@
         return Math.floor(12 / this.selected_runs.length)
       },
       topic_details() {
-        return this.cache['run-details.jsonl'][this.topics[0]['run_details']['start'] + '-' + this.topics[0]['run_details']['end']]
+        return this.cache[this.topics[0]['run_details']['path']]
       },
     },
     beforeMount() {

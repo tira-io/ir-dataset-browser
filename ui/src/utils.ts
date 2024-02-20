@@ -1,6 +1,6 @@
 import {ref} from 'vue'
 
-export async function execute_get(url: string, range: string): Promise<any> {
+export async function execute_get(url: string, range: string|null): Promise<any> {
 	if (!url.startsWith('http')) {
 		url = '/' + url
 
@@ -9,9 +9,15 @@ export async function execute_get(url: string, range: string): Promise<any> {
 		}
 	}
 
+	let headers:any = {}
+	if(range) {
+		headers['Range'] = 'bytes=' + range
+		headers['Accept-Encoding'] = 'identity'
+	}
+
 	const response = await fetch(url, {
 		method: 'GET',
-		headers: {'Range': 'bytes=' + range, 'Accept-Encoding': 'identity'},
+		headers: headers,
 	})
 
 	if (!response.ok) {
@@ -23,15 +29,26 @@ export async function execute_get(url: string, range: string): Promise<any> {
 
 function inject_response(response: any, request: any, obj: any): void {
 	if (response != null) {
-		obj.$data['cache'][request['path']][request['start'] + '-' + request['end']] = response
+		if (!request['start']  && ! request['end']) {
+			obj.$data['cache'][request['path']] = response
+		} else {
+			obj.$data['cache'][request['path']][request['start'] + '-' + request['end']] = response
+		}
 	}
 }
 
 export async function get(request: any, obj: any): Promise<any> {
-	let range = request['start'] + '-' + request['end']
+	let range = null
+	if (!request['start']  && ! request['end']) {
+		if (obj.$data['cache'][request['path']]) {
+			return obj.$data['cache'][request['path']]
+		}
+	} else {
+		range = request['start'] + '-' + request['end']
 
-	if (obj.$data['cache'][request['path']][range]) {
-		return obj.$data['cache'][request['path']][range]
+		if (obj.$data['cache'][request['path']][range]) {
+			return obj.$data['cache'][request['path']][range]
+		}
 	}
 
 	const response = await execute_get(request['path'], range);

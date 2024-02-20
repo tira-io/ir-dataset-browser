@@ -81,6 +81,13 @@ tira_runs = [
     'ir-benchmarks/tira-ir-starter/DFRee Re-Rank (tira-ir-starter-pyterrier)',
     'ir-benchmarks/tira-ir-starter/DFReeKLIM Re-Rank (tira-ir-starter-pyterrier)',
     'ir-benchmarks/tira-ir-starter/DLH Re-Rank (tira-ir-starter-pyterrier)',
+
+    'ir-benchmarks/tira-ir-starter/ir-benchmarks/tira-ir-starter/DPH Re-Rank (tira-ir-starter-pyterrier)',
+    'ir-benchmarks/tira-ir-starter/ir-benchmarks/tira-ir-starter/Hiemstra_LM Re-Rank (tira-ir-starter-pyterrier)',
+    'ir-benchmarks/tira-ir-starter/IFB2 Re-Rank (tira-ir-starter-pyterrier)',
+    'ir-benchmarks/tira-ir-starter/In_expB2 Re-Rank (tira-ir-starter-pyterrier)',
+    'ir-benchmarks/tira-ir-starter/In_expC2 Re-Rank (tira-ir-starter-pyterrier)'
+
     "ir-benchmarks/tira-ir-starter/MonoT5 Base (tira-ir-starter-gygaggle)",
     "ir-benchmarks/tira-ir-starter/MonoT5 Large (tira-ir-starter-gygaggle)",
     "ir-benchmarks/tira-ir-starter/DirichletLM Re-Rank (tira-ir-starter-pyterrier)",
@@ -379,7 +386,7 @@ def main():
         i['run_details'] = {'path': 'run-details-' + i['dataset'].replace('/', '-') + '-' + i['query_id'].replace('/', '-') + '.json'}
 
         #i['qrel_details'] = {'start': qrels[i['dataset']][i['query_id']]['start'], 'end': qrels[i['dataset']][i['query_id']]['end'] - 1, 'path': 'qrel-details.jsonl'}
-        i['qrel_details'] = {'path': 'topic-details-' + i['dataset'].replace('/', '-') + '-' + i['query_id'].replace('/', '-') + '.json'}
+        i['qrel_details'] = {'path': 'qrel-details-' + i['dataset'].replace('/', '-') + '-' + i['query_id'].replace('/', '-') + '.json'}
         i['topic_details'] = {'start': topics[i['dataset']][i['query_id']]['start'], 'end': topics[i['dataset']][i['query_id']]['end'] - 1, 'path': 'qrel-details.jsonl'}
 
     json.dump(data,  open('ui/src/topics.json', 'w'), indent=4)

@@ -84,7 +84,7 @@
           let ret = []
   
           for (let topic of this.topics) {
-            let entry = this.cache['qrel-details.jsonl'][topic['qrel_details']['start'] + '-' + topic['qrel_details']['end']]
+            let entry = this.cache[topic['qrel_details']['path']]
             if (entry) {
               if (topic['dataset'] != entry['dataset']) {
                   throw new Error('dataset mismatch')

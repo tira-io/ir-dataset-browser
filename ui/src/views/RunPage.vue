@@ -154,10 +154,10 @@
         return ret
       },
       manual_docs() {
-        let key = this.topic['run_details'].start + '-' + this.topic['run_details'].end
+        let key = this.topic['run_details'].path
 
-        if (this.cache['run-details.jsonl'][key] !== undefined) {
-          return this.cache['run-details.jsonl'][key]['docs'];
+        if (this.cache[key] !== undefined) {
+          return this.cache[key]['docs'];
         } else {
           return {}
         }
@@ -174,7 +174,7 @@
         return ret
       },
       manual_qrels() {
-        let qrels = this.cache['qrel-details.jsonl'][this.topic['qrel_details'].start + '-' + this.topic['qrel_details'].end]
+        let qrels = this.cache[this.topic['qrel_details'].path]
         let ret = {}
 
         if (qrels !== undefined) {
@@ -268,7 +268,7 @@
         return ret;
       },
       topic_details() {
-        return this.cache['run-details.jsonl'][this.topic['run_details']['start'] + '-' + this.topic['run_details']['end']]
+        return this.cache[this.topic['run_details']['path']]
       },
       columns() {
         if(is_mobile()) {
