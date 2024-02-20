@@ -3,6 +3,7 @@ build-ui-docker:
 
 flatten-files:
 	mkdir -p static \
+	&& pip3 install tqdm \
 	&& python3 -c 'from construct_indices.compress_data import flatten; flatten("ui/run-details.jsonl.gz", "static")' \
 	&& python3 -c 'from construct_indices.compress_data import flatten; flatten("ui/qrel-details.jsonl.gz", "static")'
 
