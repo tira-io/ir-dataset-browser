@@ -1,5 +1,7 @@
 import {ref} from 'vue'
 
+const CACHE:any = {}
+
 export async function execute_get(url: string, range: string|null): Promise<any> {
 	if (!url.startsWith('http')) {
 		url = '/' + url
@@ -31,6 +33,7 @@ function inject_response(response: any, request: any, obj: any): void {
 	if (response != null) {
 		if (!request['start']  && ! request['end']) {
 			obj.$data['cache'][request['path']] = response
+			CACHE[request['path']] = response
 		} else {
 			obj.$data['cache'][request['path']][request['start'] + '-' + request['end']] = response
 		}
@@ -42,6 +45,9 @@ export async function get(request: any, obj: any): Promise<any> {
 	if (!request['start']  && ! request['end']) {
 		if (obj.$data['cache'][request['path']]) {
 			return obj.$data['cache'][request['path']]
+		}
+		if (CACHE[request['path']]) {
+			return CACHE[request['path']]
 		}
 	} else {
 		range = request['start'] + '-' + request['end']
