@@ -75,10 +75,17 @@ RANK_NOT_RETRIEVED = 99999
 
 tira_runs = [
     "ir-benchmarks/tira-ir-starter/BM25 Re-Rank (tira-ir-starter-pyterrier)",
+    'ir-benchmarks/tira-ir-starter/DFIC Re-Rank (tira-ir-starter-pyterrier)',
+    'ir-benchmarks/tira-ir-starter/DFIZ Re-Rank (tira-ir-starter-pyterrier)',
+    'ir-benchmarks/tira-ir-starter/DFR_BM25 Re-Rank (tira-ir-starter-pyterrier)',
+    'ir-benchmarks/tira-ir-starter/DFRee Re-Rank (tira-ir-starter-pyterrier)',
+    'ir-benchmarks/tira-ir-starter/DFReeKLIM Re-Rank (tira-ir-starter-pyterrier)',
+    'ir-benchmarks/tira-ir-starter/DLH Re-Rank (tira-ir-starter-pyterrier)',
     "ir-benchmarks/tira-ir-starter/MonoT5 Base (tira-ir-starter-gygaggle)",
     "ir-benchmarks/tira-ir-starter/MonoT5 Large (tira-ir-starter-gygaggle)",
     "ir-benchmarks/tira-ir-starter/DirichletLM Re-Rank (tira-ir-starter-pyterrier)",
-    "ir-benchmarks/tira-ir-starter/TASB msmarco-distilbert-base-dot (tira-ir-starter-beir)"
+    "ir-benchmarks/tira-ir-starter/TASB msmarco-distilbert-base-dot (tira-ir-starter-beir)",
+
 ]
 
 tira_run_cache = {i: {} for i in datasets}
@@ -360,8 +367,11 @@ def main():
         data += process_dataset(dataset_name)
     
     for i in data:
-        i['run_details'] = {'start': runs[i['dataset']][i['query_id']]['start'], 'end': runs[i['dataset']][i['query_id']]['end'] - 1, 'path': 'run-details.jsonl'}
-        i['qrel_details'] = {'start': qrels[i['dataset']][i['query_id']]['start'], 'end': qrels[i['dataset']][i['query_id']]['end'] - 1, 'path': 'qrel-details.jsonl'}
+        #i['run_details'] = {'start': runs[i['dataset']][i['query_id']]['start'], 'end': runs[i['dataset']][i['query_id']]['end'] - 1, 'path': 'run-details.jsonl'}
+        i['run_details'] = {'path': 'run-details-' + i['dataset'].replace('/', '-') + '-' + i['query_id'].replace('/', '-') + '.json'}
+
+        #i['qrel_details'] = {'start': qrels[i['dataset']][i['query_id']]['start'], 'end': qrels[i['dataset']][i['query_id']]['end'] - 1, 'path': 'qrel-details.jsonl'}
+        i['qrel_details'] = {'path': 'topic-details-' + i['dataset'].replace('/', '-') + '-' + i['query_id'].replace('/', '-') + '.json'}
         i['topic_details'] = {'start': topics[i['dataset']][i['query_id']]['start'], 'end': topics[i['dataset']][i['query_id']]['end'] - 1, 'path': 'qrel-details.jsonl'}
 
     json.dump(data,  open('ui/src/topics.json', 'w'), indent=4)
