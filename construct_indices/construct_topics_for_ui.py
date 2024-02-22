@@ -79,12 +79,13 @@ tira_runs = [
     'ir-benchmarks/tira-ir-starter/DFIZ Re-Rank (tira-ir-starter-pyterrier)',
     'ir-benchmarks/tira-ir-starter/DFR_BM25 Re-Rank (tira-ir-starter-pyterrier)',
     'ir-benchmarks/tira-ir-starter/DFRee Re-Rank (tira-ir-starter-pyterrier)',
+
     'ir-benchmarks/tira-ir-starter/DFReeKLIM Re-Rank (tira-ir-starter-pyterrier)',
     'ir-benchmarks/tira-ir-starter/DLH Re-Rank (tira-ir-starter-pyterrier)',
-
     'ir-benchmarks/tira-ir-starter/DPH Re-Rank (tira-ir-starter-pyterrier)',
     'ir-benchmarks/tira-ir-starter/Hiemstra_LM Re-Rank (tira-ir-starter-pyterrier)',
     'ir-benchmarks/tira-ir-starter/IFB2 Re-Rank (tira-ir-starter-pyterrier)',
+
     'ir-benchmarks/tira-ir-starter/In_expB2 Re-Rank (tira-ir-starter-pyterrier)',
     'ir-benchmarks/tira-ir-starter/In_expC2 Re-Rank (tira-ir-starter-pyterrier)',
     'ir-benchmarks/tira-ir-starter/InB2 Re-Rank (tira-ir-starter-pyterrier)',
