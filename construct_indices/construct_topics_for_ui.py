@@ -94,6 +94,13 @@ tira_runs = [
     'ir-benchmarks/tira-ir-starter/LGD Re-Rank (tira-ir-starter-pyterrier)',
     'ir-benchmarks/tira-ir-starter/PL2 Re-Rank (tira-ir-starter-pyterrier)',
 
+    'ir-benchmarks/tira-ir-starter/TF_IDF Re-Rank (tira-ir-starter-pyterrier)',
+    'ir-benchmarks/tira-ir-starter/XSqrA_M Re-Rank (tira-ir-starter-pyterrier)',
+    'ir-benchmarks/tira-ir-starter/ANCE Base Cosine (tira-ir-starter-beir)',
+    'ir-benchmarks/tira-ir-starter/ANCE Base Dot (tira-ir-starter-beir)',
+    'ir-benchmarks/tira-ir-starter/ColBERT Re-Rank (tira-ir-starter-pyterrier)',
+    'ir-benchmarks/tira-ir-starter/SBERT msmarco-distilbert-base-v3-cos (tira-ir-starter-beir)',
+
     "ir-benchmarks/tira-ir-starter/MonoT5 Base (tira-ir-starter-gygaggle)",
     "ir-benchmarks/tira-ir-starter/MonoT5 Large (tira-ir-starter-gygaggle)",
     "ir-benchmarks/tira-ir-starter/DirichletLM Re-Rank (tira-ir-starter-pyterrier)",
