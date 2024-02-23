@@ -106,14 +106,14 @@ tira_runs = [
     'ir-benchmarks/tira-ir-starter/ANCE Base Dot (tira-ir-starter-beir)',
     'ir-benchmarks/tira-ir-starter/ColBERT Re-Rank (tira-ir-starter-pyterrier)',
     'ir-benchmarks/tira-ir-starter/SBERT msmarco-distilbert-base-v3-cos (tira-ir-starter-beir)',
-    'SBERT msmarco-distilbert-base-v3-dot (tira-ir-starter-beir)',
-    'SBERT msmarco-MiniLM-L6-cos-v5 (tira-ir-starter-beir)',
+    'ir-benchmarks/tira-ir-starter/SBERT msmarco-distilbert-base-v3-dot (tira-ir-starter-beir)',
+    'ir-benchmarks/tira-ir-starter/SBERT msmarco-MiniLM-L6-cos-v5 (tira-ir-starter-beir)',
 
     #26--30
-    'SBERT msmarco-MiniLM-L12-cos-v5 (tira-ir-starter-beir)',
-    'SBERT msmarco-distilbert-cos-v5 (tira-ir-starter-beir)',
-    'SBERT msmarco-distilbert-dot-v5 (tira-ir-starter-beir)',
-    'SBERT msmarco-bert-base-dot-v5 (tira-ir-starter-beir)',
+    'ir-benchmarks/tira-ir-starter/SBERT msmarco-MiniLM-L12-cos-v5 (tira-ir-starter-beir)',
+    'ir-benchmarks/tira-ir-starter/SBERT msmarco-distilbert-cos-v5 (tira-ir-starter-beir)',
+    'ir-benchmarks/tira-ir-starter/SBERT msmarco-distilbert-dot-v5 (tira-ir-starter-beir)',
+    'ir-benchmarks/tira-ir-starter/SBERT msmarco-bert-base-dot-v5 (tira-ir-starter-beir)',
 
 
 
